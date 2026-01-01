@@ -1,0 +1,248 @@
+# Project Structure & Coding Conventions
+
+## Folder Organization (Type-Based / Atomic)
+
+This project uses **Type-Based Component Organization**. Follow these rules strictly:
+
+### Component Placement Rules
+
+```
+components/
+├── layout/     # Layout components (navbar, footer, sidebar)
+├── ui/         # Reusable UI components (buttons, cards, forms)
+└── icons/      # Icon components only
+```
+
+**Rules:**
+- `components/layout/` → Components yang mempengaruhi page layout (Navbar, Footer, Sidebar, Header)
+- `components/ui/` → Reusable UI components yang tidak spesifik ke layout (Counter, ThemeSwitch, Form components)
+- `components/icons/` → Icon components ONLY (SVG components)
+
+### Non-Component Folders
+
+```
+lib/        # Utility functions, helpers, formatters
+hooks/      # Custom React hooks
+services/   # API calls, external services
+config/     # Configuration files
+types/      # TypeScript type definitions
+```
+
+**Rules:**
+- `lib/` → Pure functions, utilities (validators, formatters, constants). NO React components.
+- `hooks/` → Custom React hooks ONLY (useAuth, useForm, useLocalStorage)
+- `services/` → API calls, external service integrations (fetchData, apiClient)
+- `config/` → Configuration ONLY (site config, fonts, environment)
+- `types/` → TypeScript types and interfaces
+
+### Barrel Exports (index.ts)
+
+**Every folder MUST have an index.ts barrel export:**
+
+```typescript
+// components/layout/index.ts
+export * from './navbar';
+export * from './footer';
+
+// components/ui/index.ts
+export * from './theme-switch';
+export * from './counter';
+
+// lib/index.ts
+export * from './utils';
+
+// hooks/index.ts
+export * from './useAuth';
+export * from './useForm';
+```
+
+**Import Convention:**
+```typescript
+// ✅ CORRECT - Use barrel exports
+import { Navbar } from "@/components/layout";
+import { ThemeSwitch } from "@/components/ui";
+import { title } from "@/lib/utils";
+
+// ❌ WRONG - Don't import from specific file
+import { Navbar } from "@/components/layout/navbar";
+```
+
+## File Naming Conventions
+
+### Components
+- Use **PascalCase** for component files: `Navbar.tsx`, `ThemeSwitch.tsx`, `UserProfile.tsx`
+- One component per file
+- File name MUST match component name
+
+### Utilities, Hooks, Services
+- Use **camelCase** for non-component files: `utils.ts`, `useAuth.ts`, `api.ts`
+
+## Import Order Convention
+
+```typescript
+// 1. React & Next.js
+import { useState } from "react";
+import Link from "next/link";
+
+// 2. Third-party libraries
+import { Button } from "@heroui/button";
+import clsx from "clsx";
+
+// 3. Project imports (use barrel exports!)
+import { Navbar } from "@/components/layout";
+import { title } from "@/lib/utils";
+import { siteConfig } from "@/config/site";
+```
+
+## Component Writing Rules
+
+### Component Structure
+```typescript
+// 1. "use client" directive (if needed)
+"use client";
+
+// 2. Imports
+import { FC } from "react";
+
+// 3. Types/Interfaces
+export interface ComponentProps {
+  // ...
+}
+
+// 4. Component
+export const ComponentName: FC<ComponentProps> = ({ ... }) => {
+  // Hooks
+  // Handlers
+  // Effects
+  // Render
+  return ( ... );
+};
+```
+
+### Type Safety
+- **ALWAYS** define props interfaces
+- Use `FC` (Functional Component) type for components
+- Export types if they're used elsewhere
+
+### "use client" Directive
+- Add "use client" at the TOP of file if:
+  - Using hooks (useState, useEffect, etc.)
+  - Using event handlers (onClick, onChange, etc.)
+  - Using browser APIs
+- Omit "use client" if component is purely presentational
+
+## When to Create New Files
+
+### Creating UI Component
+```typescript
+// Question: Is this a reusable UI element?
+// YES → components/ui/[ComponentName].tsx
+// Examples: Button, Card, Modal, Form, Input
+
+// Question: Is this layout-related?
+// YES → components/layout/[ComponentName].tsx
+// Examples: Navbar, Footer, Sidebar, Header
+```
+
+### Creating Utility Function
+```typescript
+// Question: Is this a pure function (no React dependencies)?
+// YES → lib/[filename].ts
+
+// Example:
+// lib/format.ts → for date formatting, number formatting
+// lib/validators.ts → for validation functions
+// lib/constants.ts → for constants
+```
+
+### Creating Custom Hook
+```typescript
+// Question: Does this use React hooks and provide reusable logic?
+// YES → hooks/use[HookName].ts
+
+// Example:
+// hooks/useAuth.ts → for authentication logic
+// hooks/useLocalStorage.ts → for localStorage management
+```
+
+### Creating Service
+```typescript
+// Question: Is this an API call or external service integration?
+// YES → services/[serviceName].ts
+
+// Example:
+// services/api.ts → for API client
+// services/auth.ts → for auth API calls
+// services/database.ts → for database operations
+```
+
+## Code Quality Rules
+
+### Component vs Utility
+- **Component** → Returns JSX, uses React
+- **Utility** → Pure function, NO React, returns data
+
+### Feature-Based vs Type-Based
+- This project uses **TYPE-BASED** organization
+- DO NOT create feature folders unless explicitly needed
+- Keep components organized by TYPE (layout, ui, icons)
+
+## Examples
+
+### ✅ CORRECT
+```typescript
+// components/ui/Button.tsx
+export const Button: FC<ButtonProps> = ({ ... }) => { ... };
+
+// lib/utils.ts
+export const formatDate = (date: Date): string => { ... };
+
+// hooks/useAuth.ts
+export const useAuth = () => { ... };
+
+// services/api.ts
+export const fetchUser = async (id: string) => { ... };
+```
+
+### ❌ WRONG
+```typescript
+// components/Button (folder instead of file)
+// ❌ Don't create folders for single components
+
+// components/formatDate.tsx
+// ❌ Don't put utilities in components folder
+
+// lib/useAuth.ts
+// ❌ Don't put hooks in lib folder
+
+// utils/api.ts
+// ❌ Don't create 'utils' folder - use 'lib' instead
+```
+
+## Testing & Build
+
+Before committing:
+1. Run `npm run build` to ensure no errors
+2. Check all imports use barrel exports
+3. Verify components are in correct folders
+4. Ensure all new folders have index.ts barrel exports
+
+## Summary Checklist
+
+- [ ] Component in `components/layout/`, `components/ui/`, or `components/icons/`
+- [ ] Utility in `lib/` (NOT components/)
+- [ ] Hook in `hooks/` (NOT lib/ or components/)
+- [ ] Service in `services/` (NOT lib/ or components/)
+- [ ] Folder has `index.ts` barrel export
+- [ ] Imports use barrel exports: `import { X } from "@/components/ui"`
+- [ ] File naming follows convention (PascalCase for components, camelCase for others)
+- [ ] Component has props interface exported
+- [ ] Build passes: `npm run build`
+
+**When in doubt:**
+- Layout/structural component? → `components/layout/`
+- Reusable UI component? → `components/ui/`
+- Icon? → `components/icons/`
+- Pure function/helper? → `lib/`
+- React hook logic? → `hooks/`
+- API call? → `services/`

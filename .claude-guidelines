@@ -1,0 +1,390 @@
+# Claude Code Project Guidelines
+
+## 📌 IMPORTANT - READ THIS FIRST
+
+This file contains **MUST FOLLOW** rules for Claude Code (AI assistant) when working on this project.
+
+**Claude Code MUST:**
+1. Read and follow ALL rules in this file before making any changes
+2. Use the folder structure defined below
+3. Follow the naming conventions exactly
+4. Create barrel exports (index.ts) for every new folder
+5. Use barrel exports for imports
+
+---
+
+## 🏗️ PROJECT STRUCTURE (STRICT)
+
+This project uses **Type-Based (Atomic) Component Organization**.
+
+```
+idx-web/
+├── app/                    # Next.js App Router
+├── components/
+│   ├── layout/            # Layout components ONLY
+│   ├── ui/                # UI components ONLY
+│   └── icons/             # Icons ONLY
+├── lib/                   # Utilities, helpers, formatters
+├── hooks/                 # Custom React hooks
+├── services/              # API calls, external services
+├── config/                # Configuration files
+├── types/                 # TypeScript types
+└── styles/                # Global styles
+```
+
+---
+
+## 📂 FOLDER RULES (DECISION TREE)
+
+When creating ANY file, Claude Code MUST follow this decision tree:
+
+```
+START: What are you creating?
+│
+├─→ Is it a React Component (returns JSX)?
+│   │
+│   ├─→ Is it layout-related? (Navbar, Footer, Sidebar, Header)
+│   │   │
+│   │   └─→ YES → Create in: components/layout/[ComponentName].tsx
+│   │
+│   ├─→ Is it an icon/graphic? (SVG component)
+│   │   │
+│   │   └─→ YES → Create in: components/icons/[IconName].tsx
+│   │
+│   └─→ Is it a reusable UI element?
+│       │
+│       └─→ YES → Create in: components/ui/[ComponentName].tsx
+│
+├─→ Is it a React Hook? (uses useState, useEffect, etc.)
+│   │
+│   └─→ YES → Create in: hooks/use[HookName].ts
+│
+├─→ Is it an API call or external service?
+│   │
+│   └─→ YES → Create in: services/[ServiceName].ts
+│
+└─→ Is it a utility/helper function?
+    │
+    └─→ YES → Create in: lib/[FileName].ts
+```
+
+### Examples
+
+✅ **CORRECT:**
+- User profile card → `components/ui/UserProfileCard.tsx`
+- Navigation bar → `components/layout/Navbar.tsx`
+- Logo icon → `components/icons/Logo.tsx`
+- Date formatter → `lib/formatDate.ts`
+- Auth hook → `hooks/useAuth.ts`
+- API client → `services/api.ts`
+
+❌ **WRONG:**
+- User profile card → `components/UserProfileCard.tsx` (missing folder!)
+- Navigation bar → `components/ui/Navbar.tsx` (wrong folder!)
+- Date formatter → `components/formatDate.tsx` (wrong folder!)
+- Auth hook → `lib/useAuth.ts` (wrong folder!)
+
+---
+
+## 📝 FILE NAMING CONVENTIONS
+
+### Components
+- **Format:** PascalCase
+- **Extension:** `.tsx`
+- **Rule:** File name MUST match component name exactly
+- **Examples:** `Navbar.tsx`, `ThemeSwitch.tsx`, `UserProfileCard.tsx`
+
+### Utilities, Hooks, Services
+- **Format:** camelCase
+- **Extension:** `.ts` (no JSX)
+- **Examples:** `utils.ts`, `useAuth.ts`, `api.ts`, `validators.ts`
+
+---
+
+## 📦 BARREL EXPORTS (REQUIRED)
+
+**EVERY folder MUST have `index.ts` file for barrel exports.**
+
+### Creating Barrel Export
+
+When Claude Code creates a new file in a folder, it MUST also update the `index.ts`:
+
+```typescript
+// components/ui/index.ts
+export * from './theme-switch';
+export * from './counter';
+export * from './UserProfileCard'; // ← Add this for new component
+
+// lib/index.ts
+export * from './utils';
+export * from './formatDate'; // ← Add this for new utility
+```
+
+### Import Convention
+
+**ALWAYS use barrel exports for imports:**
+
+```typescript
+// ✅ CORRECT
+import { Navbar } from "@/components/layout";
+import { ThemeSwitch } from "@/components/ui";
+import { formatDate } from "@/lib/utils";
+import { useAuth } from "@/hooks";
+
+// ❌ WRONG - Don't import from specific file
+import { Navbar } from "@/components/layout/navbar";
+import { ThemeSwitch } from "@/components/ui/theme-switch";
+```
+
+---
+
+## 🎯 COMPONENT CREATION RULES
+
+When creating a component, Claude Code MUST:
+
+1. **Place in correct folder** (use decision tree above)
+2. **Export props interface:**
+   ```typescript
+   export interface ComponentNameProps {
+     // Define all props
+   }
+   ```
+
+3. **Use FC type:**
+   ```typescript
+   export const ComponentName: FC<ComponentNameProps> = ({ ... }) => {
+   ```
+
+4. **Add "use client" directive** (if needed):
+   ```typescript
+   "use client";
+
+   // Add at top if using:
+   // - React hooks (useState, useEffect, etc.)
+   // - Event handlers (onClick, onChange, etc.)
+   // - Browser APIs
+   ```
+
+5. **Create/update barrel export** in folder's `index.ts`
+
+6. **Use barrel export** when importing elsewhere
+
+### Example: Creating a Button Component
+
+```typescript
+// components/ui/Button.tsx
+"use client";
+
+import { FC } from "react";
+
+export interface ButtonProps {
+  label: string;
+  onClick?: () => void;
+  variant?: "primary" | "secondary";
+}
+
+export const Button: FC<ButtonProps> = ({ label, onClick, variant = "primary" }) => {
+  return (
+    <button
+      onClick={onClick}
+      className={`btn btn-${variant}`}
+    >
+      {label}
+    </button>
+  );
+};
+
+// Then update components/ui/index.ts:
+// export * from './Button';
+```
+
+---
+
+## 🔧 UTILITY/HOOK/SERVICE CREATION RULES
+
+### Utilities (lib/)
+- **Pure functions only** - NO React dependencies
+- **NO JSX** - use `.ts` extension
+- **Export functions** that can be used anywhere
+
+```typescript
+// lib/formatDate.ts
+export const formatDate = (date: Date): string => {
+  return date.toLocaleDateString('id-ID');
+};
+
+// Then update lib/index.ts:
+// export * from './formatDate';
+```
+
+### Hooks (hooks/)
+- **MUST use React hooks** (useState, useEffect, etc.)
+- **Naming convention:** `use[HookName]`
+- **Export custom hook** that encapsulates logic
+
+```typescript
+// hooks/useLocalStorage.ts
+import { useState } from "react";
+
+export const useLocalStorage = <T>(key: string, initialValue: T) => {
+  // Hook implementation
+};
+
+// Then update hooks/index.ts:
+// export * from './useLocalStorage';
+```
+
+### Services (services/)
+- **API calls** - fetch, axios, etc.
+- **External service integrations**
+- **Return data, NOT JSX**
+
+```typescript
+// services/userApi.ts
+export const fetchUser = async (id: string) => {
+  const response = await fetch(`/api/users/${id}`);
+  return response.json();
+};
+
+// Then update services/index.ts:
+// export * from './userApi';
+```
+
+---
+
+## 📋 IMPORT ORDER CONVENTION
+
+When writing imports, use this order:
+
+```typescript
+// 1. React & Next.js
+import { useState } from "react";
+import Link from "next/link";
+
+// 2. Third-party libraries
+import { Button } from "@heroui/button";
+import clsx from "clsx";
+
+// 3. Project imports (use barrel exports!)
+import { Navbar } from "@/components/layout";
+import { title } from "@/lib/utils";
+```
+
+---
+
+## ✅ CHECKLIST BEFORE COMPLETING TASK
+
+Before saying a task is complete, Claude Code MUST verify:
+
+- [ ] File created in correct folder (followed decision tree)
+- [ ] File name follows convention (PascalCase for components, camelCase for others)
+- [ ] Component has props interface exported
+- [ ] Component uses FC type
+- [ ] "use client" added if needed
+- [ ] Folder's `index.ts` updated with barrel export
+- [ ] Imports use barrel exports (not specific file paths)
+- [ ] Build passes: `npm run build`
+
+---
+
+## 🚫 COMMON MISTAKES TO AVOID
+
+❌ **DON'T:**
+- Create component without folder structure
+- Put utilities in `components/`
+- Put hooks in `lib/`
+- Put API calls in `lib/`
+- Import from specific file instead of barrel export
+- Forget to update barrel export (index.ts)
+- Use wrong file naming (snake_case, inconsistent)
+
+✅ **DO:**
+- Follow the decision tree for folder placement
+- Create barrel exports for every folder
+- Use barrel exports for imports
+- Follow naming conventions strictly
+- Run build before completing task
+
+---
+
+## 🎨 PROJECT-SPECIFIC INFO
+
+- **Framework:** Next.js 15 with App Router
+- **UI Library:** HeroUI v2
+- **Styling:** Tailwind CSS
+- **TypeScript:** Strict mode enabled
+- **Theme:** Dark/light mode support
+
+---
+
+## 💡 TEMPLATES
+
+### New Component Template
+```typescript
+"use client";
+
+import { FC } from "react";
+
+export interface ComponentNameProps {
+  // Define props here
+}
+
+export const ComponentName: FC<ComponentNameProps> = ({ ... }) => {
+  // Hooks here
+
+  // Handlers here
+
+  // Return JSX
+  return (
+    <div>
+      {/* Component JSX */}
+    </div>
+  );
+};
+```
+
+### New Utility Template
+```typescript
+export const functionName = (params: ParamType): ReturnType => {
+  // Implementation
+  return result;
+};
+```
+
+### New Hook Template
+```typescript
+import { useState } from "react";
+
+export const useHookName = <T>(initialValue: T) => {
+  const [value, setValue] = useState<T>(initialValue);
+
+  // Hook logic
+
+  return { value, setValue };
+};
+```
+
+---
+
+## 📖 ADDITIONAL INFORMATION
+
+- This project follows **Type-Based (Atomic)** organization
+- Not feature-based - keep components organized by TYPE
+- Barrel exports make imports cleaner and more maintainable
+- Consistency is key - follow these rules every time
+
+**When unsure:** Use the decision tree above or ask the user for clarification.
+
+---
+
+## 🔗 RELATED FILES
+
+- `.cursorrules` - Cursor AI editor conventions (similar content)
+- `README.md` - Human-readable documentation
+- `tsconfig.json` - TypeScript configuration with path aliases (@/*)
+
+---
+
+**Last Updated:** 2026-01-02
+**Project:** idx-web (Next.js + HeroUI)
+**Convention:** Type-Based Component Organization
