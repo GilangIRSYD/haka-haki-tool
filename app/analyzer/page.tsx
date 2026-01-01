@@ -640,8 +640,7 @@ function InputSection({
   return (
     <Card className="w-full">
       <CardBody>
-        <h2 className="text-lg font-bold mb-3">Broker Accumulation Analyzer</h2>
-
+        <h2 className="text-lg font-bold mb-3">Broker Action Analyzer 🤘</h2>
         <div className="space-y-3">
           <div>
             <label className="block text-xs font-medium text-default-700 mb-1.5">
@@ -809,15 +808,6 @@ export default function AnalyzerPage() {
 
   return (
     <div className="w-full h-full">
-      <div className="mb-6">
-        <h1 className="text-3xl font-bold mb-2">
-          IDX Broker Accumulation Analyzer
-        </h1>
-        <p className="text-default-500 text-sm">
-          Analyze broker buying and selling patterns for Indonesian stocks
-        </p>
-      </div>
-
       <AnimatePresence mode="wait">
         {!analysisResult && !isLoading && (
           <motion.div
@@ -849,7 +839,7 @@ export default function AnalyzerPage() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="grid grid-cols-1 lg:grid-cols-3 gap-6 h-[calc(100vh-200px)]"
+            className="grid grid-cols-1 lg:grid-cols-3 gap-6 h-[calc(100vh-100px)]"
           >
             {/* Left Column - Control & Summary Panel */}
             <motion.div
