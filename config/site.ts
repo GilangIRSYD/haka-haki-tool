@@ -1,12 +1,16 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Next.js + HeroUI",
-  description: "Make beautiful websites regardless of your design experience.",
+  name: "IDX Analytics",
+  description: "Indonesian stock market broker accumulation analysis platform.",
   navItems: [
     {
       label: "Home",
       href: "/",
+    },
+    {
+      label: "Analyzer",
+      href: "/analyzer",
     },
     {
       label: "Docs",
