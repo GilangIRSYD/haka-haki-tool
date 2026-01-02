@@ -104,6 +104,78 @@ function generateNonce(): string {
   ).join('');
 }
 
+// Fetch broker summary from dedicated API
+async function fetchBrokerSummary(
+  stockCode: string,
+  startDate: string,
+  endDate: string
+): Promise<BrokerDailyData[]> {
+  const baseUrl = 'https://api-idx.gsphomelab.org/api/v1';
+  const endpoint = '/emiten-broker-summary';
+
+  const params = new URLSearchParams({
+    symbol: stockCode,
+    from: startDate,
+    to: endDate,
+  });
+
+  const url = `${baseUrl}${endpoint}?${params.toString()}`;
+
+  const response = await fetch(url, {
+    method: 'GET',
+    headers: {
+      'x-nonce': generateNonce(),
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error(`Broker Summary API Error: ${response.status} ${response.statusText}`);
+  }
+
+  const apiResponse = await response.json();
+
+  // Transform broker buy data
+  const buyBrokers = apiResponse.brokers_buy.map((broker: any) => ({
+    broker: broker.broker_code,
+    buyValue: broker.buy_value,
+    buyLot: broker.buy_volume,
+    buyAvg: broker.avg_price,
+    sellValue: 0,
+    sellLot: 0,
+    sellAvg: 0,
+  }));
+
+  // Transform broker sell data
+  const sellBrokers = apiResponse.brokers_sell.map((broker: any) => ({
+    broker: broker.broker_code,
+    buyValue: 0,
+    buyLot: 0,
+    buyAvg: 0,
+    sellValue: broker.sell_value,
+    sellLot: broker.sell_volume,
+    sellAvg: broker.avg_price
+  }));
+
+  // Merge buy and sell data by broker code
+  const brokerMap = new Map<string, BrokerDailyData>();
+
+  [...buyBrokers, ...sellBrokers].forEach((broker: BrokerDailyData) => {
+    const existing = brokerMap.get(broker.broker);
+    if (existing) {
+      existing.buyValue += broker.buyValue;
+      existing.buyLot += broker.buyLot;
+      existing.buyAvg = existing.buyLot > 0 ? existing.buyValue / existing.buyLot / 100 : 0;
+      existing.sellValue += broker.sellValue;
+      existing.sellLot += broker.sellLot;
+      existing.sellAvg = existing.sellLot > 0 ? existing.sellValue / existing.sellLot / 100 : 0;
+    } else {
+      brokerMap.set(broker.broker, broker);
+    }
+  });
+
+  return Array.from(brokerMap.values());
+}
+
 // Real API call to fetch broker calendar data
 async function analyzeData(
   brokers: string[],
@@ -129,18 +201,22 @@ async function analyzeData(
   const url = `${baseUrl}${endpoint}?${params.toString()}`;
 
   try {
-    const response = await fetch(url, {
-      method: 'GET',
-      headers: {
-        'x-nonce': generateNonce(),
-      },
-    });
+    // Fetch both calendar and broker summary data in parallel
+    const [calendarResponse, brokerSummaryData] = await Promise.all([
+      fetch(url, {
+        method: 'GET',
+        headers: {
+          'x-nonce': generateNonce(),
+        },
+      }),
+      fetchBrokerSummary(stockCode, startDate, endDate),
+    ]);
 
-    if (!response.ok) {
-      throw new Error(`API Error: ${response.status} ${response.statusText}`);
+    if (!calendarResponse.ok) {
+      throw new Error(`Calendar API Error: ${calendarResponse.status} ${calendarResponse.statusText}`);
     }
 
-    const apiResponse = await response.json();
+    const apiResponse = await calendarResponse.json();
 
     // Transform API response to our data structure
     const dailyData: DailyData[] = apiResponse.data.map((day: any, index: number) => {
@@ -177,38 +253,8 @@ async function analyzeData(
       };
     });
 
-    // Calculate broker summary
-    const brokerSummary: BrokerDailyData[] = brokers.map(code => {
-      const buyValue = dailyData.reduce((sum, day) => {
-        const brokerData = day.brokers.find(b => b.broker === code);
-        return sum + (brokerData?.buyValue || 0);
-      }, 0);
-
-      const sellValue = dailyData.reduce((sum, day) => {
-        const brokerData = day.brokers.find(b => b.broker === code);
-        return sum + (brokerData?.sellValue || 0);
-      }, 0);
-
-      const buyLot = dailyData.reduce((sum, day) => {
-        const brokerData = day.brokers.find(b => b.broker === code);
-        return sum + (brokerData?.buyLot || 0);
-      }, 0);
-
-      const sellLot = dailyData.reduce((sum, day) => {
-        const brokerData = day.brokers.find(b => b.broker === code);
-        return sum + (brokerData?.sellLot || 0);
-      }, 0);
-
-      return {
-        broker: code,
-        buyValue,
-        buyLot,
-        buyAvg: buyLot > 0 ? buyValue / buyLot / 100 : 0,
-        sellValue,
-        sellLot,
-        sellAvg: sellLot > 0 ? sellValue / sellLot / 100 : 0,
-      };
-    });
+    // Use broker summary from dedicated API instead of calculating from calendar data
+    const brokerSummary = brokerSummaryData;
 
     const netBuy = apiResponse.summary.total_buy_value || 0;
     const netSell = apiResponse.summary.total_sell_value || 0;
@@ -471,92 +517,145 @@ function BrokerSummaryTable({ brokerSummary }: { brokerSummary: BrokerDailyData[
   };
 
   const formatPrice = (value: number) => {
-    return value.toFixed(0);
+    return Math.floor(value).toFixed(0);
   };
+
+  // Separate buyers and sellers
+  const buyers = brokerSummary.filter((broker) => broker.buyValue > 0);
+  const sellers = brokerSummary.filter((broker) => broker.sellValue > 0);
 
   return (
     <>
-    <Card className="w-full">
-      <CardBody className="p-0">
-        <div className="overflow-x-auto">
-          <table className="w-full text-[11px]">
-            <thead>
-              <tr className="border-b border-default-200 bg-default-50">
-                <th className="px-2 py-2 text-left font-semibold text-default-700">BY</th>
-                <th className="px-2 py-2 text-right font-semibold text-success">B.Val</th>
-                <th className="px-2 py-2 text-right font-semibold text-success">B.Lot</th>
-                <th className="px-2 py-2 text-right font-semibold text-success">B.Avg</th>
-                <th className="px-2 py-2 text-left font-semibold text-default-700">SL</th>
-                <th className="px-2 py-2 text-right font-semibold text-danger">S.Val</th>
-                <th className="px-2 py-2 text-right font-semibold text-danger">S.Lot</th>
-                <th className="px-2 py-2 text-right font-semibold text-danger">S.Avg</th>
-              </tr>
-            </thead>
-            <tbody>
-              {brokerSummary.map((broker, idx) => {
-                const brokerGroup = getBrokerGroupCode(broker.broker);
-                const groupTextColor = getBrokerGroupTextColor(brokerGroup);
-
-                return (
-                  <tr
-                    key={broker.broker}
-                    className={`border-b border-default-100 hover:bg-default-50 transition-colors ${
-                      idx % 2 === 0 ? "bg-default-100/30" : ""
-                    }`}
-                  >
-                    <td className="px-2 py-2">
-                      {broker.buyValue > 0 ? (
-                        <span className={`font-bold ${groupTextColor}`}>{broker.broker}</span>
-                      ) : "-"}
-                    </td>
-                    <td className="px-2 py-2 text-right text-success">
-                      {broker.buyValue > 0 ? formatCurrency(broker.buyValue) : "-"}
-                    </td>
-                    <td className="px-2 py-2 text-right text-success">
-                      {broker.buyValue > 0 ? formatLot(broker.buyLot) : "-"}
-                    </td>
-                    <td className="px-2 py-2 text-right text-success">
-                      {broker.buyValue > 0 ? formatPrice(broker.buyAvg) : "-"}
-                    </td>
-                    <td className="px-2 py-2">
-                      {broker.sellValue > 0 ? (
-                        <span className={`font-bold ${groupTextColor}`}>{broker.broker}</span>
-                      ) : "-"}
-                    </td>
-                    <td className="px-2 py-2 text-right text-danger">
-                      {broker.sellValue > 0 ? formatCurrency(broker.sellValue) : "-"}
-                    </td>
-                    <td className="px-2 py-2 text-right text-danger">
-                      {broker.sellValue > 0 ? formatLot(broker.sellLot) : "-"}
-                    </td>
-                    <td className="px-2 py-2 text-right text-danger">
-                      {broker.sellValue > 0 ? formatPrice(broker.sellAvg) : "-"}
-                    </td>
+      <div className="grid grid-cols-2 gap-1">
+        {/* Buyers Table */}
+        <Card className="w-full">
+          <CardBody className="p-0">
+            <div className="bg-success/10 px-3 py-2 border-b border-success/30">
+              <h3 className="text-xs font-bold text-success">BUYERS</h3>
+            </div>
+            <div className="overflow-x-auto max-h-96 overflow-y-auto">
+              <table className="w-full text-[11px]">
+                <thead className="sticky top-0 bg-default-50">
+                  <tr className="border-b border-default-200">
+                    <th className="px-2 py-2 text-left font-semibold text-default-700">BY</th>
+                    <th className="px-2 py-2 text-right font-semibold text-success">B.Val</th>
+                    <th className="px-2 py-2 text-right font-semibold text-success">B.Lot</th>
+                    <th className="px-2 py-2 text-right font-semibold text-success">B.Avg</th>
                   </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        </div>
-      </CardBody>
-    </Card>
+                </thead>
+                <tbody>
+                  {buyers.map((broker, idx) => {
+                    const brokerGroup = getBrokerGroupCode(broker.broker);
+                    const groupTextColor = getBrokerGroupTextColor(brokerGroup);
 
-    {/* Color Legend */}
-    <div className="flex items-center justify-center gap-4 mt-2 text-[10px]">
-      <div className="flex items-center gap-1">
-        <span className="font-bold text-warning">●</span>
-        <span className="text-default-600">Foreign</span>
+                    return (
+                      <tr
+                        key={broker.broker}
+                        className={`border-b border-default-100 hover:bg-default-50 transition-colors ${
+                          idx % 2 === 0 ? "bg-default-100/30" : ""
+                        }`}
+                      >
+                        <td className="px-2 py-2">
+                          <span className={`font-bold ${groupTextColor}`}>{broker.broker}</span>
+                        </td>
+                        <td className="px-2 py-2 text-right text-success">
+                          {formatCurrency(broker.buyValue)}
+                        </td>
+                        <td className="px-2 py-2 text-right text-success">
+                          {formatLot(broker.buyLot)}
+                        </td>
+                        <td className="px-2 py-2 text-right text-success">
+                          {formatPrice(broker.buyAvg)}
+                        </td>
+                      </tr>
+                    );
+                  })}
+                  {buyers.length === 0 && (
+                    <tr>
+                      <td colSpan={4} className="px-2 py-4 text-center text-default-500 text-xs">
+                        No buyers in this period
+                      </td>
+                    </tr>
+                  )}
+                </tbody>
+              </table>
+            </div>
+          </CardBody>
+        </Card>
+
+        {/* Sellers Table */}
+        <Card className="w-full">
+          <CardBody className="p-0">
+            <div className="bg-danger/10 px-3 py-2 border-b border-danger/30">
+              <h3 className="text-xs font-bold text-danger">SELLERS</h3>
+            </div>
+            <div className="overflow-x-auto max-h-96 overflow-y-auto">
+              <table className="w-full text-[11px]">
+                <thead className="sticky top-0 bg-default-50">
+                  <tr className="border-b border-default-200">
+                    <th className="px-2 py-2 text-left font-semibold text-default-700">SL</th>
+                    <th className="px-2 py-2 text-right font-semibold text-danger">S.Val</th>
+                    <th className="px-2 py-2 text-right font-semibold text-danger">S.Lot</th>
+                    <th className="px-2 py-2 text-right font-semibold text-danger">S.Avg</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {sellers.map((broker, idx) => {
+                    const brokerGroup = getBrokerGroupCode(broker.broker);
+                    const groupTextColor = getBrokerGroupTextColor(brokerGroup);
+
+                    return (
+                      <tr
+                        key={broker.broker}
+                        className={`border-b border-default-100 hover:bg-default-50 transition-colors ${
+                          idx % 2 === 0 ? "bg-default-100/30" : ""
+                        }`}
+                      >
+                        <td className="px-2 py-2">
+                          <span className={`font-bold ${groupTextColor}`}>{broker.broker}</span>
+                        </td>
+                        <td className="px-2 py-2 text-right text-danger">
+                          {formatCurrency(broker.sellValue)}
+                        </td>
+                        <td className="px-2 py-2 text-right text-danger">
+                          {formatLot(broker.sellLot)}
+                        </td>
+                        <td className="px-2 py-2 text-right text-danger">
+                          {formatPrice(broker.sellAvg)}
+                        </td>
+                      </tr>
+                    );
+                  })}
+                  {sellers.length === 0 && (
+                    <tr>
+                      <td colSpan={4} className="px-2 py-4 text-center text-default-500 text-xs">
+                        No sellers in this period
+                      </td>
+                    </tr>
+                  )}
+                </tbody>
+              </table>
+            </div>
+          </CardBody>
+        </Card>
       </div>
-      <div className="flex items-center gap-1">
-        <span className="font-bold text-secondary">●</span>
-        <span className="text-default-600">Domestic</span>
+
+      {/* Color Legend */}
+      <div className="flex items-center justify-center gap-4 mt-2 text-[10px]">
+        <div className="flex items-center gap-1">
+          <span className="font-bold text-warning">●</span>
+          <span className="text-default-600">Foreign</span>
+        </div>
+        <div className="flex items-center gap-1">
+          <span className="font-bold text-secondary">●</span>
+          <span className="text-default-600">Domestic</span>
+        </div>
+        <div className="flex items-center gap-1">
+          <span className="font-bold text-primary">●</span>
+          <span className="text-default-600">BUMN</span>
+        </div>
       </div>
-      <div className="flex items-center gap-1">
-        <span className="font-bold text-primary">●</span>
-        <span className="text-default-600">BUMN</span>
-      </div>
-    </div>
-  </>
+    </>
   );
 }
 
