@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useRef } from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 import { Button } from "@heroui/button";
 import { Input } from "@heroui/input";
 import { Card, CardBody } from "@heroui/card";
@@ -839,6 +839,177 @@ function ExecutiveSummary({ result, startDate, endDate }: { result: AnalysisResu
   );
 }
 
+// TradingView Modal Component
+function TradingViewModal({
+  isOpen,
+  onClose,
+  symbol
+}: {
+  isOpen: boolean;
+  onClose: () => void;
+  symbol: string;
+}) {
+  const widgetRef = useRef<HTMLDivElement>(null);
+  const scriptLoaded = useRef(false);
+  const widgetCreated = useRef(false);
+  const currentSymbol = useRef<string>("");
+
+  // Load TradingView script only once
+  useEffect(() => {
+    if (!scriptLoaded.current) {
+      const script = document.createElement('script');
+      script.src = 'https://s3.tradingview.com/tv.js';
+      script.async = true;
+      script.id = 'tradingview-widget-script';
+      script.onload = () => {
+        scriptLoaded.current = true;
+      };
+      document.head.appendChild(script);
+    }
+  }, []);
+
+  // Create widget only once when symbol changes
+  useEffect(() => {
+    if (symbol && widgetRef.current) {
+      const waitForScript = () => {
+        if (!scriptLoaded.current) {
+          setTimeout(waitForScript, 100);
+          return;
+        }
+
+        if (widgetRef.current && currentSymbol.current !== symbol) {
+          currentSymbol.current = symbol;
+          widgetRef.current.innerHTML = '';
+
+          // @ts-ignore
+          new TradingView.widget({
+            autosize: true,
+            symbol: `IDX:${symbol}`,
+            interval: "D",
+            timezone: "Asia/Jakarta",
+            theme: "dark",
+            style: "1",
+            locale: "en",
+            toolbar_bg: "#1e222d",
+            enable_publishing: false,
+            hide_side_toolbar: false,
+            allow_symbol_change: true,
+            container_id: "tradingview-widget-container",
+            studies: [
+              "MASimple@tv-basicstudies",
+              "MACD@tv-basicstudies"
+            ]
+          });
+          widgetCreated.current = true;
+        }
+      };
+
+      waitForScript();
+    }
+  }, [symbol]);
+
+  if (!symbol) return null;
+
+  return (
+    <>
+      {/* Widget Container - ALWAYS in DOM, visibility controlled by CSS */}
+      <div
+        className={`fixed inset-4 md:inset-8 lg:inset-12 z-[10001] transition-opacity duration-200 ${
+          isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
+      >
+        <div className="w-full h-full bg-content1 rounded-2xl shadow-2xl overflow-hidden flex flex-col">
+          {/* Header */}
+          <div className="flex items-center justify-between px-4 py-3 border-b border-default-200 flex-shrink-0">
+            <h2 className="text-lg font-bold">TradingView Chart - {symbol}</h2>
+            <Button
+              isIconOnly
+              size="sm"
+              variant="flat"
+              onPress={onClose}
+              className="rounded-full"
+            >
+              ✕
+            </Button>
+          </div>
+
+          {/* TradingView Widget Container - Always in DOM */}
+          <div className="flex-1 p-3 min-h-0">
+            <div
+              id="tradingview-widget-container"
+              ref={widgetRef}
+              className="w-full h-full rounded-lg overflow-hidden"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Backdrop - Controlled by AnimatePresence */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 bg-black/30 backdrop-blur-sm z-[10000]"
+            onClick={onClose}
+          />
+        )}
+      </AnimatePresence>
+    </>
+  );
+}
+
+// Floating Action Button for Chart
+function ChartFloatingButton({
+  onClick,
+  symbol
+}: {
+  onClick: () => void;
+  symbol: string;
+}) {
+  return (
+    <motion.div
+      initial={{ scale: 0, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      exit={{ scale: 0, opacity: 0 }}
+      transition={{
+        type: "spring",
+        stiffness: 300,
+        damping: 20
+      }}
+      className="fixed bottom-8 right-8 z-[9999]"
+    >
+      <Button
+        isIconOnly
+        size="lg"
+        color="primary"
+        className="rounded-full shadow-2xl h-16 w-16"
+        onPress={onClick}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="28"
+          height="28"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+        </svg>
+      </Button>
+      {/* Tooltip */}
+      <div className="absolute bottom-full right-0 mb-2 px-2 py-1 bg-foreground text-background text-xs rounded-md whitespace-nowrap opacity-0 hover:opacity-100 transition-opacity pointer-events-none">
+        View {symbol} Chart
+      </div>
+    </motion.div>
+  );
+}
+
 // Input Section component
 function InputSection({
   onSubmit,
@@ -1022,6 +1193,10 @@ export default function AnalyzerPage() {
     endDate: string;
   } | null>(null);
 
+  // TradingView Chart States
+  const [isChartModalOpen, setIsChartModalOpen] = useState(false);
+  const [chartSymbol, setChartSymbol] = useState("");
+
   const handleAnalyze = async (data: {
     brokers: string[];
     stockCode: string;
@@ -1039,6 +1214,9 @@ export default function AnalyzerPage() {
         data.endDate
       );
       setAnalysisResult(result);
+
+      // Set chart symbol for TradingView (load in background)
+      setChartSymbol(data.stockCode.toUpperCase());
     } catch (error) {
       addToast({
         title: "Analysis Failed",
@@ -1119,6 +1297,23 @@ export default function AnalyzerPage() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* TradingView Floating Action Button */}
+      <AnimatePresence>
+        {chartSymbol && (
+          <ChartFloatingButton
+            onClick={() => setIsChartModalOpen(true)}
+            symbol={chartSymbol}
+          />
+        )}
+      </AnimatePresence>
+
+      {/* TradingView Chart Modal */}
+      <TradingViewModal
+        isOpen={isChartModalOpen}
+        onClose={() => setIsChartModalOpen(false)}
+        symbol={chartSymbol}
+      />
     </div>
   );
 }

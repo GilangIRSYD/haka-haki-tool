@@ -1,8 +1,8 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "IDX Analytics",
-  description: "Indonesian stock market broker accumulation analysis platform.",
+  name: "Haka-Haki Tools 🤘",
+  description: "Indonesian stock market analysis platform.",
   navItems: [
     {
       label: "Home",
