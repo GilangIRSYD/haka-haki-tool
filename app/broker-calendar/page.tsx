@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef } from "react";
 import { Button } from "@heroui/button";
 import { Input } from "@heroui/input";
 import { Card, CardBody } from "@heroui/card";
@@ -290,6 +290,17 @@ function CalendarCell({
   data: DailyData | null;
 }) {
   const [showTooltip, setShowTooltip] = useState(false);
+  const [tooltipPosition, setTooltipPosition] = useState<'top' | 'bottom'>('top');
+  const cellRef = useRef<HTMLDivElement>(null);
+
+  const handleMouseEnter = () => {
+    if (cellRef.current) {
+      const rect = cellRef.current.getBoundingClientRect();
+      const threshold = 250; // pixels from top - adjust based on navbar height
+      setTooltipPosition(rect.top < threshold ? 'bottom' : 'top');
+    }
+    setShowTooltip(true);
+  };
 
   if (!data) {
     return (
@@ -322,10 +333,27 @@ function CalendarCell({
     return `${sign}${value.toFixed(0)}%`;
   };
 
+  const tooltipClasses = tooltipPosition === 'top'
+    ? "bottom-full left-1/2 -translate-x-1/2 mb-2"
+    : "top-full left-1/2 -translate-x-1/2 mt-2";
+
+  const animationVariants = tooltipPosition === 'top'
+    ? {
+        initial: { opacity: 0, y: -10, scale: 0.95 },
+        animate: { opacity: 1, y: 0, scale: 1 },
+        exit: { opacity: 0, y: -10, scale: 0.95 }
+      }
+    : {
+        initial: { opacity: 0, y: 10, scale: 0.95 },
+        animate: { opacity: 1, y: 0, scale: 1 },
+        exit: { opacity: 0, y: 10, scale: 0.95 }
+      };
+
   return (
     <div
+      ref={cellRef}
       className="relative"
-      onMouseEnter={() => setShowTooltip(true)}
+      onMouseEnter={handleMouseEnter}
       onMouseLeave={() => setShowTooltip(false)}
     >
       <div
@@ -350,11 +378,11 @@ function CalendarCell({
 
       {showTooltip && (
         <motion.div
-          initial={{ opacity: 0, y: -10, scale: 0.95 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: -10, scale: 0.95 }}
+          initial={animationVariants.initial}
+          animate={animationVariants.animate}
+          exit={animationVariants.exit}
           transition={{ duration: 0.15 }}
-          className="absolute z-50 w-56 bg-content1 border border-default-200 rounded-lg shadow-xl p-3 bottom-full left-1/2 -translate-x-1/2 mb-2"
+          className={`absolute z-[9999] w-56 bg-content1 border border-default-200 rounded-lg shadow-xl p-3 ${tooltipClasses}`}
         >
           <div className="text-xs font-semibold mb-2 text-foreground">
             {data.date}
