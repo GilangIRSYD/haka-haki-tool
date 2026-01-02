@@ -357,20 +357,20 @@ function CalendarCell({
       onMouseLeave={() => setShowTooltip(false)}
     >
       <div
-        className={`aspect-square p-1.5 rounded-lg border ${bgColor} transition-all cursor-pointer hover:scale-105 hover:shadow-lg`}
+        className={`aspect-square p-2 rounded-lg border ${bgColor} transition-all cursor-pointer hover:scale-105 hover:shadow-lg`}
       >
-        <div className="text-[11px] font-bold text-default-600 mb-0.5">
+        <div className="text-[11px] text-right font-bold text-default-600 mb-3">
           {day}
         </div>
-        <div className="text-[10px] font-bold leading-tight">
+        <div className="text-[10px] leading-tight">
           {formatLot(data.netLot)}
         </div>
-        <div className="text-[9px] text-default-500 leading-tight">
+        <div className="text-lg text-default-600 font-bold leading-tight">
           {formatCurrency(data.netValue)}
         </div>
         <div className="text-[9px] text-default-400 leading-tight mt-0.5 flex items-center gap-1">
           <span>@{data.closingPrice.toFixed(0)}</span>
-          <span className={`font-bold ${priceColor} text-[8px]`}>
+          <span className={`font-bold italic ${priceColor} text-[10px]`}>
             {formatPercent(data.priceChangePercent)}
           </span>
         </div>
@@ -385,7 +385,7 @@ function CalendarCell({
           className={`absolute z-[9999] w-56 bg-content1 border border-default-200 rounded-lg shadow-xl p-3 ${tooltipClasses}`}
         >
           <div className="text-xs font-semibold mb-2 text-foreground">
-            {data.date}
+            {new Date(data.date).toLocaleDateString("en-US", { day: "2-digit", month: "long" })}
           </div>
 
           {/* Price Info */}
@@ -688,7 +688,7 @@ function BrokerSummaryTable({ brokerSummary }: { brokerSummary: BrokerDailyData[
 }
 
 // Executive Summary component
-function ExecutiveSummary({ result }: { result: AnalysisResult }) {
+function ExecutiveSummary({ result, startDate, endDate }: { result: AnalysisResult; startDate: string; endDate: string }) {
   const isAccumulation = result.phase === "accumulation";
   const netValue = Math.abs(result.totalValue);
   const isPriceUp = result.priceMovement.changePercent >= 0;
@@ -704,13 +704,18 @@ function ExecutiveSummary({ result }: { result: AnalysisResult }) {
     return `${sign}${value.toFixed(2)}%`;
   };
 
+  // Format date range
+  const formatDate = (dateString: string) => {
+    return new Date(dateString).toLocaleDateString("en-US", { day: "2-digit", month: "short" });
+  };
+
   return (
     <Card className="w-full">
       <CardBody className="gap-3">
         <div className="flex items-center justify-between">
           <div>
             <h2 className="text-xl font-bold mb-1">Executive Summary</h2>
-            <p className="text-default-500 text-xs">Broker Analysis Result</p>
+            <p className="text-default-500 text-xs">{formatDate(startDate)} - {formatDate(endDate)}</p>
           </div>
           <Chip
             color={isAccumulation ? "success" : "danger"}
@@ -1088,7 +1093,7 @@ export default function AnalyzerPage() {
               className="lg:col-span-1 overflow-y-auto pr-2 space-y-4"
             >
               <InputSection onSubmit={handleAnalyze} initialData={formData || undefined} />
-              <ExecutiveSummary result={analysisResult} />
+              <ExecutiveSummary result={analysisResult} startDate={formData?.startDate || ""} endDate={formData?.endDate || ""} />
               <div>
                 <h3 className="text-sm font-bold mb-2 text-default-700">
                   Broker Summary
