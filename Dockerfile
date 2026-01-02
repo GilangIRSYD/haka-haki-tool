@@ -1,10 +1,30 @@
-FROM oven/bun:1.1
+# =====================
+# BUILD STAGE
+# =====================
+FROM node:18-alpine AS builder
 
 WORKDIR /app
-COPY . .
 
-RUN bun install
-RUN bun run build
+COPY package.json package-lock.json* ./
+RUN npm install
+
+COPY . .
+RUN npm run build
+
+
+# =====================
+# RUNTIME STAGE
+# =====================
+FROM node:18-alpine
+
+WORKDIR /app
+ENV NODE_ENV=production
+
+# Copy standalone server
+COPY --from=builder /app/.next/standalone ./
+COPY --from=builder /app/.next/static ./.next/static
+COPY --from=builder /app/public ./public
 
 EXPOSE 9000
-CMD ["bun", "run", "start"]
+
+CMD ["node", "server.js"]
