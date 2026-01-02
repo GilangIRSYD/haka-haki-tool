@@ -1,0 +1,1646 @@
+{
+    "symbol": "BUMI",
+    "brokers": [
+        "KI",
+        "YU",
+        "XL",
+        "YP"
+    ],
+    "range": {
+        "from": "2025-11-01",
+        "to": "2025-12-30"
+    },
+    "summary": {
+        "total_buy_value": 15656633955900,
+        "total_buy_value_formatted": "15656.6B",
+        "total_buy_volume": 575748251,
+        "total_buy_volume_formatted": "575.7M",
+        "total_sell_value": 33142998235500,
+        "total_sell_value_formatted": "33143.0B",
+        "total_sell_volume": 1287047000,
+        "total_sell_volume_formatted": "1.3B",
+        "total_value": -17486364279600,
+        "total_value_formatted": "(17486.4B)",
+        "total_volume": -711298749,
+        "total_volume_formatted": "(711.3M)",
+        "trend": "distribution",
+        "strength": "moderate",
+        "dominant_brokers": [
+            "XL",
+            "YP",
+            "KI"
+        ],
+        "distribution_brokers": [
+            "YU"
+        ],
+        "price_movement": {
+            "from": 141,
+            "to": 366,
+            "change": 225,
+            "change_pct": 159.57
+        },
+        "note": "Distribution phase with mixed signals; caution advised"
+    },
+    "data": [
+        {
+            "date": "2025-11-03",
+            "close_price": 141,
+            "close_price_formatted": "141",
+            "total_value": 6175255800,
+            "total_value_formatted": "6.2B",
+            "total_volume": 442859,
+            "total_volume_formatted": "442.9K",
+            "signal": {
+                "trend": "accumulation",
+                "strength": "strong",
+                "note": "Strong breakout with heavy institutional accumulation"
+            },
+            "brokers": {
+                "KI": {
+                    "value": -822051500,
+                    "value_formatted": "(822.1M)",
+                    "volume": -57036,
+                    "volume_formatted": "(57K)"
+                },
+                "XL": {
+                    "value": 3843661100,
+                    "value_formatted": "3.8B",
+                    "volume": 272681,
+                    "volume_formatted": "272.7K"
+                },
+                "YP": {
+                    "value": 3082823800,
+                    "value_formatted": "3.1B",
+                    "volume": 222360,
+                    "volume_formatted": "222.4K"
+                },
+                "YU": {
+                    "value": 70822400,
+                    "value_formatted": "70.8M",
+                    "volume": 4854,
+                    "volume_formatted": "4.9K"
+                }
+            }
+        },
+        {
+            "date": "2025-11-04",
+            "close_price": 140,
+            "close_price_formatted": "140",
+            "total_value": 12096545000,
+            "total_value_formatted": "12.1B",
+            "total_volume": 885998,
+            "total_volume_formatted": "886.0K",
+            "signal": {
+                "trend": "accumulation",
+                "strength": "strong",
+                "note": "Strong breakout with heavy institutional accumulation"
+            },
+            "brokers": {
+                "KI": {
+                    "value": -1138132200,
+                    "value_formatted": "(1.1B)",
+                    "volume": -79059,
+                    "volume_formatted": "(79.1K)"
+                },
+                "XL": {
+                    "value": 5985461300,
+                    "value_formatted": "6B",
+                    "volume": 433252,
+                    "volume_formatted": "433.3K"
+                },
+                "YP": {
+                    "value": 4694458700,
+                    "value_formatted": "4.7B",
+                    "volume": 340007,
+                    "volume_formatted": "340K"
+                },
+                "YU": {
+                    "value": 2554757200,
+                    "value_formatted": "2.6B",
+                    "volume": 191798,
+                    "volume_formatted": "191.8K"
+                }
+            }
+        },
+        {
+            "date": "2025-11-05",
+            "close_price": 142,
+            "close_price_formatted": "142",
+            "total_value": 8222507400,
+            "total_value_formatted": "8.2B",
+            "total_volume": 618242,
+            "total_volume_formatted": "618.2K",
+            "signal": {
+                "trend": "accumulation",
+                "strength": "moderate",
+                "note": "Pullback with sustained buying interest"
+            },
+            "brokers": {
+                "KI": {
+                    "value": -1361098700,
+                    "value_formatted": "(1.4B)",
+                    "volume": -94766,
+                    "volume_formatted": "(94.8K)"
+                },
+                "XL": {
+                    "value": 4100792500,
+                    "value_formatted": "4.1B",
+                    "volume": 297768,
+                    "volume_formatted": "297.8K"
+                },
+                "YP": {
+                    "value": 9456196400,
+                    "value_formatted": "9.5B",
+                    "volume": 686695,
+                    "volume_formatted": "686.7K"
+                },
+                "YU": {
+                    "value": -3973382800,
+                    "value_formatted": "(4B)",
+                    "volume": -271455,
+                    "volume_formatted": "(271.5K)"
+                }
+            }
+        },
+        {
+            "date": "2025-11-06",
+            "close_price": 141,
+            "close_price_formatted": "141",
+            "total_value": 21956564700,
+            "total_value_formatted": "22.0B",
+            "total_volume": 1588995,
+            "total_volume_formatted": "1.6M",
+            "signal": {
+                "trend": "accumulation",
+                "strength": "strong",
+                "note": "Strong breakout with heavy institutional accumulation"
+            },
+            "brokers": {
+                "KI": {
+                    "value": -77492500,
+                    "value_formatted": "(77.5M)",
+                    "volume": -4411,
+                    "volume_formatted": "(4.4K)"
+                },
+                "XL": {
+                    "value": 4124532000,
+                    "value_formatted": "4.1B",
+                    "volume": 300308,
+                    "volume_formatted": "300.3K"
+                },
+                "YP": {
+                    "value": 25492006000,
+                    "value_formatted": "25.5B",
+                    "volume": 1820134,
+                    "volume_formatted": "1.8M"
+                },
+                "YU": {
+                    "value": -7582480800,
+                    "value_formatted": "(7.6B)",
+                    "volume": -527036,
+                    "volume_formatted": "(527K)"
+                }
+            }
+        },
+        {
+            "date": "2025-11-07",
+            "close_price": 141,
+            "close_price_formatted": "141",
+            "total_value": 43448230200,
+            "total_value_formatted": "43.4B",
+            "total_volume": 3106615,
+            "total_volume_formatted": "3.1M",
+            "signal": {
+                "trend": "accumulation",
+                "strength": "strong",
+                "note": "Strong breakout with heavy institutional accumulation"
+            },
+            "brokers": {
+                "KI": {
+                    "value": 1308556100,
+                    "value_formatted": "1.3B",
+                    "volume": 93884,
+                    "volume_formatted": "93.9K"
+                },
+                "XL": {
+                    "value": 12969319800,
+                    "value_formatted": "13B",
+                    "volume": 923293,
+                    "volume_formatted": "923.3K"
+                },
+                "YP": {
+                    "value": 36745274300,
+                    "value_formatted": "36.7B",
+                    "volume": 2616011,
+                    "volume_formatted": "2.6M"
+                },
+                "YU": {
+                    "value": -7574920000,
+                    "value_formatted": "(7.6B)",
+                    "volume": -526573,
+                    "volume_formatted": "(526.6K)"
+                }
+            }
+        },
+        {
+            "date": "2025-11-10",
+            "close_price": 150,
+            "close_price_formatted": "150",
+            "total_value": 17101084000,
+            "total_value_formatted": "17.1B",
+            "total_volume": 1298591,
+            "total_volume_formatted": "1.3M",
+            "signal": {
+                "trend": "accumulation",
+                "strength": "moderate",
+                "note": "Pullback with sustained buying interest"
+            },
+            "brokers": {
+                "KI": {
+                    "value": -3914906600,
+                    "value_formatted": "(3.9B)",
+                    "volume": -259159,
+                    "volume_formatted": "(259.2K)"
+                },
+                "XL": {
+                    "value": -4140742800,
+                    "value_formatted": "(4.1B)",
+                    "volume": -263790,
+                    "volume_formatted": "(263.8K)"
+                },
+                "YP": {
+                    "value": 31101766900,
+                    "value_formatted": "31.1B",
+                    "volume": 2225090,
+                    "volume_formatted": "2.2M"
+                },
+                "YU": {
+                    "value": -5945033500,
+                    "value_formatted": "(5.9B)",
+                    "volume": -403550,
+                    "volume_formatted": "(403.6K)"
+                }
+            }
+        },
+        {
+            "date": "2025-11-11",
+            "close_price": 198,
+            "close_price_formatted": "198",
+            "total_value": -79711740900,
+            "total_value_formatted": "(79.7B)",
+            "total_volume": -4012951,
+            "total_volume_formatted": "(4.0M)",
+            "signal": {
+                "trend": "distribution",
+                "strength": "strong",
+                "note": "Heavy institutional selling pressure"
+            },
+            "brokers": {
+                "KI": {
+                    "value": -12231859700,
+                    "value_formatted": "(12.2B)",
+                    "volume": -715888,
+                    "volume_formatted": "(715.9K)"
+                },
+                "XL": {
+                    "value": 5612988000,
+                    "value_formatted": "5.6B",
+                    "volume": 281207,
+                    "volume_formatted": "281.2K"
+                },
+                "YP": {
+                    "value": -81502432500,
+                    "value_formatted": "(81.5B)",
+                    "volume": -3905619,
+                    "volume_formatted": "(3.9M)"
+                },
+                "YU": {
+                    "value": 8409563300,
+                    "value_formatted": "8.4B",
+                    "volume": 327349,
+                    "volume_formatted": "327.3K"
+                }
+            }
+        },
+        {
+            "date": "2025-11-12",
+            "close_price": 192,
+            "close_price_formatted": "192",
+            "total_value": -32485930400,
+            "total_value_formatted": "(32.5B)",
+            "total_volume": -1913768,
+            "total_volume_formatted": "(1.9M)",
+            "signal": {
+                "trend": "distribution",
+                "strength": "moderate",
+                "note": "Selling pressure dominant, early distribution"
+            },
+            "brokers": {
+                "KI": {
+                    "value": -9959881800,
+                    "value_formatted": "(10B)",
+                    "volume": -598809,
+                    "volume_formatted": "(598.8K)"
+                },
+                "XL": {
+                    "value": 26849245500,
+                    "value_formatted": "26.8B",
+                    "volume": 1156347,
+                    "volume_formatted": "1.2M"
+                },
+                "YP": {
+                    "value": -72564678500,
+                    "value_formatted": "(72.6B)",
+                    "volume": -3576746,
+                    "volume_formatted": "(3.6M)"
+                },
+                "YU": {
+                    "value": 23189384400,
+                    "value_formatted": "23.2B",
+                    "volume": 1105440,
+                    "volume_formatted": "1.1M"
+                }
+            }
+        },
+        {
+            "date": "2025-11-13",
+            "close_price": 224,
+            "close_price_formatted": "224",
+            "total_value": -8859301600,
+            "total_value_formatted": "(8.9B)",
+            "total_volume": -1043091,
+            "total_volume_formatted": "(1.0M)",
+            "signal": {
+                "trend": "distribution",
+                "strength": "weak",
+                "note": "Mild distribution detected"
+            },
+            "brokers": {
+                "KI": {
+                    "value": -7523100400,
+                    "value_formatted": "(7.5B)",
+                    "volume": -492696,
+                    "volume_formatted": "(492.7K)"
+                },
+                "XL": {
+                    "value": 77289771800,
+                    "value_formatted": "77.3B",
+                    "volume": 3187224,
+                    "volume_formatted": "3.2M"
+                },
+                "YP": {
+                    "value": -103573230600,
+                    "value_formatted": "(103.6B)",
+                    "volume": -4875917,
+                    "volume_formatted": "(4.9M)"
+                },
+                "YU": {
+                    "value": 24947257600,
+                    "value_formatted": "24.9B",
+                    "volume": 1138298,
+                    "volume_formatted": "1.1M"
+                }
+            }
+        },
+        {
+            "date": "2025-11-14",
+            "close_price": 220,
+            "close_price_formatted": "220",
+            "total_value": 78860688800,
+            "total_value_formatted": "78.9B",
+            "total_volume": 2527739,
+            "total_volume_formatted": "2.5M",
+            "signal": {
+                "trend": "accumulation",
+                "strength": "moderate",
+                "note": "Pullback with sustained buying interest"
+            },
+            "brokers": {
+                "KI": {
+                    "value": -5054677200,
+                    "value_formatted": "(5.1B)",
+                    "volume": -390951,
+                    "volume_formatted": "(391K)"
+                },
+                "XL": {
+                    "value": 104086357800,
+                    "value_formatted": "104.1B",
+                    "volume": 4233046,
+                    "volume_formatted": "4.2M"
+                },
+                "YP": {
+                    "value": -43781351000,
+                    "value_formatted": "(43.8B)",
+                    "volume": -2295866,
+                    "volume_formatted": "(2.3M)"
+                },
+                "YU": {
+                    "value": 23610359200,
+                    "value_formatted": "23.6B",
+                    "volume": 981510,
+                    "volume_formatted": "981.5K"
+                }
+            }
+        },
+        {
+            "date": "2025-11-17",
+            "close_price": 222,
+            "close_price_formatted": "222",
+            "total_value": 188556544800,
+            "total_value_formatted": "188.6B",
+            "total_volume": 7406807,
+            "total_volume_formatted": "7.4M",
+            "signal": {
+                "trend": "accumulation",
+                "strength": "strong",
+                "note": "Strong breakout with heavy institutional accumulation"
+            },
+            "brokers": {
+                "KI": {
+                    "value": -5474976200,
+                    "value_formatted": "(5.5B)",
+                    "volume": -412420,
+                    "volume_formatted": "(412.4K)"
+                },
+                "XL": {
+                    "value": 157063110000,
+                    "value_formatted": "157.1B",
+                    "volume": 6569263,
+                    "volume_formatted": "6.6M"
+                },
+                "YP": {
+                    "value": -3309356600,
+                    "value_formatted": "(3.3B)",
+                    "volume": -545459,
+                    "volume_formatted": "(545.5K)"
+                },
+                "YU": {
+                    "value": 40277767600,
+                    "value_formatted": "40.3B",
+                    "volume": 1795423,
+                    "volume_formatted": "1.8M"
+                }
+            }
+        },
+        {
+            "date": "2025-11-18",
+            "close_price": 214,
+            "close_price_formatted": "214",
+            "total_value": 171919101200,
+            "total_value_formatted": "171.9B",
+            "total_volume": 6553165,
+            "total_volume_formatted": "6.6M",
+            "signal": {
+                "trend": "accumulation",
+                "strength": "strong",
+                "note": "Strong breakout with heavy institutional accumulation"
+            },
+            "brokers": {
+                "KI": {
+                    "value": -9562439200,
+                    "value_formatted": "(9.6B)",
+                    "volume": -603826,
+                    "volume_formatted": "(603.8K)"
+                },
+                "XL": {
+                    "value": 150534235400,
+                    "value_formatted": "150.5B",
+                    "volume": 6230009,
+                    "volume_formatted": "6.2M"
+                },
+                "YP": {
+                    "value": -10271154600,
+                    "value_formatted": "(10.3B)",
+                    "volume": -931001,
+                    "volume_formatted": "(931K)"
+                },
+                "YU": {
+                    "value": 41218459600,
+                    "value_formatted": "41.2B",
+                    "volume": 1857983,
+                    "volume_formatted": "1.9M"
+                }
+            }
+        },
+        {
+            "date": "2025-11-19",
+            "close_price": 228,
+            "close_price_formatted": "228",
+            "total_value": 236448309400,
+            "total_value_formatted": "236.4B",
+            "total_volume": 9289582,
+            "total_volume_formatted": "9.3M",
+            "signal": {
+                "trend": "accumulation",
+                "strength": "strong",
+                "note": "Strong breakout with heavy institutional accumulation"
+            },
+            "brokers": {
+                "KI": {
+                    "value": 10291440800,
+                    "value_formatted": "10.3B",
+                    "volume": 254186,
+                    "volume_formatted": "254.2K"
+                },
+                "XL": {
+                    "value": 185200419200,
+                    "value_formatted": "185.2B",
+                    "volume": 7695251,
+                    "volume_formatted": "7.7M"
+                },
+                "YP": {
+                    "value": 8350119200,
+                    "value_formatted": "8.4B",
+                    "volume": -130781,
+                    "volume_formatted": "(130.8K)"
+                },
+                "YU": {
+                    "value": 32606330200,
+                    "value_formatted": "32.6B",
+                    "volume": 1470926,
+                    "volume_formatted": "1.5M"
+                }
+            }
+        },
+        {
+            "date": "2025-11-20",
+            "close_price": 226,
+            "close_price_formatted": "226",
+            "total_value": 355349009200,
+            "total_value_formatted": "355.3B",
+            "total_volume": 14504992,
+            "total_volume_formatted": "14.5M",
+            "signal": {
+                "trend": "accumulation",
+                "strength": "strong",
+                "note": "Strong breakout with heavy institutional accumulation"
+            },
+            "brokers": {
+                "KI": {
+                    "value": 19759560600,
+                    "value_formatted": "19.8B",
+                    "volume": 668494,
+                    "volume_formatted": "668.5K"
+                },
+                "XL": {
+                    "value": 269222827600,
+                    "value_formatted": "269.2B",
+                    "volume": 11360806,
+                    "volume_formatted": "11.4M"
+                },
+                "YP": {
+                    "value": 26516925600,
+                    "value_formatted": "26.5B",
+                    "volume": 671672,
+                    "volume_formatted": "671.7K"
+                },
+                "YU": {
+                    "value": 39849695400,
+                    "value_formatted": "39.8B",
+                    "volume": 1804020,
+                    "volume_formatted": "1.8M"
+                }
+            }
+        },
+        {
+            "date": "2025-11-21",
+            "close_price": 220,
+            "close_price_formatted": "220",
+            "total_value": 325167765400,
+            "total_value_formatted": "325.2B",
+            "total_volume": 13151948,
+            "total_volume_formatted": "13.2M",
+            "signal": {
+                "trend": "accumulation",
+                "strength": "strong",
+                "note": "Strong breakout with heavy institutional accumulation"
+            },
+            "brokers": {
+                "KI": {
+                    "value": 29702064600,
+                    "value_formatted": "29.7B",
+                    "volume": 1118162,
+                    "volume_formatted": "1.1M"
+                },
+                "XL": {
+                    "value": 271259426400,
+                    "value_formatted": "271.3B",
+                    "volume": 11441831,
+                    "volume_formatted": "11.4M"
+                },
+                "YP": {
+                    "value": 38654294200,
+                    "value_formatted": "38.7B",
+                    "volume": 1221444,
+                    "volume_formatted": "1.2M"
+                },
+                "YU": {
+                    "value": -14448019800,
+                    "value_formatted": "(14.4B)",
+                    "volume": -629489,
+                    "volume_formatted": "(629.5K)"
+                }
+            }
+        },
+        {
+            "date": "2025-11-24",
+            "close_price": 218,
+            "close_price_formatted": "218",
+            "total_value": 284229908800,
+            "total_value_formatted": "284.2B",
+            "total_volume": 11293964,
+            "total_volume_formatted": "11.3M",
+            "signal": {
+                "trend": "accumulation",
+                "strength": "strong",
+                "note": "Strong breakout with heavy institutional accumulation"
+            },
+            "brokers": {
+                "KI": {
+                    "value": 30738210800,
+                    "value_formatted": "30.7B",
+                    "volume": 1164861,
+                    "volume_formatted": "1.2M"
+                },
+                "XL": {
+                    "value": 290861600800,
+                    "value_formatted": "290.9B",
+                    "volume": 12335215,
+                    "volume_formatted": "12.3M"
+                },
+                "YP": {
+                    "value": 12373353400,
+                    "value_formatted": "12.4B",
+                    "volume": 29763,
+                    "volume_formatted": "29.8K"
+                },
+                "YU": {
+                    "value": -49743256200,
+                    "value_formatted": "(49.7B)",
+                    "volume": -2235875,
+                    "volume_formatted": "(2.2M)"
+                }
+            }
+        },
+        {
+            "date": "2025-11-25",
+            "close_price": 236,
+            "close_price_formatted": "236",
+            "total_value": 17706615800,
+            "total_value_formatted": "17.7B",
+            "total_volume": -75479,
+            "total_volume_formatted": "(75.5K)",
+            "signal": {
+                "trend": "accumulation",
+                "strength": "weak",
+                "note": "Mild accumulation detected"
+            },
+            "brokers": {
+                "KI": {
+                    "value": 36717925800,
+                    "value_formatted": "36.7B",
+                    "volume": 1421693,
+                    "volume_formatted": "1.4M"
+                },
+                "XL": {
+                    "value": 204221948000,
+                    "value_formatted": "204.2B",
+                    "volume": 8610632,
+                    "volume_formatted": "8.6M"
+                },
+                "YP": {
+                    "value": 44872858200,
+                    "value_formatted": "44.9B",
+                    "volume": 1405771,
+                    "volume_formatted": "1.4M"
+                },
+                "YU": {
+                    "value": -268106116200,
+                    "value_formatted": "(268.1B)",
+                    "volume": -11513575,
+                    "volume_formatted": "(11.5M)"
+                }
+            }
+        },
+        {
+            "date": "2025-11-26",
+            "close_price": 260,
+            "close_price_formatted": "260",
+            "total_value": -211405960800,
+            "total_value_formatted": "(211.4B)",
+            "total_volume": -9325720,
+            "total_volume_formatted": "(9.3M)",
+            "signal": {
+                "trend": "distribution",
+                "strength": "moderate",
+                "note": "Selling pressure dominant, early distribution"
+            },
+            "brokers": {
+                "KI": {
+                    "value": 43605391200,
+                    "value_formatted": "43.6B",
+                    "volume": 1720296,
+                    "volume_formatted": "1.7M"
+                },
+                "XL": {
+                    "value": 232829121200,
+                    "value_formatted": "232.8B",
+                    "volume": 9658851,
+                    "volume_formatted": "9.7M"
+                },
+                "YP": {
+                    "value": 48280854800,
+                    "value_formatted": "48.3B",
+                    "volume": 1482295,
+                    "volume_formatted": "1.5M"
+                },
+                "YU": {
+                    "value": -536121328000,
+                    "value_formatted": "(536.1B)",
+                    "volume": -22187162,
+                    "volume_formatted": "(22.2M)"
+                }
+            }
+        },
+        {
+            "date": "2025-11-27",
+            "close_price": 242,
+            "close_price_formatted": "242",
+            "total_value": -341689373000,
+            "total_value_formatted": "(341.7B)",
+            "total_volume": -14637975,
+            "total_volume_formatted": "(14.6M)",
+            "signal": {
+                "trend": "distribution",
+                "strength": "moderate",
+                "note": "Selling pressure dominant, early distribution"
+            },
+            "brokers": {
+                "KI": {
+                    "value": 54458617800,
+                    "value_formatted": "54.5B",
+                    "volume": 2165550,
+                    "volume_formatted": "2.2M"
+                },
+                "XL": {
+                    "value": 208585794200,
+                    "value_formatted": "208.6B",
+                    "volume": 8694275,
+                    "volume_formatted": "8.7M"
+                },
+                "YP": {
+                    "value": 74107067600,
+                    "value_formatted": "74.1B",
+                    "volume": 2527167,
+                    "volume_formatted": "2.5M"
+                },
+                "YU": {
+                    "value": -678840852600,
+                    "value_formatted": "(678.8B)",
+                    "volume": -28024967,
+                    "volume_formatted": "(28M)"
+                }
+            }
+        },
+        {
+            "date": "2025-11-28",
+            "close_price": 244,
+            "close_price_formatted": "244",
+            "total_value": -306921846800,
+            "total_value_formatted": "(306.9B)",
+            "total_volume": -13227487,
+            "total_volume_formatted": "(13.2M)",
+            "signal": {
+                "trend": "distribution",
+                "strength": "moderate",
+                "note": "Selling pressure dominant, early distribution"
+            },
+            "brokers": {
+                "KI": {
+                    "value": 54255953600,
+                    "value_formatted": "54.3B",
+                    "volume": 2157117,
+                    "volume_formatted": "2.2M"
+                },
+                "XL": {
+                    "value": 223711041600,
+                    "value_formatted": "223.7B",
+                    "volume": 9299656,
+                    "volume_formatted": "9.3M"
+                },
+                "YP": {
+                    "value": 107501718600,
+                    "value_formatted": "107.5B",
+                    "volume": 3913289,
+                    "volume_formatted": "3.9M"
+                },
+                "YU": {
+                    "value": -692390560600,
+                    "value_formatted": "(692.4B)",
+                    "volume": -28597549,
+                    "volume_formatted": "(28.6M)"
+                }
+            }
+        },
+        {
+            "date": "2025-12-01",
+            "close_price": 246,
+            "close_price_formatted": "246",
+            "total_value": -418981838400,
+            "total_value_formatted": "(419.0B)",
+            "total_volume": -17791520,
+            "total_volume_formatted": "(17.8M)",
+            "signal": {
+                "trend": "distribution",
+                "strength": "moderate",
+                "note": "Selling pressure dominant, early distribution"
+            },
+            "brokers": {
+                "KI": {
+                    "value": 63056894800,
+                    "value_formatted": "63.1B",
+                    "volume": 2518305,
+                    "volume_formatted": "2.5M"
+                },
+                "XL": {
+                    "value": 250502492000,
+                    "value_formatted": "250.5B",
+                    "volume": 10375016,
+                    "volume_formatted": "10.4M"
+                },
+                "YP": {
+                    "value": 92628225800,
+                    "value_formatted": "92.6B",
+                    "volume": 3316185,
+                    "volume_formatted": "3.3M"
+                },
+                "YU": {
+                    "value": -825169451000,
+                    "value_formatted": "(825.2B)",
+                    "volume": -34001026,
+                    "volume_formatted": "(34M)"
+                }
+            }
+        },
+        {
+            "date": "2025-12-02",
+            "close_price": 242,
+            "close_price_formatted": "242",
+            "total_value": -401147492200,
+            "total_value_formatted": "(401.1B)",
+            "total_volume": -17056843,
+            "total_volume_formatted": "(17.1M)",
+            "signal": {
+                "trend": "distribution",
+                "strength": "moderate",
+                "note": "Selling pressure dominant, early distribution"
+            },
+            "brokers": {
+                "KI": {
+                    "value": 69816948000,
+                    "value_formatted": "69.8B",
+                    "volume": 2797909,
+                    "volume_formatted": "2.8M"
+                },
+                "XL": {
+                    "value": 268804274800,
+                    "value_formatted": "268.8B",
+                    "volume": 11125195,
+                    "volume_formatted": "11.1M"
+                },
+                "YP": {
+                    "value": 93388446600,
+                    "value_formatted": "93.4B",
+                    "volume": 3348094,
+                    "volume_formatted": "3.3M"
+                },
+                "YU": {
+                    "value": -833157161600,
+                    "value_formatted": "(833.2B)",
+                    "volume": -34328041,
+                    "volume_formatted": "(34.3M)"
+                }
+            }
+        },
+        {
+            "date": "2025-12-03",
+            "close_price": 240,
+            "close_price_formatted": "240",
+            "total_value": -424399669200,
+            "total_value_formatted": "(424.4B)",
+            "total_volume": -18014447,
+            "total_volume_formatted": "(18.0M)",
+            "signal": {
+                "trend": "distribution",
+                "strength": "moderate",
+                "note": "Selling pressure dominant, early distribution"
+            },
+            "brokers": {
+                "KI": {
+                    "value": 73913773000,
+                    "value_formatted": "73.9B",
+                    "volume": 2965858,
+                    "volume_formatted": "3M"
+                },
+                "XL": {
+                    "value": 281340639800,
+                    "value_formatted": "281.3B",
+                    "volume": 11635559,
+                    "volume_formatted": "11.6M"
+                },
+                "YP": {
+                    "value": 87582960800,
+                    "value_formatted": "87.6B",
+                    "volume": 3114216,
+                    "volume_formatted": "3.1M"
+                },
+                "YU": {
+                    "value": -867237042800,
+                    "value_formatted": "(867.2B)",
+                    "volume": -35730080,
+                    "volume_formatted": "(35.7M)"
+                }
+            }
+        },
+        {
+            "date": "2025-12-04",
+            "close_price": 242,
+            "close_price_formatted": "242",
+            "total_value": -485424493800,
+            "total_value_formatted": "(485.4B)",
+            "total_volume": -20534332,
+            "total_volume_formatted": "(20.5M)",
+            "signal": {
+                "trend": "distribution",
+                "strength": "moderate",
+                "note": "Selling pressure dominant, early distribution"
+            },
+            "brokers": {
+                "KI": {
+                    "value": 73906989600,
+                    "value_formatted": "73.9B",
+                    "volume": 2965580,
+                    "volume_formatted": "3M"
+                },
+                "XL": {
+                    "value": 277480053000,
+                    "value_formatted": "277.5B",
+                    "volume": 11472785,
+                    "volume_formatted": "11.5M"
+                },
+                "YP": {
+                    "value": 81531689600,
+                    "value_formatted": "81.5B",
+                    "volume": 2864801,
+                    "volume_formatted": "2.9M"
+                },
+                "YU": {
+                    "value": -918343226000,
+                    "value_formatted": "(918.3B)",
+                    "volume": -37837498,
+                    "volume_formatted": "(37.8M)"
+                }
+            }
+        },
+        {
+            "date": "2025-12-05",
+            "close_price": 238,
+            "close_price_formatted": "238",
+            "total_value": -498360424000,
+            "total_value_formatted": "(498.4B)",
+            "total_volume": -21081667,
+            "total_volume_formatted": "(21.1M)",
+            "signal": {
+                "trend": "distribution",
+                "strength": "moderate",
+                "note": "Selling pressure dominant, early distribution"
+            },
+            "brokers": {
+                "KI": {
+                    "value": 74165690400,
+                    "value_formatted": "74.2B",
+                    "volume": 2976436,
+                    "volume_formatted": "3M"
+                },
+                "XL": {
+                    "value": 282211565600,
+                    "value_formatted": "282.2B",
+                    "volume": 11667892,
+                    "volume_formatted": "11.7M"
+                },
+                "YP": {
+                    "value": 108691963000,
+                    "value_formatted": "108.7B",
+                    "volume": 3992258,
+                    "volume_formatted": "4M"
+                },
+                "YU": {
+                    "value": -963429643000,
+                    "value_formatted": "(963.4B)",
+                    "volume": -39718253,
+                    "volume_formatted": "(39.7M)"
+                }
+            }
+        },
+        {
+            "date": "2025-12-08",
+            "close_price": 252,
+            "close_price_formatted": "252",
+            "total_value": -681625962400,
+            "total_value_formatted": "(681.6B)",
+            "total_volume": -28513645,
+            "total_volume_formatted": "(28.5M)",
+            "signal": {
+                "trend": "distribution",
+                "strength": "moderate",
+                "note": "Selling pressure dominant, early distribution"
+            },
+            "brokers": {
+                "KI": {
+                    "value": 72324857000,
+                    "value_formatted": "72.3B",
+                    "volume": 2901768,
+                    "volume_formatted": "2.9M"
+                },
+                "XL": {
+                    "value": 256190583800,
+                    "value_formatted": "256.2B",
+                    "volume": 10613698,
+                    "volume_formatted": "10.6M"
+                },
+                "YP": {
+                    "value": 96954793400,
+                    "value_formatted": "97B",
+                    "volume": 3508726,
+                    "volume_formatted": "3.5M"
+                },
+                "YU": {
+                    "value": -1107096196600,
+                    "value_formatted": "(1107.1B)",
+                    "volume": -45537837,
+                    "volume_formatted": "(45.5M)"
+                }
+            }
+        },
+        {
+            "date": "2025-12-09",
+            "close_price": 272,
+            "close_price_formatted": "272",
+            "total_value": -916337006000,
+            "total_value_formatted": "(916.3B)",
+            "total_volume": -37260078,
+            "total_volume_formatted": "(37.3M)",
+            "signal": {
+                "trend": "distribution",
+                "strength": "strong",
+                "note": "Heavy institutional selling pressure"
+            },
+            "brokers": {
+                "KI": {
+                    "value": 71079295600,
+                    "value_formatted": "71.1B",
+                    "volume": 2864805,
+                    "volume_formatted": "2.9M"
+                },
+                "XL": {
+                    "value": 261297345000,
+                    "value_formatted": "261.3B",
+                    "volume": 10819762,
+                    "volume_formatted": "10.8M"
+                },
+                "YP": {
+                    "value": 83270475800,
+                    "value_formatted": "83.3B",
+                    "volume": 3025911,
+                    "volume_formatted": "3M"
+                },
+                "YU": {
+                    "value": -1331984122400,
+                    "value_formatted": "(1332B)",
+                    "volume": -53970556,
+                    "volume_formatted": "(54M)"
+                }
+            }
+        },
+        {
+            "date": "2025-12-10",
+            "close_price": 326,
+            "close_price_formatted": "326",
+            "total_value": -1319135528800,
+            "total_value_formatted": "(1319.1B)",
+            "total_volume": -50111724,
+            "total_volume_formatted": "(50.1M)",
+            "signal": {
+                "trend": "distribution",
+                "strength": "strong",
+                "note": "Heavy institutional selling pressure"
+            },
+            "brokers": {
+                "KI": {
+                    "value": 69727272400,
+                    "value_formatted": "69.7B",
+                    "volume": 2828406,
+                    "volume_formatted": "2.8M"
+                },
+                "XL": {
+                    "value": 264222417000,
+                    "value_formatted": "264.2B",
+                    "volume": 10936537,
+                    "volume_formatted": "10.9M"
+                },
+                "YP": {
+                    "value": -24589803200,
+                    "value_formatted": "(24.6B)",
+                    "volume": -508609,
+                    "volume_formatted": "(508.6K)"
+                },
+                "YU": {
+                    "value": -1628495415000,
+                    "value_formatted": "(1628.5B)",
+                    "volume": -63368058,
+                    "volume_formatted": "(63.4M)"
+                }
+            }
+        },
+        {
+            "date": "2025-12-11",
+            "close_price": 360,
+            "close_price_formatted": "360",
+            "total_value": -1183030879000,
+            "total_value_formatted": "(1183.0B)",
+            "total_volume": -46264089,
+            "total_volume_formatted": "(46.3M)",
+            "signal": {
+                "trend": "distribution",
+                "strength": "strong",
+                "note": "Heavy institutional selling pressure"
+            },
+            "brokers": {
+                "KI": {
+                    "value": 33674113800,
+                    "value_formatted": "33.7B",
+                    "volume": 1808203,
+                    "volume_formatted": "1.8M"
+                },
+                "XL": {
+                    "value": 404134429600,
+                    "value_formatted": "404.1B",
+                    "volume": 14851063,
+                    "volume_formatted": "14.9M"
+                },
+                "YP": {
+                    "value": 15876786400,
+                    "value_formatted": "15.9B",
+                    "volume": 671196,
+                    "volume_formatted": "671.2K"
+                },
+                "YU": {
+                    "value": -1636716208800,
+                    "value_formatted": "(1636.7B)",
+                    "volume": -63594551,
+                    "volume_formatted": "(63.6M)"
+                }
+            }
+        },
+        {
+            "date": "2025-12-12",
+            "close_price": 368,
+            "close_price_formatted": "368",
+            "total_value": -1149185980400,
+            "total_value_formatted": "(1149.2B)",
+            "total_volume": -45364877,
+            "total_volume_formatted": "(45.4M)",
+            "signal": {
+                "trend": "distribution",
+                "strength": "strong",
+                "note": "Heavy institutional selling pressure"
+            },
+            "brokers": {
+                "KI": {
+                    "value": 39752669600,
+                    "value_formatted": "39.8B",
+                    "volume": 1976103,
+                    "volume_formatted": "2M"
+                },
+                "XL": {
+                    "value": 474328084200,
+                    "value_formatted": "474.3B",
+                    "volume": 16714123,
+                    "volume_formatted": "16.7M"
+                },
+                "YP": {
+                    "value": 17387737600,
+                    "value_formatted": "17.4B",
+                    "volume": 718085,
+                    "volume_formatted": "718.1K"
+                },
+                "YU": {
+                    "value": -1680654471800,
+                    "value_formatted": "(1680.7B)",
+                    "volume": -64773188,
+                    "volume_formatted": "(64.8M)"
+                }
+            }
+        },
+        {
+            "date": "2025-12-15",
+            "close_price": 344,
+            "close_price_formatted": "344",
+            "total_value": -1028513459000,
+            "total_value_formatted": "(1028.5B)",
+            "total_volume": -42278717,
+            "total_volume_formatted": "(42.3M)",
+            "signal": {
+                "trend": "distribution",
+                "strength": "moderate",
+                "note": "Selling pressure dominant, early distribution"
+            },
+            "brokers": {
+                "KI": {
+                    "value": 47766587400,
+                    "value_formatted": "47.8B",
+                    "volume": 2204998,
+                    "volume_formatted": "2.2M"
+                },
+                "XL": {
+                    "value": 521930259200,
+                    "value_formatted": "521.9B",
+                    "volume": 17885670,
+                    "volume_formatted": "17.9M"
+                },
+                "YP": {
+                    "value": 93710542400,
+                    "value_formatted": "93.7B",
+                    "volume": 2701050,
+                    "volume_formatted": "2.7M"
+                },
+                "YU": {
+                    "value": -1691920848000,
+                    "value_formatted": "(1691.9B)",
+                    "volume": -65070435,
+                    "volume_formatted": "(65.1M)"
+                }
+            }
+        },
+        {
+            "date": "2025-12-16",
+            "close_price": 348,
+            "close_price_formatted": "348",
+            "total_value": -1035419338600,
+            "total_value_formatted": "(1035.4B)",
+            "total_volume": -42573429,
+            "total_volume_formatted": "(42.6M)",
+            "signal": {
+                "trend": "distribution",
+                "strength": "moderate",
+                "note": "Selling pressure dominant, early distribution"
+            },
+            "brokers": {
+                "KI": {
+                    "value": 49202473400,
+                    "value_formatted": "49.2B",
+                    "volume": 2245232,
+                    "volume_formatted": "2.2M"
+                },
+                "XL": {
+                    "value": 515402021800,
+                    "value_formatted": "515.4B",
+                    "volume": 17648039,
+                    "volume_formatted": "17.6M"
+                },
+                "YP": {
+                    "value": 86499556800,
+                    "value_formatted": "86.5B",
+                    "volume": 2486554,
+                    "volume_formatted": "2.5M"
+                },
+                "YU": {
+                    "value": -1686523390600,
+                    "value_formatted": "(1686.5B)",
+                    "volume": -64953254,
+                    "volume_formatted": "(65M)"
+                }
+            }
+        },
+        {
+            "date": "2025-12-17",
+            "close_price": 348,
+            "close_price_formatted": "348",
+            "total_value": -987956788800,
+            "total_value_formatted": "(988.0B)",
+            "total_volume": -41205819,
+            "total_volume_formatted": "(41.2M)",
+            "signal": {
+                "trend": "distribution",
+                "strength": "moderate",
+                "note": "Selling pressure dominant, early distribution"
+            },
+            "brokers": {
+                "KI": {
+                    "value": 51294238600,
+                    "value_formatted": "51.3B",
+                    "volume": 2304520,
+                    "volume_formatted": "2.3M"
+                },
+                "XL": {
+                    "value": 569713642400,
+                    "value_formatted": "569.7B",
+                    "volume": 19190760,
+                    "volume_formatted": "19.2M"
+                },
+                "YP": {
+                    "value": 99887336000,
+                    "value_formatted": "99.9B",
+                    "volume": 2869190,
+                    "volume_formatted": "2.9M"
+                },
+                "YU": {
+                    "value": -1708852005800,
+                    "value_formatted": "(1708.9B)",
+                    "volume": -65570289,
+                    "volume_formatted": "(65.6M)"
+                }
+            }
+        },
+        {
+            "date": "2025-12-18",
+            "close_price": 340,
+            "close_price_formatted": "340",
+            "total_value": -986830519200,
+            "total_value_formatted": "(986.8B)",
+            "total_volume": -41187507,
+            "total_volume_formatted": "(41.2M)",
+            "signal": {
+                "trend": "distribution",
+                "strength": "moderate",
+                "note": "Selling pressure dominant, early distribution"
+            },
+            "brokers": {
+                "KI": {
+                    "value": 52765432600,
+                    "value_formatted": "52.8B",
+                    "volume": 2347775,
+                    "volume_formatted": "2.3M"
+                },
+                "XL": {
+                    "value": 569256687800,
+                    "value_formatted": "569.3B",
+                    "volume": 19168500,
+                    "volume_formatted": "19.2M"
+                },
+                "YP": {
+                    "value": 99866095800,
+                    "value_formatted": "99.9B",
+                    "volume": 2865325,
+                    "volume_formatted": "2.9M"
+                },
+                "YU": {
+                    "value": -1708718735400,
+                    "value_formatted": "(1708.7B)",
+                    "volume": -65569107,
+                    "volume_formatted": "(65.6M)"
+                }
+            }
+        },
+        {
+            "date": "2025-12-19",
+            "close_price": 344,
+            "close_price_formatted": "344",
+            "total_value": -1012038410400,
+            "total_value_formatted": "(1012.0B)",
+            "total_volume": -41939115,
+            "total_volume_formatted": "(41.9M)",
+            "signal": {
+                "trend": "distribution",
+                "strength": "moderate",
+                "note": "Selling pressure dominant, early distribution"
+            },
+            "brokers": {
+                "KI": {
+                    "value": 58872901800,
+                    "value_formatted": "58.9B",
+                    "volume": 2524362,
+                    "volume_formatted": "2.5M"
+                },
+                "XL": {
+                    "value": 611810151000,
+                    "value_formatted": "611.8B",
+                    "volume": 20396302,
+                    "volume_formatted": "20.4M"
+                },
+                "YP": {
+                    "value": 60698801200,
+                    "value_formatted": "60.7B",
+                    "volume": 1713811,
+                    "volume_formatted": "1.7M"
+                },
+                "YU": {
+                    "value": -1743420264400,
+                    "value_formatted": "(1743.4B)",
+                    "volume": -66573590,
+                    "volume_formatted": "(66.6M)"
+                }
+            }
+        },
+        {
+            "date": "2025-12-22",
+            "close_price": 394,
+            "close_price_formatted": "394",
+            "total_value": -1185234517200,
+            "total_value_formatted": "(1185.2B)",
+            "total_volume": -46524868,
+            "total_volume_formatted": "(46.5M)",
+            "signal": {
+                "trend": "distribution",
+                "strength": "strong",
+                "note": "Heavy institutional selling pressure"
+            },
+            "brokers": {
+                "KI": {
+                    "value": 48910320400,
+                    "value_formatted": "48.9B",
+                    "volume": 2258428,
+                    "volume_formatted": "2.3M"
+                },
+                "XL": {
+                    "value": 493589429200,
+                    "value_formatted": "493.6B",
+                    "volume": 17222363,
+                    "volume_formatted": "17.2M"
+                },
+                "YP": {
+                    "value": 45382362600,
+                    "value_formatted": "45.4B",
+                    "volume": 1338838,
+                    "volume_formatted": "1.3M"
+                },
+                "YU": {
+                    "value": -1773116629400,
+                    "value_formatted": "(1773.1B)",
+                    "volume": -67344497,
+                    "volume_formatted": "(67.3M)"
+                }
+            }
+        },
+        {
+            "date": "2025-12-23",
+            "close_price": 380,
+            "close_price_formatted": "380",
+            "total_value": -1084759943000,
+            "total_value_formatted": "(1084.8B)",
+            "total_volume": -44033691,
+            "total_volume_formatted": "(44.0M)",
+            "signal": {
+                "trend": "distribution",
+                "strength": "moderate",
+                "note": "Selling pressure dominant, early distribution"
+            },
+            "brokers": {
+                "KI": {
+                    "value": 56528904800,
+                    "value_formatted": "56.5B",
+                    "volume": 2456177,
+                    "volume_formatted": "2.5M"
+                },
+                "XL": {
+                    "value": 582811975600,
+                    "value_formatted": "582.8B",
+                    "volume": 19489890,
+                    "volume_formatted": "19.5M"
+                },
+                "YP": {
+                    "value": 174114107000,
+                    "value_formatted": "174.1B",
+                    "volume": 4632978,
+                    "volume_formatted": "4.6M"
+                },
+                "YU": {
+                    "value": -1898214930400,
+                    "value_formatted": "(1898.2B)",
+                    "volume": -70612736,
+                    "volume_formatted": "(70.6M)"
+                }
+            }
+        },
+        {
+            "date": "2025-12-24",
+            "close_price": 362,
+            "close_price_formatted": "362",
+            "total_value": -1136533365600,
+            "total_value_formatted": "(1136.5B)",
+            "total_volume": -45385492,
+            "total_volume_formatted": "(45.4M)",
+            "signal": {
+                "trend": "distribution",
+                "strength": "moderate",
+                "note": "Selling pressure dominant, early distribution"
+            },
+            "brokers": {
+                "KI": {
+                    "value": 59802543800,
+                    "value_formatted": "59.8B",
+                    "volume": 2542743,
+                    "volume_formatted": "2.5M"
+                },
+                "XL": {
+                    "value": 616339995000,
+                    "value_formatted": "616.3B",
+                    "volume": 20409766,
+                    "volume_formatted": "20.4M"
+                },
+                "YP": {
+                    "value": 165093784600,
+                    "value_formatted": "165.1B",
+                    "volume": 4386341,
+                    "volume_formatted": "4.4M"
+                },
+                "YU": {
+                    "value": -1977769689000,
+                    "value_formatted": "(1977.8B)",
+                    "volume": -72724342,
+                    "volume_formatted": "(72.7M)"
+                }
+            }
+        },
+        {
+            "date": "2025-12-29",
+            "close_price": 366,
+            "close_price_formatted": "366",
+            "total_value": -1130232126800,
+            "total_value_formatted": "(1130.2B)",
+            "total_volume": -45246463,
+            "total_volume_formatted": "(45.2M)",
+            "signal": {
+                "trend": "distribution",
+                "strength": "moderate",
+                "note": "Selling pressure dominant, early distribution"
+            },
+            "brokers": {
+                "KI": {
+                    "value": 65812895000,
+                    "value_formatted": "65.8B",
+                    "volume": 2706430,
+                    "volume_formatted": "2.7M"
+                },
+                "XL": {
+                    "value": 742873735400,
+                    "value_formatted": "742.9B",
+                    "volume": 23847036,
+                    "volume_formatted": "23.8M"
+                },
+                "YP": {
+                    "value": 253095554600,
+                    "value_formatted": "253.1B",
+                    "volume": 6780380,
+                    "volume_formatted": "6.8M"
+                },
+                "YU": {
+                    "value": -2192014311800,
+                    "value_formatted": "(2192B)",
+                    "volume": -78580309,
+                    "volume_formatted": "(78.6M)"
+                }
+            }
+        },
+        {
+            "date": "2025-12-30",
+            "close_price": 366,
+            "close_price_formatted": "366",
+            "total_value": -1207380513800,
+            "total_value_formatted": "(1207.4B)",
+            "total_volume": -47363452,
+            "total_volume_formatted": "(47.4M)",
+            "signal": {
+                "trend": "distribution",
+                "strength": "moderate",
+                "note": "Selling pressure dominant, early distribution"
+            },
+            "brokers": {
+                "KI": {
+                    "value": 65326552800,
+                    "value_formatted": "65.3B",
+                    "volume": 2692839,
+                    "volume_formatted": "2.7M"
+                },
+                "XL": {
+                    "value": 785173186200,
+                    "value_formatted": "785.2B",
+                    "volume": 24997515,
+                    "volume_formatted": "25M"
+                },
+                "YP": {
+                    "value": 246704922600,
+                    "value_formatted": "246.7B",
+                    "volume": 6606288,
+                    "volume_formatted": "6.6M"
+                },
+                "YU": {
+                    "value": -2304585175400,
+                    "value_formatted": "(2304.6B)",
+                    "volume": -81660094,
+                    "volume_formatted": "(81.7M)"
+                }
+            }
+        }
+    ]
+}

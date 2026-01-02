@@ -4,6 +4,7 @@ import { Link } from "@heroui/link";
 import clsx from "clsx";
 
 import { Providers } from "./providers";
+import { ToastProvider } from "@heroui/toast";
 
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
@@ -48,9 +49,10 @@ export default function RootLayout({
               {children}
             </main>
             {/* <footer className="w-full flex items-center justify-center py-3">
-             
+
             </footer> */}
           </div>
+          <ToastProvider placement="top-right" />
         </Providers>
       </body>
     </html>

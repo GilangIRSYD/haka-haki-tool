@@ -9,6 +9,7 @@ import { Spinner } from "@heroui/spinner";
 import { Autocomplete, AutocompleteItem } from "@heroui/autocomplete";
 import { motion, AnimatePresence } from "framer-motion";
 import { BROKERS } from "@/data/brokers";
+import { addToast } from "@heroui/toast";
 
 // Types
 interface BrokerDailyData {
@@ -31,6 +32,13 @@ interface DailyData {
   brokers: BrokerDailyData[];
 }
 
+interface PriceMovement {
+  from: number;
+  to: number;
+  change: number;
+  changePercent: number;
+}
+
 interface AnalysisResult {
   phase: "accumulation" | "distribution";
   netBuy: number;
@@ -39,6 +47,9 @@ interface AnalysisResult {
   insight: string;
   brokerSummary: BrokerDailyData[];
   dailyData: DailyData[];
+  dominantBrokers: string[];
+  distributionBrokers: string[];
+  priceMovement: PriceMovement;
 }
 
 // Helper function to get color based on broker group
@@ -86,112 +97,142 @@ function getBrokerGroupDisplayName(group: string): string {
   }
 }
 
-// Mock analysis function
-function analyzeData(
+// Generate random hex string for x-nonce header
+function generateNonce(): string {
+  return Array.from({ length: 32 }, () =>
+    Math.floor(Math.random() * 16).toString(16)
+  ).join('');
+}
+
+// Real API call to fetch broker calendar data
+async function analyzeData(
   brokers: string[],
   stockCode: string,
   startDate: string,
   endDate: string
-): AnalysisResult {
-  const dailyData: DailyData[] = [];
-  const start = new Date(startDate);
-  const end = new Date(endDate);
+): Promise<AnalysisResult> {
+  const baseUrl = 'https://api-idx.gsphomelab.org/api/v1';
+  const endpoint = '/broker-action-calendar';
 
-  let totalBuy = 0;
-  let totalSell = 0;
-
-  const brokerSummary: BrokerDailyData[] = brokers.map((broker) => ({
-    broker,
-    buyValue: 0,
-    buyLot: 0,
-    buyAvg: 0,
-    sellValue: 0,
-    sellLot: 0,
-    sellAvg: 0,
-  }));
-
-  for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
-    if (d.getDay() === 0 || d.getDay() === 6) continue;
-
-    const brokersData: BrokerDailyData[] = [];
-    let dayNetLot = 0;
-    let dayNetValue = 0;
-
-    brokers.forEach((broker, idx) => {
-      const isBuy = Math.random() > 0.45;
-      const lot = Math.floor(Math.random() * 10000);
-      const avgPrice = 50 + Math.random() * 100;
-
-      if (isBuy) {
-        const value = lot * avgPrice * 100;
-        totalBuy += value;
-        dayNetLot += lot;
-        dayNetValue += value;
-        brokerSummary[idx].buyValue += value;
-        brokerSummary[idx].buyLot += lot;
-
-        brokersData.push({
-          broker,
-          buyValue: value,
-          buyLot: lot,
-          buyAvg: avgPrice,
-          sellValue: 0,
-          sellLot: 0,
-          sellAvg: 0,
-        });
-      } else {
-        const value = lot * avgPrice * 100;
-        totalSell += value;
-        dayNetLot -= lot;
-        dayNetValue -= value;
-        brokerSummary[idx].sellValue += value;
-        brokerSummary[idx].sellLot += lot;
-
-        brokersData.push({
-          broker,
-          buyValue: 0,
-          buyLot: 0,
-          buyAvg: 0,
-          sellValue: value,
-          sellLot: lot,
-          sellAvg: avgPrice,
-        });
-      }
-    });
-
-    const closingPrice = 50 + Math.random() * 100;
-    const previousPrice = dailyData.length > 0 ? dailyData[dailyData.length - 1].closingPrice : closingPrice;
-    const priceChange = closingPrice - previousPrice;
-    const priceChangePercent = (priceChange / previousPrice) * 100;
-
-    dailyData.push({
-      date: d.toISOString().split("T")[0],
-      netLot: dayNetLot,
-      netValue: dayNetValue,
-      closingPrice,
-      priceChange,
-      priceChangePercent,
-      brokers: brokersData,
-    });
-  }
-
-  brokerSummary.forEach((b) => {
-    b.buyAvg = b.buyLot > 0 ? b.buyValue / b.buyLot / 100 : 0;
-    b.sellAvg = b.sellLot > 0 ? b.sellValue / b.sellLot / 100 : 0;
+  // Build query parameters
+  const params = new URLSearchParams({
+    symbol: stockCode,
+    from: startDate,
+    to: endDate,
   });
 
-  const netTotal = totalBuy - totalSell;
-  const phase = netTotal > 0 ? "accumulation" : "distribution";
+  // Add multiple broker_code params
+  brokers.forEach(code => {
+    params.append('broker_code', code);
+  });
 
-  return {
-    phase,
-    netBuy: totalBuy,
-    netSell: totalSell,
-    totalValue: netTotal,
-    insight: `Dominant ${phase} by ${brokers[0]} and ${brokers[1]} during mid-month period`,
-    brokerSummary,
-    dailyData: dailyData.reverse(),
-  };
+  const url = `${baseUrl}${endpoint}?${params.toString()}`;
+
+  try {
+    const response = await fetch(url, {
+      method: 'GET',
+      headers: {
+        'x-nonce': generateNonce(),
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`API Error: ${response.status} ${response.statusText}`);
+    }
+
+    const apiResponse = await response.json();
+
+    // Transform API response to our data structure
+    const dailyData: DailyData[] = apiResponse.data.map((day: any, index: number) => {
+      const prevDay = apiResponse.data[index - 1];
+      const previousPrice = prevDay ? prevDay.close_price : day.close_price;
+      const priceChange = day.close_price - previousPrice;
+      const priceChangePercent = (priceChange / previousPrice) * 100;
+
+      // Transform broker data
+      const brokersData: BrokerDailyData[] = Object.entries(day.brokers).map(([code, data]: [string, any]) => {
+        const value = data.value;
+        const volume = data.volume;
+        const isBuy = value > 0;
+
+        return {
+          broker: code,
+          buyValue: isBuy ? value : 0,
+          buyLot: isBuy ? volume : 0,
+          buyAvg: isBuy ? volume > 0 ? value / volume : 0 : 0,
+          sellValue: !isBuy ? Math.abs(value) : 0,
+          sellLot: !isBuy ? Math.abs(volume) : 0,
+          sellAvg: !isBuy ? volume !== 0 ? Math.abs(value) / Math.abs(volume) : 0 : 0,
+        };
+      });
+
+      return {
+        date: day.date,
+        netLot: day.total_volume,
+        netValue: day.total_value,
+        closingPrice: day.close_price,
+        priceChange,
+        priceChangePercent,
+        brokers: brokersData,
+      };
+    });
+
+    // Calculate broker summary
+    const brokerSummary: BrokerDailyData[] = brokers.map(code => {
+      const buyValue = dailyData.reduce((sum, day) => {
+        const brokerData = day.brokers.find(b => b.broker === code);
+        return sum + (brokerData?.buyValue || 0);
+      }, 0);
+
+      const sellValue = dailyData.reduce((sum, day) => {
+        const brokerData = day.brokers.find(b => b.broker === code);
+        return sum + (brokerData?.sellValue || 0);
+      }, 0);
+
+      const buyLot = dailyData.reduce((sum, day) => {
+        const brokerData = day.brokers.find(b => b.broker === code);
+        return sum + (brokerData?.buyLot || 0);
+      }, 0);
+
+      const sellLot = dailyData.reduce((sum, day) => {
+        const brokerData = day.brokers.find(b => b.broker === code);
+        return sum + (brokerData?.sellLot || 0);
+      }, 0);
+
+      return {
+        broker: code,
+        buyValue,
+        buyLot,
+        buyAvg: buyLot > 0 ? buyValue / buyLot / 100 : 0,
+        sellValue,
+        sellLot,
+        sellAvg: sellLot > 0 ? sellValue / sellLot / 100 : 0,
+      };
+    });
+
+    const netBuy = apiResponse.summary.total_buy_value || 0;
+    const netSell = apiResponse.summary.total_sell_value || 0;
+
+    return {
+      phase: apiResponse.summary.trend,
+      netBuy,
+      netSell,
+      totalValue: apiResponse.summary.total_value,
+      insight: apiResponse.summary.note,
+      brokerSummary,
+      dailyData,
+      dominantBrokers: apiResponse.summary.dominant_brokers || [],
+      distributionBrokers: apiResponse.summary.distribution_brokers || [],
+      priceMovement: {
+        from: apiResponse.summary.price_movement?.from || 0,
+        to: apiResponse.summary.price_movement?.to || 0,
+        change: apiResponse.summary.price_movement?.change || 0,
+        changePercent: apiResponse.summary.price_movement?.change_pct || 0,
+      },
+    };
+  } catch (error) {
+    throw error;
+  }
 }
 
 // Calendar Cell with Tooltip
@@ -523,11 +564,17 @@ function BrokerSummaryTable({ brokerSummary }: { brokerSummary: BrokerDailyData[
 function ExecutiveSummary({ result }: { result: AnalysisResult }) {
   const isAccumulation = result.phase === "accumulation";
   const netValue = Math.abs(result.totalValue);
+  const isPriceUp = result.priceMovement.changePercent >= 0;
 
   const formatCurrency = (value: number) => {
     if (value >= 1000000000) return `IDR ${(value / 1000000000).toFixed(2)}B`;
     if (value >= 1000000) return `IDR ${(value / 1000000).toFixed(2)}M`;
     return `IDR ${(value / 1000).toFixed(2)}K`;
+  };
+
+  const formatPercent = (value: number) => {
+    const sign = value >= 0 ? "+" : "";
+    return `${sign}${value.toFixed(2)}%`;
   };
 
   return (
@@ -594,6 +641,64 @@ function ExecutiveSummary({ result }: { result: AnalysisResult }) {
           </div>
         </div>
 
+        {/* Price Movement */}
+        <div className="bg-default-100 p-2 rounded-lg">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-[10px] text-default-500 mb-0.5">Price Movement</p>
+              <p className="text-sm font-bold">
+                IDR {result.priceMovement.from.toFixed(0)} → IDR {result.priceMovement.to.toFixed(0)}
+              </p>
+            </div>
+            <div className="text-right">
+              <p className="text-xs text-default-500">Change</p>
+              <p className={`text-sm font-bold ${isPriceUp ? "text-success" : "text-danger"}`}>
+                {result.priceMovement.change >= 0 ? "+" : ""}{result.priceMovement.change.toFixed(0)}
+                <span className="text-[10px] ml-1">({formatPercent(result.priceMovement.changePercent)})</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Dominant & Distribution Brokers */}
+        <div className="grid grid-cols-2 gap-2">
+          {/* Dominant Buyers */}
+          {result.dominantBrokers.length > 0 && (
+            <div className="bg-success/10 border border-success/30 p-2 rounded-lg">
+              <p className="text-[10px] text-default-600 mb-1.5 font-semibold">Dominant Buyers</p>
+              <div className="flex flex-wrap gap-1">
+                {result.dominantBrokers.map((broker) => {
+                  const brokerGroup = getBrokerGroupCode(broker);
+                  const groupColor = getBrokerGroupTextColor(brokerGroup);
+                  return (
+                    <span key={broker} className={`text-xs font-bold ${groupColor}`}>
+                      {broker}
+                    </span>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          {/* Active Distributors */}
+          {result.distributionBrokers.length > 0 && (
+            <div className="bg-danger/10 border border-danger/30 p-2 rounded-lg">
+              <p className="text-[10px] text-default-600 mb-1.5 font-semibold">Active Distributors</p>
+              <div className="flex flex-wrap gap-1">
+                {result.distributionBrokers.map((broker) => {
+                  const brokerGroup = getBrokerGroupCode(broker);
+                  const groupColor = getBrokerGroupTextColor(brokerGroup);
+                  return (
+                    <span key={broker} className={`text-xs font-bold ${groupColor}`}>
+                      {broker}
+                    </span>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+        </div>
+
         <div className="bg-default-100 p-2 rounded-lg">
           <p className="text-[11px] text-default-600">{result.insight}</p>
         </div>
@@ -634,7 +739,7 @@ function InputSection({
       alert("Please fill in all fields");
       return;
     }
-    onSubmit({ brokers: selectedBrokers, stockCode, startDate, endDate });
+    onSubmit({ brokers: selectedBrokers, stockCode: stockCode.toUpperCase(), startDate, endDate });
   };
 
   return (
@@ -785,7 +890,7 @@ export default function AnalyzerPage() {
     endDate: string;
   } | null>(null);
 
-  const handleAnalyze = (data: {
+  const handleAnalyze = async (data: {
     brokers: string[];
     stockCode: string;
     startDate: string;
@@ -794,16 +899,23 @@ export default function AnalyzerPage() {
     setFormData(data);
     setIsLoading(true);
 
-    setTimeout(() => {
-      const result = analyzeData(
+    try {
+      const result = await analyzeData(
         data.brokers,
         data.stockCode,
         data.startDate,
         data.endDate
       );
       setAnalysisResult(result);
+    } catch (error) {
+      addToast({
+        title: "Analysis Failed",
+        description: error instanceof Error ? error.message : "Failed to fetch broker data. Please try again.",
+        color: "danger",
+      });
+    } finally {
       setIsLoading(false);
-    }, 1000);
+    }
   };
 
   return (
