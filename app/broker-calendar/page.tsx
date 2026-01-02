@@ -853,7 +853,7 @@ function InputSection({
   };
 }) {
   const [selectedBrokers, setSelectedBrokers] = useState<string[]>(
-    initialData?.brokers || ["AK", "YU"]
+    initialData?.brokers || ["AK", "XL", "XC", "CC", "MG"]
   );
   const [stockCode, setStockCode] = useState(initialData?.stockCode || "FORE");
   const [startDate, setStartDate] = useState(
