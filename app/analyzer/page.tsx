@@ -350,11 +350,11 @@ function CalendarCell({
 
       {showTooltip && (
         <motion.div
-          initial={{ opacity: 0, y: 10, scale: 0.95 }}
+          initial={{ opacity: 0, y: -10, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: 10, scale: 0.95 }}
+          exit={{ opacity: 0, y: -10, scale: 0.95 }}
           transition={{ duration: 0.15 }}
-          className="absolute z-50 w-56 bg-content1 border border-default-200 rounded-lg shadow-xl p-3 top-full left-1/2 -translate-x-1/2 mt-2"
+          className="absolute z-50 w-56 bg-content1 border border-default-200 rounded-lg shadow-xl p-3 bottom-full left-1/2 -translate-x-1/2 mb-2"
         >
           <div className="text-xs font-semibold mb-2 text-foreground">
             {data.date}
