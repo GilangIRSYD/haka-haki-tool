@@ -979,7 +979,7 @@ function ChartFloatingButton({
         stiffness: 300,
         damping: 20
       }}
-      className="fixed bottom-8 right-8 z-[9999]"
+      className="fixed bottom-8 right-8 z-[9999] group"
     >
       <Button
         isIconOnly
@@ -1002,9 +1002,12 @@ function ChartFloatingButton({
           <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
         </svg>
       </Button>
-      {/* Tooltip */}
-      <div className="absolute bottom-full right-0 mb-2 px-2 py-1 bg-foreground text-background text-xs rounded-md whitespace-nowrap opacity-0 hover:opacity-100 transition-opacity pointer-events-none">
-        View {symbol} Chart
+      {/* Tooltip with shortcut hint */}
+      <div className="absolute bottom-full right-0 mb-2 px-3 py-2 bg-foreground text-background text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none flex items-center gap-2">
+        <span>Toggle Chart</span>
+        <kbd className="px-1.5 py-0.5 text-[10px] font-semibold bg-default-100 opacity-65 text-default-foreground border border-default-300 rounded">
+          ⌘ + K
+        </kbd>
       </div>
     </motion.div>
   );
@@ -1045,6 +1048,13 @@ function InputSection({
     onSubmit({ brokers: selectedBrokers, stockCode: stockCode.toUpperCase(), startDate, endDate });
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      handleSubmit();
+    }
+  };
+
   return (
     <Card className="w-full">
       <CardBody>
@@ -1058,6 +1068,7 @@ function InputSection({
               placeholder="e.g., FORE"
               value={stockCode}
               onValueChange={setStockCode}
+              onKeyDown={handleKeyDown}
               size="sm"
               classNames={{
                 input: "uppercase text-sm",
@@ -1074,6 +1085,7 @@ function InputSection({
                 type="date"
                 value={startDate}
                 onValueChange={setStartDate}
+                onKeyDown={handleKeyDown}
                 size="sm"
               />
             </div>
@@ -1086,6 +1098,7 @@ function InputSection({
                 type="date"
                 value={endDate}
                 onValueChange={setEndDate}
+                onKeyDown={handleKeyDown}
                 size="sm"
               />
             </div>
@@ -1174,7 +1187,10 @@ function InputSection({
             className="w-full font-semibold mt-2"
             onPress={handleSubmit}
           >
-            Analyze
+            <span>Analyze</span>
+            <kbd className="ml-2 px-2 py-0.5 text-xs font-semibold text-default-foreground bg-default-100 opacity-35 border border-default-300 rounded-md">
+              ↵ Enter
+            </kbd>
           </Button>
         </div>
       </CardBody>
@@ -1227,6 +1243,23 @@ export default function AnalyzerPage() {
       setIsLoading(false);
     }
   };
+
+  // Keyboard shortcut for toggling chart modal (Cmd/Ctrl + K)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Check for Cmd/Ctrl + K
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        // Toggle chart modal if symbol is available
+        if (chartSymbol) {
+          setIsChartModalOpen(prev => !prev);
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [chartSymbol]);
 
   return (
     <div className="w-full h-full">
