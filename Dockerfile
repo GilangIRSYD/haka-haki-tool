@@ -35,4 +35,4 @@ EXPOSE 9000
 ENV PORT 9000
 ENV HOSTNAME "0.0.0.0"
 
-CMD ["bun", "server.js"]
+CMD ["bun", "start"]
