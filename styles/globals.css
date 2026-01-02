@@ -1,3 +1,10 @@
 @import "tailwindcss";
 
+/* Completely hide scrollbar for Chrome/Webkit */
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  background: transparent;
+}
+
 @config "../tailwind.config.js"
