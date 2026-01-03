@@ -10,6 +10,8 @@ import { Autocomplete, AutocompleteItem } from "@heroui/autocomplete";
 import { motion, AnimatePresence } from "framer-motion";
 import { BROKERS } from "@/data/brokers";
 import { addToast } from "@heroui/toast";
+import { useAnalytics } from "@/lib/hooks/useAnalytics";
+import { useTrackPageView } from "@/lib/hooks/useTrackPageView";
 
 // Types
 interface BrokerDailyData {
@@ -1031,6 +1033,7 @@ function InputSection({
     endDate: string;
   };
 }) {
+  const { trackBrokerSelection, trackDateFilterChanged } = useAnalytics();
   const [selectedBrokers, setSelectedBrokers] = useState<string[]>(
     initialData?.brokers || ["AK", "XL", "XC", "CC", "MG"]
   );
@@ -1084,7 +1087,11 @@ function InputSection({
               <Input
                 type="date"
                 value={startDate}
-                onValueChange={setStartDate}
+                onValueChange={(value) => {
+                  const previousValue = startDate;
+                  setStartDate(value);
+                  trackDateFilterChanged('start_date', value, previousValue);
+                }}
                 onKeyDown={handleKeyDown}
                 size="sm"
               />
@@ -1097,7 +1104,11 @@ function InputSection({
               <Input
                 type="date"
                 value={endDate}
-                onValueChange={setEndDate}
+                onValueChange={(value) => {
+                  const previousValue = endDate;
+                  setEndDate(value);
+                  trackDateFilterChanged('end_date', value, previousValue);
+                }}
                 onKeyDown={handleKeyDown}
                 size="sm"
               />
@@ -1115,6 +1126,10 @@ function InputSection({
               variant="bordered"
               onSelectionChange={(key) => {
                 if (key && !selectedBrokers.includes(key as string)) {
+                  const broker = BROKERS.find((b) => b.code === key);
+                  if (broker) {
+                    trackBrokerSelection(broker.code, broker.name, broker.group as 'Asing' | 'Lokal' | 'Pemerintah', 'autocomplete');
+                  }
                   setSelectedBrokers([...selectedBrokers, key as string]);
                 }
               }}
@@ -1164,6 +1179,7 @@ function InputSection({
                         content: "text-xs",
                       }}
                       onClose={() => {
+                        trackBrokerSelection(broker.code, broker.name, broker.group as 'Asing' | 'Lokal' | 'Pemerintah', 'chip_removal');
                         setSelectedBrokers(selectedBrokers.filter((b) => b !== brokerCode));
                       }}
                     >
@@ -1200,6 +1216,13 @@ function InputSection({
 
 // Main page component
 export default function AnalyzerPage() {
+  const { trackAnalysisInitiated, trackAnalysisCompleted, trackAnalysisFailed, trackChartToggled } = useAnalytics();
+
+  // Track page view
+  useTrackPageView({
+    pageTitle: 'Broker Calendar',
+  });
+
   const [analysisResult, setAnalysisResult] = useState<AnalysisResult | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState<{
@@ -1222,6 +1245,11 @@ export default function AnalyzerPage() {
     setFormData(data);
     setIsLoading(true);
 
+    const startTime = Date.now();
+
+    // Track analysis initiation
+    trackAnalysisInitiated(data.stockCode, data.brokers.length, data.startDate, data.endDate);
+
     try {
       const result = await analyzeData(
         data.brokers,
@@ -1231,9 +1259,27 @@ export default function AnalyzerPage() {
       );
       setAnalysisResult(result);
 
+      // Track analysis completion
+      const duration = Date.now() - startTime;
+      trackAnalysisCompleted(
+        data.stockCode,
+        duration,
+        result.dailyData.length,
+        result.phase
+      );
+
       // Set chart symbol for TradingView (load in background)
       setChartSymbol(data.stockCode.toUpperCase());
     } catch (error) {
+      // Track analysis failure
+      const duration = Date.now() - startTime;
+      trackAnalysisFailed(
+        data.stockCode,
+        'api',
+        error instanceof Error ? error.message : 'Unknown error',
+        duration
+      );
+
       addToast({
         title: "Analysis Failed",
         description: error instanceof Error ? error.message : "Failed to fetch broker data. Please try again.",
@@ -1252,6 +1298,7 @@ export default function AnalyzerPage() {
         e.preventDefault();
         // Toggle chart modal if symbol is available
         if (chartSymbol) {
+          trackChartToggled(chartSymbol, 'keyboard_shortcut', true);
           setIsChartModalOpen(prev => !prev);
         }
       }
@@ -1259,7 +1306,7 @@ export default function AnalyzerPage() {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [chartSymbol]);
+  }, [chartSymbol, trackChartToggled]);
 
   return (
     <div className="w-full h-full">
@@ -1335,7 +1382,10 @@ export default function AnalyzerPage() {
       <AnimatePresence>
         {chartSymbol && (
           <ChartFloatingButton
-            onClick={() => setIsChartModalOpen(true)}
+            onClick={() => {
+              trackChartToggled(chartSymbol, 'button_click');
+              setIsChartModalOpen(true);
+            }}
             symbol={chartSymbol}
           />
         )}
