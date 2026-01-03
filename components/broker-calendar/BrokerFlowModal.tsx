@@ -119,40 +119,50 @@ export function BrokerFlowModal({
                 </div>
 
                 {/* Footer - Summary Stats */}
-                {!isLoading && data.length > 0 && (
-                  <div className="px-6 py-4 border-t border-default-200 flex-shrink-0">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                      {/* Date Range */}
-                      <div className="text-center">
-                        <p className="text-[10px] text-default-500 mb-1">Date Range</p>
-                        <p className="text-sm font-bold">
-                          {data.length} day{data.length > 1 ? 's' : ''}
-                        </p>
-                      </div>
+                {!isLoading && data.length > 0 && (() => {
+                  // Calculate price change from first to last day
+                  const firstPrice = data[0].close_price;
+                  const lastPrice = data[data.length - 1].close_price;
+                  const percentageChange = ((lastPrice - firstPrice) / firstPrice) * 100;
+                  const isPositive = percentageChange >= 0;
 
-                      {/* Price Range */}
-                      <div className="text-center">
-                        <p className="text-[10px] text-default-500 mb-1">Price Range</p>
-                        <p className="text-sm font-bold">
-                          {Math.min(...data.map((d) => d.close_price)).toFixed(0)} -{' '}
-                          {Math.max(...data.map((d) => d.close_price)).toFixed(0)}
-                        </p>
-                      </div>
+                  return (
+                    <div className="px-6 py-4 border-t border-default-200 flex-shrink-0">
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        {/* Date Range */}
+                        <div className="text-center">
+                          <p className="text-[10px] text-default-500 mb-1">Date Range</p>
+                          <p className="text-sm font-bold">
+                            {data.length} day{data.length > 1 ? 's' : ''}
+                          </p>
+                        </div>
 
-                      {/* Active Brokers */}
-                      <div className="text-center">
-                        <p className="text-[10px] text-default-500 mb-1">Active Brokers</p>
-                        <p className="text-sm font-bold">{brokers.length}</p>
-                      </div>
+                        {/* Price Range */}
+                        <div className="text-center">
+                          <p className="text-[10px] text-default-500 mb-1">Price Range</p>
+                          <p className="text-sm font-bold">
+                            {firstPrice.toFixed(0)} - {lastPrice.toFixed(0)}{' '}
+                            <span className={isPositive ? 'text-success' : 'text-danger'}>
+                              ({isPositive ? '+' : ''}{percentageChange.toFixed(1)}%)
+                            </span>
+                          </p>
+                        </div>
 
-                      {/* Symbol */}
-                      <div className="text-center">
-                        <p className="text-[10px] text-default-500 mb-1">Symbol</p>
-                        <p className="text-sm font-bold">{symbol}</p>
+                        {/* Active Brokers */}
+                        <div className="text-center">
+                          <p className="text-[10px] text-default-500 mb-1">Active Brokers</p>
+                          <p className="text-sm font-bold">{brokers.length}</p>
+                        </div>
+
+                        {/* Symbol */}
+                        <div className="text-center">
+                          <p className="text-[10px] text-default-500 mb-1">Symbol</p>
+                          <p className="text-sm font-bold">{symbol}</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                )}
+                  );
+                })()}
               </div>
             </motion.div>
           </div>

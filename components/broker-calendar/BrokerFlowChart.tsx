@@ -62,35 +62,35 @@ function formatValueDynamic(value: number): { formatted: string; unit: string; d
   if (absValue >= 1000000000000) {
     // Trillions
     return {
-      formatted: `${(value / 1000000000000).toFixed(1)}`,
+      formatted: `${(absValue / 1000000000000).toFixed(1)}`,
       unit: 'T',
       divider: 1000000000000
     };
   } else if (absValue >= 1000000000) {
     // Billions
     return {
-      formatted: `${(value / 1000000000).toFixed(1)}`,
+      formatted: `${(absValue / 1000000000).toFixed(1)}`,
       unit: 'B',
       divider: 1000000000
     };
   } else if (absValue >= 1000000) {
     // Millions
     return {
-      formatted: `${(value / 1000000).toFixed(1)}`,
+      formatted: `${(absValue / 1000000).toFixed(1)}`,
       unit: 'M',
       divider: 1000000
     };
   } else if (absValue >= 1000) {
     // Thousands
     return {
-      formatted: `${(value / 1000).toFixed(1)}`,
+      formatted: `${(absValue / 1000).toFixed(1)}`,
       unit: 'K',
       divider: 1000
     };
   } else {
     // Raw value
     return {
-      formatted: `${value.toFixed(0)}`,
+      formatted: `${absValue.toFixed(0)}`,
       unit: '',
       divider: 1
     };
@@ -215,6 +215,7 @@ function CustomTooltip({
   brokers,
   unit,
   divider,
+  chartData,
 }: {
   active?: boolean;
   payload?: any[];
@@ -222,12 +223,29 @@ function CustomTooltip({
   brokers: string[];
   unit: string;
   divider: number;
+  chartData: Array<Record<string, any>>;
 }) {
   if (!active || !payload || !label) return null;
 
   // Find the price data point
   const priceData = payload.find((p) => p.dataKey === 'close_price');
   const price = priceData?.value || 0;
+
+  // Find current data point index and calculate previous price change
+  const currentIndex = chartData.findIndex((point) => point.displayDate === label);
+  let priceChangePercentage: { value: number; display: string } | null = null;
+
+  if (currentIndex > 0 && priceData?.payload) {
+    const previousPrice = chartData[currentIndex - 1].close_price;
+    const priceChange = price - previousPrice;
+    const percentageChange = (priceChange / previousPrice) * 100;
+    const isPositive = percentageChange >= 0;
+
+    priceChangePercentage = {
+      value: percentageChange,
+      display: `${isPositive ? '+' : ''}${percentageChange.toFixed(2)}%`,
+    };
+  }
 
   return (
     <div className="bg-content1 border border-default-200 rounded-lg shadow-xl p-3 max-w-xs">
@@ -239,7 +257,18 @@ function CustomTooltip({
       {/* Price Info */}
       <div className="flex items-center justify-between text-xs mb-2">
         <span className="text-default-600">Price:</span>
-        <span className="font-bold text-blue-500">{formatPrice(price)}</span>
+        <div className="flex items-center gap-2">
+          <span className="font-bold text-blue-500">{formatPrice(price)}</span>
+          {priceChangePercentage && (
+            <span
+              className={`text-xs font-bold ${
+                priceChangePercentage.value >= 0 ? 'text-success' : 'text-danger'
+              }`}
+            >
+              {priceChangePercentage.display}
+            </span>
+          )}
+        </div>
       </div>
 
       {/* Broker Flow Values */}
@@ -445,7 +474,7 @@ export function BrokerFlowChart({
 
             {/* Custom Tooltip */}
             <Tooltip
-              content={<CustomTooltip brokers={brokers} unit={optimalUnit} divider={divider} />}
+              content={<CustomTooltip brokers={brokers} unit={optimalUnit} divider={divider} chartData={chartData} />}
               cursor={{ stroke: 'currentColor', strokeWidth: 1, strokeDasharray: '5 5' }}
             />
 
