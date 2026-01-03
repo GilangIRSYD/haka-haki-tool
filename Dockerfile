@@ -29,6 +29,7 @@ COPY package.json package-lock.json* ./
 RUN npm install
 
 COPY . .
+COPY .env .env.production
 RUN npm run build
 
 
