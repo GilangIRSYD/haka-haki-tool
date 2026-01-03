@@ -45,7 +45,7 @@ export default function RootLayout({
       >
         <FirebaseProvider>
           <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-            <div className="relative flex flex-col h-screen">
+            <div className="relative flex flex-col min-h-screen bg-gradient-to-br from-background dark:to-purple-950 to-blue-100">
               <Navbar />
               <main className="container mx-auto max-w-7xl pt-3 px-6 flex-grow">
                 {children}
@@ -54,7 +54,7 @@ export default function RootLayout({
 
               </footer> */}
             </div>
-            <ToastProvider placement="top-right" />
+            <ToastProvider toastOffset={50} placement="top-right" />
           </Providers>
         </FirebaseProvider>
       </body>
