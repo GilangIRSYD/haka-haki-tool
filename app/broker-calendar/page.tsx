@@ -145,6 +145,64 @@ function getTodayDate(): string {
   return new Date().toISOString().split('T')[0];
 }
 
+// Helper function to calculate and format date range duration
+function formatDateRangeDuration(startDate: string, endDate: string): string {
+  const start = new Date(startDate);
+  const end = new Date(endDate);
+  const diffTime = Math.abs(end.getTime() - start.getTime());
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+  const months = Math.floor(diffDays / 30);
+  const remainingDays = diffDays % 30;
+
+  if (months > 0 && remainingDays > 0) {
+    return `${months} Month${months > 1 ? 's' : ''} ${remainingDays} Day${remainingDays > 1 ? 's' : ''}`;
+  } else if (months > 0) {
+    return `${months} Month${months > 1 ? 's' : ''}`;
+  } else {
+    return `${diffDays} Day${diffDays > 1 ? 's' : ''}`;
+  }
+}
+
+// Helper function to get date based on preset
+function getDateByPreset(preset: string): string {
+  const date = new Date();
+  switch (preset) {
+    case '1week':
+      date.setDate(date.getDate() - 7);
+      break;
+    case '1month':
+      date.setMonth(date.getMonth() - 1);
+      break;
+    case '3months':
+      date.setMonth(date.getMonth() - 3);
+      break;
+    case '6months':
+      date.setMonth(date.getMonth() - 6);
+      break;
+    case '1year':
+      date.setFullYear(date.getFullYear() - 1);
+      break;
+    default:
+      date.setMonth(date.getMonth() - 3);
+  }
+  return date.toISOString().split('T')[0];
+}
+
+// Helper function to check if dates match a preset
+function getMatchingPreset(startDate: string, endDate: string): string {
+  const today = getTodayDate();
+  if (endDate !== today) return '';
+
+  const presets = ['1week', '1month', '3months', '6months', '1year'];
+  for (const preset of presets) {
+    if (startDate === getDateByPreset(preset)) {
+      return preset;
+    }
+  }
+  return '';
+}
+
 // Fetch broker summary from dedicated API
 async function fetchBrokerSummary(
   stockCode: string,
@@ -750,13 +808,19 @@ function ExecutiveSummary({ result, startDate, endDate }: { result: AnalysisResu
     return new Date(dateString).toLocaleDateString("en-US", { day: "2-digit", month: "short" });
   };
 
+  // Get date range duration
+  const dateRangeDuration = formatDateRangeDuration(startDate, endDate);
+
   return (
     <Card className="w-full">
       <CardBody className="gap-3">
         <div className="flex items-center justify-between">
           <div>
             <h2 className="text-xl font-bold mb-1">Executive Summary</h2>
-            <p className="text-default-500 text-xs">{formatDate(startDate)} - {formatDate(endDate)}</p>
+            <p className="text-default-500 text-xs">
+              {formatDate(startDate)} - {formatDate(endDate)}
+              <span className="text-default-400 ml-1">({dateRangeDuration})</span>
+            </p>
           </div>
           <Chip
             color={isAccumulation ? "success" : "danger"}
@@ -1085,6 +1149,17 @@ function InputSection({
     initialData?.startDate || getDateThreeMonthsAgo()
   );
   const [endDate, setEndDate] = useState(initialData?.endDate || getTodayDate());
+  const [selectedPreset, setSelectedPreset] = useState<string>("3months");
+  const [isCustomRange, setIsCustomRange] = useState(false);
+
+  // Sync selectedPreset when initialData changes or dates change
+  useEffect(() => {
+    if (initialData?.startDate && initialData?.endDate) {
+      const matchingPreset = getMatchingPreset(initialData.startDate, initialData.endDate);
+      setSelectedPreset(matchingPreset);
+      setIsCustomRange(matchingPreset === '');
+    }
+  }, [initialData?.startDate, initialData?.endDate]);
 
   // Load data from localStorage only on first mount and if no initialData
   useEffect(() => {
@@ -1116,6 +1191,14 @@ function InputSection({
       e.preventDefault();
       handleSubmit();
     }
+  };
+
+  const handlePresetClick = (preset: string) => {
+    setSelectedPreset(preset);
+    setIsCustomRange(false);
+    const newStartDate = getDateByPreset(preset);
+    setStartDate(newStartDate);
+    setEndDate(getTodayDate());
   };
 
   return (
@@ -1150,6 +1233,9 @@ function InputSection({
                 onValueChange={(value) => {
                   const previousValue = startDate;
                   setStartDate(value);
+                  const matchingPreset = getMatchingPreset(value, endDate);
+                  setSelectedPreset(matchingPreset);
+                  setIsCustomRange(matchingPreset === '');
                   trackDateFilterChanged('start_date', value, previousValue);
                 }}
                 onKeyDown={handleKeyDown}
@@ -1167,11 +1253,53 @@ function InputSection({
                 onValueChange={(value) => {
                   const previousValue = endDate;
                   setEndDate(value);
+                  const matchingPreset = getMatchingPreset(startDate, value);
+                  setSelectedPreset(matchingPreset);
+                  setIsCustomRange(matchingPreset === '');
                   trackDateFilterChanged('end_date', value, previousValue);
                 }}
                 onKeyDown={handleKeyDown}
                 size="sm"
               />
+            </div>
+          </div>
+
+          {/* Quick Select Buttons */}
+          <div>
+            <label className="block text-xs font-medium text-default-700 mb-1.5">
+              Quick Select
+            </label>
+            <div className="flex flex-wrap gap-1.5">
+              {[
+                { key: '1week', label: '1 Week' },
+                { key: '1month', label: '1 Month' },
+                { key: '3months', label: '3 Months' },
+                { key: '6months', label: '6 Months' },
+                { key: '1year', label: '1 Year' },
+              ].map((preset) => (
+                <Button
+                  key={preset.key}
+                  size="sm"
+                  variant={selectedPreset === preset.key ? "solid" : "flat"}
+                  color={selectedPreset === preset.key ? "primary" : "default"}
+                  className={`text-xs px-3 h-7 ${
+                    selectedPreset === preset.key ? "font-semibold" : ""
+                  }`}
+                  onPress={() => handlePresetClick(preset.key)}
+                >
+                  {preset.label}
+                </Button>
+              ))}
+              {isCustomRange && (
+                <Button
+                  size="sm"
+                  variant="solid"
+                  color="primary"
+                  className="text-xs px-3 h-7 font-semibold"
+                >
+                  Custom ({formatDateRangeDuration(startDate, endDate)})
+                </Button>
+              )}
             </div>
           </div>
 
@@ -1181,11 +1309,26 @@ function InputSection({
             </label>
             <Autocomplete
               defaultItems={BROKERS.filter((b) => !selectedBrokers.includes(b.code))}
-              placeholder="Type to search brokers..."
+              placeholder={
+                selectedBrokers.length >= 7
+                  ? "Maximum 7 brokers reached"
+                  : selectedBrokers.length >= 5
+                  ? `Type to search brokers... (${7 - selectedBrokers.length} remaining)`
+                  : "Type to search brokers..."
+              }
               size="sm"
               variant="bordered"
+              isDisabled={selectedBrokers.length >= 7}
               onSelectionChange={(key) => {
                 if (key && !selectedBrokers.includes(key as string)) {
+                  if (selectedBrokers.length >= 7) {
+                    addToast({
+                      title: "Maximum Brokers Reached",
+                      description: "You can only select up to 7 brokers. Please remove some brokers first.",
+                      color: "warning",
+                    });
+                    return;
+                  }
                   const broker = BROKERS.find((b) => b.code === key);
                   if (broker) {
                     trackBrokerSelection(broker.code, broker.name, broker.group as 'Asing' | 'Lokal' | 'Pemerintah', 'autocomplete');
@@ -1250,10 +1393,16 @@ function InputSection({
               </div>
             )}
 
-            <p className="text-[10px] text-default-500 mt-1">
+            <p className={`text-[10px] mt-1 ${
+              selectedBrokers.length >= 7
+                ? "text-warning font-semibold"
+                : selectedBrokers.length >= 5
+                ? "text-default-600"
+                : "text-default-500"
+            }`}>
               {selectedBrokers.length > 0
-                ? `${selectedBrokers.length} broker(s) selected: ${selectedBrokers.join(", ")}`
-                : "No brokers selected"}
+                ? `${selectedBrokers.length}/7 broker(s) selected: ${selectedBrokers.join(", ")}`
+                : "0/7 brokers selected (maximum 7 brokers)"}
             </p>
           </div>
 
