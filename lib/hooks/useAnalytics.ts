@@ -152,6 +152,38 @@ export function useAnalytics() {
     return analyticsService.getDeviceId();
   }, []);
 
+  /**
+   * Track share link generation
+   */
+  const trackShareLinkGenerated = useCallback(
+    (
+      stockCode: string,
+      hasCustomSlug: boolean,
+      customSlug?: string,
+      brokerCount?: number,
+      dateRangeDays?: number
+    ) => {
+      analyticsService.trackShareLinkGenerated(
+        stockCode,
+        hasCustomSlug,
+        customSlug,
+        brokerCount,
+        dateRangeDays
+      );
+    },
+    []
+  );
+
+  /**
+   * Track share link clicked
+   */
+  const trackShareLinkClicked = useCallback(
+    (shareCode: string, source: 'direct' | 'social_media' | 'other') => {
+      analyticsService.trackShareLinkClicked(shareCode, source);
+    },
+    []
+  );
+
   return {
     trackEvent,
     trackPageView,
@@ -165,5 +197,7 @@ export function useAnalytics() {
     trackThemeChanged,
     trackError,
     getDeviceId,
+    trackShareLinkGenerated,
+    trackShareLinkClicked,
   };
 }

@@ -20,6 +20,8 @@ import type {
   ApiCallPerformanceParams,
   ThemeChangedParams,
   ErrorOccurredParams,
+  ShareLinkGeneratedParams,
+  ShareLinkClickedParams,
 } from '@/lib/types/analytics';
 
 /**
@@ -243,6 +245,38 @@ class AnalyticsService {
       context,
       fatal: fatal || false,
     } as ErrorOccurredParams);
+  }
+
+  /**
+   * Track share link generation
+   */
+  trackShareLinkGenerated(
+    stockCode: string,
+    hasCustomSlug: boolean,
+    customSlug?: string,
+    brokerCount?: number,
+    dateRangeDays?: number
+  ): void {
+    this.trackEvent('share_link_generated', {
+      stock_code: stockCode,
+      has_custom_slug: hasCustomSlug,
+      custom_slug: customSlug,
+      broker_count: brokerCount || 0,
+      date_range_days: dateRangeDays || 0,
+    } as ShareLinkGeneratedParams);
+  }
+
+  /**
+   * Track share link click
+   */
+  trackShareLinkClicked(
+    shareCode: string,
+    source: 'direct' | 'social_media' | 'other'
+  ): void {
+    this.trackEvent('share_link_clicked', {
+      share_code: shareCode,
+      source,
+    } as ShareLinkClickedParams);
   }
 
   /**

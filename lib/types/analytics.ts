@@ -137,6 +137,20 @@ export interface DataExportCompletedParams extends BaseEventParams {
   duration_ms: number;
 }
 
+// Share Link Events
+export interface ShareLinkGeneratedParams extends BaseEventParams {
+  stock_code: string;
+  has_custom_slug: boolean;
+  custom_slug?: string;
+  broker_count: number;
+  date_range_days: number;
+}
+
+export interface ShareLinkClickedParams extends BaseEventParams {
+  share_code: string;
+  source: 'direct' | 'social_media' | 'other';
+}
+
 // Union type for all event names
 export type AnalyticsEventName =
   | 'page_view'
@@ -156,7 +170,9 @@ export type AnalyticsEventName =
   | 'theme_changed'
   | 'error_occurred'
   | 'data_export_initiated'
-  | 'data_export_completed';
+  | 'data_export_completed'
+  | 'share_link_generated'
+  | 'share_link_clicked';
 
 // Union type for all event parameters
 export type AnalyticsEventParams =
@@ -177,7 +193,9 @@ export type AnalyticsEventParams =
   | ThemeChangedParams
   | ErrorOccurredParams
   | DataExportInitiatedParams
-  | DataExportCompletedParams;
+  | DataExportCompletedParams
+  | ShareLinkGeneratedParams
+  | ShareLinkClickedParams;
 
 // Event name to parameters mapping
 export interface AnalyticsEventMap {
@@ -199,4 +217,6 @@ export interface AnalyticsEventMap {
   error_occurred: ErrorOccurredParams;
   data_export_initiated: DataExportInitiatedParams;
   data_export_completed: DataExportCompletedParams;
+  share_link_generated: ShareLinkGeneratedParams;
+  share_link_clicked: ShareLinkClickedParams;
 }
