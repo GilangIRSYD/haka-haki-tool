@@ -19,6 +19,8 @@ import { useAnalytics } from "@/lib/hooks/useAnalytics";
 import { useTrackPageView } from "@/lib/hooks/useTrackPageView";
 import { ShareModal } from "@/components/broker-calendar/ShareModal";
 import { ShareFloatingButton } from "@/components/broker-calendar/ShareFloatingButton";
+import { BrokerFlowModal } from "@/components/broker-calendar/BrokerFlowModal";
+import { BrokerFlowFloatingButton } from "@/components/broker-calendar/BrokerFlowFloatingButton";
 import { useRouter } from "next/navigation";
 import { createShareLink, getSharedLink } from "@/lib/api/share";
 
@@ -1468,6 +1470,9 @@ function AnalyzerPage({ shareSlug }: { shareSlug?: string }) {
     broker_code: string[];
   } | null>(null);
 
+  // Broker Flow Chart States
+  const [isBrokerFlowModalOpen, setIsBrokerFlowModalOpen] = useState(false);
+
   const handleAnalyze = async (data: {
     brokers: string[];
     stockCode: string;
@@ -1702,6 +1707,35 @@ function AnalyzerPage({ shareSlug }: { shareSlug?: string }) {
         isOpen={isShareModalOpen}
         onClose={() => setIsShareModalOpen(false)}
         shareData={shareData}
+      />
+
+      {/* Broker Flow Floating Action Button */}
+      <AnimatePresence>
+        {analysisResult && formData && (
+          <BrokerFlowFloatingButton
+            onPress={() => setIsBrokerFlowModalOpen(true)}
+          />
+        )}
+      </AnimatePresence>
+
+      {/* Broker Flow Chart Modal */}
+      <BrokerFlowModal
+        isOpen={isBrokerFlowModalOpen}
+        onClose={() => setIsBrokerFlowModalOpen(false)}
+        data={analysisResult?.dailyData.map(day => ({
+          date: day.date,
+          close_price: day.closingPrice,
+          brokers: day.brokers.reduce((acc, broker) => {
+            acc[broker.broker] = {
+              value: broker.buyValue - broker.sellValue,
+              volume: broker.buyLot - broker.sellLot
+            };
+            return acc;
+          }, {} as Record<string, { value: number; volume: number }>)
+        })) || []}
+        brokers={formData?.brokers || []}
+        symbol={formData?.stockCode || ""}
+        isLoading={isLoading}
       />
     </div>
   );
