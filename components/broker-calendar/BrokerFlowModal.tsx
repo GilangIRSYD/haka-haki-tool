@@ -6,6 +6,7 @@
  * Following the same pattern as TradingViewModal and ShareModal
  */
 
+import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@heroui/button';
 import { BrokerFlowChart } from './BrokerFlowChart';
@@ -42,6 +43,18 @@ export function BrokerFlowModal({
   symbol,
   isLoading = false,
 }: BrokerFlowModalProps) {
+  // Handle ESC key to close modal
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isOpen) {
+        onClose();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
+
   return (
     <AnimatePresence>
       {isOpen && (

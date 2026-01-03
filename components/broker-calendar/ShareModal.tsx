@@ -108,6 +108,18 @@ export function ShareModal({ isOpen, onClose, shareData }: ShareModalProps) {
     }
   }, [isOpen]);
 
+  // Handle ESC key to close modal
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isOpen) {
+        onClose();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
+
   // Handle slug change with real-time validation
   const handleSlugChange = (value: string) => {
     setCustomSlug(value);
