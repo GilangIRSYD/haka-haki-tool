@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-local:
-    runs-on: g-runner
+    runs-on: [self-hosted, g-runner]
 
     steps:
       - name: Checkout code
@@ -42,7 +42,7 @@ jobs:
           mv /tmp/.buildx-cache-new /tmp/.buildx-cache || true
 
   deploy:
-    runs-on: g-runner
+    runs-on: [self-hosted, g-runner]
     needs: build-local
 
     steps:
