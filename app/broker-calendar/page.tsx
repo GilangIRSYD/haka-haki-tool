@@ -45,7 +45,7 @@ export async function generateMetadata(
       const frontendUrl = process.env.NEXT_PUBLIC_FRONTEND_URL || 'https://hakahakitools.gsphomelab.org';
 
       // Generate OG metadata from share data
-      const title = `${data.queryParams.symbol} Calendar Analysis`;
+      const title = `${data.queryParams.symbol} Calendar Analysis 🤘`;
       const description = `View broker action calendar for ${data.queryParams.symbol} from ${data.queryParams.from} to ${data.queryParams.to}. Analyzed by: ${brokers}`;
 
       return {
