@@ -184,6 +184,24 @@ export function useAnalytics() {
     []
   );
 
+  /**
+   * Track broker flow button clicked
+   */
+  const trackBrokerFlowButtonClicked = useCallback(
+    (stockCode: string, brokerCount: number, dateRangeDays?: number) => {
+      analyticsService.trackEvent('feature_used', {
+        feature_name: 'broker_analyzer',
+        action: 'broker_flow_chart_opened',
+        context: {
+          stock_code: stockCode,
+          broker_count: brokerCount,
+          date_range_days: dateRangeDays,
+        },
+      });
+    },
+    []
+  );
+
   return {
     trackEvent,
     trackPageView,
@@ -199,5 +217,6 @@ export function useAnalytics() {
     getDeviceId,
     trackShareLinkGenerated,
     trackShareLinkClicked,
+    trackBrokerFlowButtonClicked,
   };
 }

@@ -1440,7 +1440,7 @@ function InputSection({
 
 // Main page component
 function AnalyzerPage({ shareSlug }: { shareSlug?: string }) {
-  const { trackAnalysisInitiated, trackAnalysisCompleted, trackAnalysisFailed, trackChartToggled, trackShareLinkClicked } = useAnalytics();
+  const { trackAnalysisInitiated, trackAnalysisCompleted, trackAnalysisFailed, trackChartToggled, trackShareLinkClicked, trackBrokerFlowButtonClicked } = useAnalytics();
   const router = useRouter();
 
   // Track page view
@@ -1713,7 +1713,19 @@ function AnalyzerPage({ shareSlug }: { shareSlug?: string }) {
       <AnimatePresence>
         {analysisResult && formData && (
           <BrokerFlowFloatingButton
-            onPress={() => setIsBrokerFlowModalOpen(true)}
+            onPress={() => {
+              // Calculate date range days
+              const startDate = new Date(formData.startDate);
+              const endDate = new Date(formData.endDate);
+              const dateRangeDays = Math.ceil((endDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24));
+
+              trackBrokerFlowButtonClicked(
+                formData.stockCode,
+                formData.brokers.length,
+                dateRangeDays
+              );
+              setIsBrokerFlowModalOpen(true);
+            }}
           />
         )}
       </AnimatePresence>
