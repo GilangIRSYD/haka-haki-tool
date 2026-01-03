@@ -106,6 +106,45 @@ function generateNonce(): string {
   ).join('');
 }
 
+// LocalStorage keys
+const STORAGE_KEYS = {
+  STOCK_CODE: 'broker-calendar-stock-code',
+  SELECTED_BROKERS: 'broker-calendar-selected-brokers',
+};
+
+// Helper functions for localStorage
+function saveToLocalStorage(key: string, value: any) {
+  if (typeof window !== 'undefined') {
+    localStorage.setItem(key, JSON.stringify(value));
+  }
+}
+
+function loadFromLocalStorage<T>(key: string, defaultValue: T): T {
+  if (typeof window !== 'undefined') {
+    const item = localStorage.getItem(key);
+    if (item) {
+      try {
+        return JSON.parse(item) as T;
+      } catch {
+        return defaultValue;
+      }
+    }
+  }
+  return defaultValue;
+}
+
+// Helper function to get date 3 months ago
+function getDateThreeMonthsAgo(): string {
+  const date = new Date();
+  date.setMonth(date.getMonth() - 3);
+  return date.toISOString().split('T')[0];
+}
+
+// Helper function to get today's date
+function getTodayDate(): string {
+  return new Date().toISOString().split('T')[0];
+}
+
 // Fetch broker summary from dedicated API
 async function fetchBrokerSummary(
   stockCode: string,
@@ -1034,14 +1073,35 @@ function InputSection({
   };
 }) {
   const { trackBrokerSelection, trackDateFilterChanged } = useAnalytics();
+
+  // Load from localStorage on mount (only if no initialData provided)
+  const [loadedFromStorage, setLoadedFromStorage] = useState(false);
+
   const [selectedBrokers, setSelectedBrokers] = useState<string[]>(
     initialData?.brokers || ["AK", "XL", "XC", "CC", "MG"]
   );
   const [stockCode, setStockCode] = useState(initialData?.stockCode || "FORE");
   const [startDate, setStartDate] = useState(
-    initialData?.startDate || "2025-11-01"
+    initialData?.startDate || getDateThreeMonthsAgo()
   );
-  const [endDate, setEndDate] = useState(initialData?.endDate || "2025-12-30");
+  const [endDate, setEndDate] = useState(initialData?.endDate || getTodayDate());
+
+  // Load data from localStorage only on first mount and if no initialData
+  useEffect(() => {
+    if (!loadedFromStorage && !initialData) {
+      const savedStockCode = loadFromLocalStorage<string>(STORAGE_KEYS.STOCK_CODE, "");
+      const savedBrokers = loadFromLocalStorage<string[]>(STORAGE_KEYS.SELECTED_BROKERS, []);
+
+      if (savedStockCode) {
+        setStockCode(savedStockCode);
+      }
+      if (savedBrokers.length > 0) {
+        setSelectedBrokers(savedBrokers);
+      }
+
+      setLoadedFromStorage(true);
+    }
+  }, [loadedFromStorage, initialData]);
 
   const handleSubmit = () => {
     if (selectedBrokers.length === 0 || !stockCode || !startDate || !endDate) {
@@ -1258,6 +1318,10 @@ export default function AnalyzerPage() {
         data.endDate
       );
       setAnalysisResult(result);
+
+      // Save to localStorage after successful analysis
+      saveToLocalStorage(STORAGE_KEYS.STOCK_CODE, data.stockCode);
+      saveToLocalStorage(STORAGE_KEYS.SELECTED_BROKERS, data.brokers);
 
       // Track analysis completion
       const duration = Date.now() - startTime;
