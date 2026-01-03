@@ -1,0 +1,56 @@
+name: Build Docker Image Locally
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  build-local:
+    runs-on: g-runner
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Extract metadata (tags, labels)
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: haka-haki-tool
+          tags: |
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=raw,value=latest
+
+      - name: Build Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          load: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=local,src=/tmp/.buildx-cache
+          cache-to: type=local,dest=/tmp/.buildx-cache-new
+
+      - name: Move cache
+        run: |
+          rm -rf /tmp/.buildx-cache
+          mv /tmp/.buildx-cache-new /tmp/.buildx-cache || true
+
+  deploy:
+    runs-on: g-runner
+    needs: build-local
+
+    steps:
+      - name: Recreate idx_web container
+        run: |
+          cd ${{ secrets.DOCKER_COMPOSE_PATH || '.' }}
+          docker compose up -d --force-recreate --no-deps idx_web
+
+      - name: Verify container is running
+        run: |
+          docker ps --filter "name=idx_web" --format "Table {{.Names}}\t{{.Status}}\t{{.Image}}"
