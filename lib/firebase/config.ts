@@ -20,13 +20,13 @@ export function getFirebaseApp(): FirebaseApp {
     if (apps.length === 0) {
       // Initialize new app
       app = initializeApp({
-        apiKey: env.firebaseApiKey,
-        authDomain: env.firebaseAuthDomain,
-        projectId: env.firebaseProjectId,
-        storageBucket: env.firebaseStorageBucket,
-        messagingSenderId: env.firebaseMessagingSenderId,
-        appId: env.firebaseAppId,
-        measurementId: env.firebaseMeasurementId,
+        apiKey: 'AIzaSyBqw8qOZtgsaGJnUXrSzW_UkHdGi-MQ-jM',
+        authDomain: 'haka-haki.firebaseapp.com',
+        projectId: 'haka-haki',
+        storageBucket: 'haka-haki.firebasestorage.app',
+        messagingSenderId: '804258381448',
+        appId: '1:804258381448:web:3a05363ec43c896580e93d',
+        measurementId: 'G-6WTKTJJVN7',
       });
     } else {
       // Use existing app

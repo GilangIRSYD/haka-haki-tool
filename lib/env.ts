@@ -61,7 +61,7 @@ export const env = {
     return envSchema.appEnv as 'development' | 'production';
   },
   get isDevelopment() {
-    return envSchema.appEnv === 'development';
+    return false;
   },
   get isProduction() {
     return envSchema.appEnv === 'production';
