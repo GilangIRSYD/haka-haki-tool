@@ -47,6 +47,11 @@ interface DailyData {
   priceChange: number; // Price change from previous day
   priceChangePercent: number; // Percentage change
   brokers: BrokerDailyData[];
+  signal?: {
+    trend: string;
+    strength: string;
+    note: string;
+  };
 }
 
 interface PriceMovement {
@@ -364,6 +369,11 @@ async function analyzeData(
         priceChange,
         priceChangePercent,
         brokers: brokersData,
+        signal: day.signal ? {
+          trend: day.signal.trend,
+          strength: day.signal.strength,
+          note: day.signal.note,
+        } : undefined,
       };
     });
 
@@ -552,6 +562,37 @@ function CalendarCell({
               );
             })}
           </div>
+
+          {/* Signal Info */}
+          {data.signal && (
+            <div className="mt-3 pt-2 border-t border-default-200">
+              <div className="flex items-center gap-2 mb-1.5">
+                <span className="text-[9px] text-default-500 font-semibold uppercase">Signal</span>
+                <Chip
+                  size="sm"
+                  variant="flat"
+                  color={data.signal.trend === "accumulation" ? "success" : "danger"}
+                  className="h-5 text-[9px] px-2 font-semibold"
+                >
+                  {data.signal.trend}
+                </Chip>
+                <Chip
+                  size="sm"
+                  variant="flat"
+                  color={
+                    data.signal.strength === "strong" ? "success" :
+                    data.signal.strength === "moderate" ? "warning" : "default"
+                  }
+                  className="h-5 text-[9px] px-2 font-semibold"
+                >
+                  {data.signal.strength}
+                </Chip>
+              </div>
+              <p className="text-[9px] text-default-600 italic leading-tight">
+                {data.signal.note}
+              </p>
+            </div>
+          )}
         </motion.div>
       )}
     </div>
