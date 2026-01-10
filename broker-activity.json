@@ -1,0 +1,1706 @@
+{
+    "meta": {
+        "broker_code": "HP",
+        "broker_name": "Henan Putihrai Sekuritas",
+        "date": "2026-01-09",
+        "limit": 10,
+        "transaction_type": "NET",
+        "market_board": "ALL",
+        "currency": "IDR"
+    },
+    "formatting": {
+        "price": "IDR with dot thousand separator",
+        "value": "K/M/B/T",
+        "volume": "lot"
+    },
+    "market_activity": {
+        "total_volume": {
+            "raw": 884010,
+            "formatted": "884.0K lot"
+        },
+        "total_value": {
+            "raw": 138404600000,
+            "formatted": "138.40B"
+        },
+        "average_price": {
+            "raw": 1565.6442,
+            "formatted": "IDR 1.566"
+        },
+        "accumulation_distribution": {
+            "label": "Neutral",
+            "net_value": {
+                "raw": -3679373600,
+                "formatted": "-3.68B"
+            },
+            "net_volume": {
+                "raw": -23500.7,
+                "formatted": "-23.5K lot"
+            },
+            "strength_percent": -2.6584187
+        },
+        "buyer_count": 50,
+        "seller_count": 50
+    },
+    "accdist_scope": {
+        "top_1": {
+            "label": "Accumulation",
+            "net_value": {
+                "raw": 44080476000,
+                "formatted": "44.08B"
+            }
+        },
+        "top_3": {
+            "label": "Neutral",
+            "net_value": {
+                "raw": -10620939000,
+                "formatted": "-10.62B"
+            }
+        },
+        "top_5": {
+            "label": "Neutral",
+            "net_value": {
+                "raw": -8424653300,
+                "formatted": "-8.42B"
+            }
+        },
+        "top_10": {
+            "label": "Neutral",
+            "net_value": {
+                "raw": -1974668800,
+                "formatted": "-1.97B"
+            }
+        }
+    },
+    "stocks": {
+        "sorting": {
+            "key": "abs(value_raw)",
+            "order": "desc",
+            "description": "Sorted by largest transaction value regardless of BUY or SELL"
+        },
+        "items": [
+            {
+                "symbol": "ARKO",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 1800,
+                    "formatted": "IDR 1.800"
+                },
+                "volume": {
+                    "raw": 323548,
+                    "formatted": "323.5K lot"
+                },
+                "value": {
+                    "raw": 58238730000,
+                    "formatted": "58.24B"
+                }
+            },
+            {
+                "symbol": "SINI",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 13200,
+                    "formatted": "IDR 13.200"
+                },
+                "volume": {
+                    "raw": 42000,
+                    "formatted": "42.0K lot"
+                },
+                "value": {
+                    "raw": 55440000000,
+                    "formatted": "55.44B"
+                }
+            },
+            {
+                "symbol": "PTRO",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 12128.911131846071,
+                    "formatted": "IDR 12.129"
+                },
+                "volume": {
+                    "raw": 27294,
+                    "formatted": "27.3K lot"
+                },
+                "value": {
+                    "raw": 33122157500,
+                    "formatted": "33.12B"
+                }
+            },
+            {
+                "symbol": "RMKE",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 6455.0701160541585,
+                    "formatted": "IDR 6.455"
+                },
+                "volume": {
+                    "raw": 30777,
+                    "formatted": "30.8K lot"
+                },
+                "value": {
+                    "raw": 19862835000,
+                    "formatted": "19.86B"
+                }
+            },
+            {
+                "symbol": "MINA",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 600.2897680007394,
+                    "formatted": "IDR 600"
+                },
+                "volume": {
+                    "raw": 177393,
+                    "formatted": "177.4K lot"
+                },
+                "value": {
+                    "raw": 10676240000,
+                    "formatted": "10.68B"
+                }
+            },
+            {
+                "symbol": "BUVA",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 1626.4935017225334,
+                    "formatted": "IDR 1.626"
+                },
+                "volume": {
+                    "raw": 36841,
+                    "formatted": "36.8K lot"
+                },
+                "value": {
+                    "raw": 6110521000,
+                    "formatted": "6.11B"
+                }
+            },
+            {
+                "symbol": "INDY",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 2736.088895351655,
+                    "formatted": "IDR 2.736"
+                },
+                "volume": {
+                    "raw": 18851,
+                    "formatted": "18.9K lot"
+                },
+                "value": {
+                    "raw": 5151696000,
+                    "formatted": "5.15B"
+                }
+            },
+            {
+                "symbol": "BIPI",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 213.59874007881444,
+                    "formatted": "IDR 214"
+                },
+                "volume": {
+                    "raw": 230064,
+                    "formatted": "230.1K lot"
+                },
+                "value": {
+                    "raw": 4934742900,
+                    "formatted": "4.93B"
+                }
+            },
+            {
+                "symbol": "RATU",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 10223.4936734284,
+                    "formatted": "IDR 10.223"
+                },
+                "volume": {
+                    "raw": 4630,
+                    "formatted": "4.6K lot"
+                },
+                "value": {
+                    "raw": 4732797500,
+                    "formatted": "4.73B"
+                }
+            },
+            {
+                "symbol": "BRMS",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 1228.105191471528,
+                    "formatted": "IDR 1.228"
+                },
+                "volume": {
+                    "raw": 37034,
+                    "formatted": "37.0K lot"
+                },
+                "value": {
+                    "raw": 4549071500,
+                    "formatted": "4.55B"
+                }
+            },
+            {
+                "symbol": "CUAN",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 2024.8330946347912,
+                    "formatted": "IDR 2.025"
+                },
+                "volume": {
+                    "raw": 14757,
+                    "formatted": "14.8K lot"
+                },
+                "value": {
+                    "raw": 2989623000,
+                    "formatted": "2.99B"
+                }
+            },
+            {
+                "symbol": "AMMN",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 8136.509937703945,
+                    "formatted": "IDR 8.137"
+                },
+                "volume": {
+                    "raw": 3021,
+                    "formatted": "3.0K lot"
+                },
+                "value": {
+                    "raw": 2461902500,
+                    "formatted": "2.46B"
+                }
+            },
+            {
+                "symbol": "KIJA",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 341.85095863701787,
+                    "formatted": "IDR 342"
+                },
+                "volume": {
+                    "raw": 71374,
+                    "formatted": "71.4K lot"
+                },
+                "value": {
+                    "raw": 2458153000,
+                    "formatted": "2.46B"
+                }
+            },
+            {
+                "symbol": "TLKM",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 3459.8347370093757,
+                    "formatted": "IDR 3.460"
+                },
+                "volume": {
+                    "raw": 6139,
+                    "formatted": "6.1K lot"
+                },
+                "value": {
+                    "raw": 2123747000,
+                    "formatted": "2.12B"
+                }
+            },
+            {
+                "symbol": "DEWA",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 815.3129168129168,
+                    "formatted": "IDR 815"
+                },
+                "volume": {
+                    "raw": 20368,
+                    "formatted": "20.4K lot"
+                },
+                "value": {
+                    "raw": 1664932500,
+                    "formatted": "1.66B"
+                }
+            },
+            {
+                "symbol": "IATA",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 173.39315782750572,
+                    "formatted": "IDR 173"
+                },
+                "volume": {
+                    "raw": 81637,
+                    "formatted": "81.6K lot"
+                },
+                "value": {
+                    "raw": 1415470900,
+                    "formatted": "1.42B"
+                }
+            },
+            {
+                "symbol": "KPIG",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 220.59916308298222,
+                    "formatted": "IDR 221"
+                },
+                "volume": {
+                    "raw": 63670,
+                    "formatted": "63.7K lot"
+                },
+                "value": {
+                    "raw": 1408610400,
+                    "formatted": "1.41B"
+                }
+            },
+            {
+                "symbol": "ARCI",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 1638.3745952157108,
+                    "formatted": "IDR 1.638"
+                },
+                "volume": {
+                    "raw": 8040,
+                    "formatted": "8.0K lot"
+                },
+                "value": {
+                    "raw": 1311992000,
+                    "formatted": "1.31B"
+                }
+            },
+            {
+                "symbol": "RAJA",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 8065.239358699334,
+                    "formatted": "IDR 8.065"
+                },
+                "volume": {
+                    "raw": 1427,
+                    "formatted": "1.4K lot"
+                },
+                "value": {
+                    "raw": 1087680000,
+                    "formatted": "1.09B"
+                }
+            },
+            {
+                "symbol": "BUMI",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 471.906575460652,
+                    "formatted": "IDR 472"
+                },
+                "volume": {
+                    "raw": 21662,
+                    "formatted": "21.7K lot"
+                },
+                "value": {
+                    "raw": 1052002200,
+                    "formatted": "1.05B"
+                }
+            },
+            {
+                "symbol": "BJBR",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 812.4912832723871,
+                    "formatted": "IDR 812"
+                },
+                "volume": {
+                    "raw": 11758,
+                    "formatted": "11.8K lot"
+                },
+                "value": {
+                    "raw": 955327000,
+                    "formatted": "955.33M"
+                }
+            },
+            {
+                "symbol": "EMTK",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 1154.6030878535319,
+                    "formatted": "IDR 1.155"
+                },
+                "volume": {
+                    "raw": 6915,
+                    "formatted": "6.9K lot"
+                },
+                "value": {
+                    "raw": 798414500,
+                    "formatted": "798.41M"
+                }
+            },
+            {
+                "symbol": "NCKL",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 1298.826849836779,
+                    "formatted": "IDR 1.299"
+                },
+                "volume": {
+                    "raw": 5236,
+                    "formatted": "5.2K lot"
+                },
+                "value": {
+                    "raw": 680188500,
+                    "formatted": "680.19M"
+                }
+            },
+            {
+                "symbol": "ZATA",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 61.738036797959104,
+                    "formatted": "IDR 62"
+                },
+                "volume": {
+                    "raw": 103294,
+                    "formatted": "103.3K lot"
+                },
+                "value": {
+                    "raw": 637701900,
+                    "formatted": "637.70M"
+                }
+            },
+            {
+                "symbol": "SSIA",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 1789.63339301701,
+                    "formatted": "IDR 1.790"
+                },
+                "volume": {
+                    "raw": 3467,
+                    "formatted": "3.5K lot"
+                },
+                "value": {
+                    "raw": 629954500,
+                    "formatted": "629.95M"
+                }
+            },
+            {
+                "symbol": "PBSA",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 2184.862940548238,
+                    "formatted": "IDR 2.185"
+                },
+                "volume": {
+                    "raw": 2697,
+                    "formatted": "2.7K lot"
+                },
+                "value": {
+                    "raw": 589392000,
+                    "formatted": "589.39M"
+                }
+            },
+            {
+                "symbol": "SGER",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 456.61980631052796,
+                    "formatted": "IDR 457"
+                },
+                "volume": {
+                    "raw": 12516,
+                    "formatted": "12.5K lot"
+                },
+                "value": {
+                    "raw": 574261400,
+                    "formatted": "574.26M"
+                }
+            },
+            {
+                "symbol": "WIFI",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 3376.3450834879404,
+                    "formatted": "IDR 3.376"
+                },
+                "volume": {
+                    "raw": 1567,
+                    "formatted": "1.6K lot"
+                },
+                "value": {
+                    "raw": 529066000,
+                    "formatted": "529.07M"
+                }
+            },
+            {
+                "symbol": "HILL",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 217.79564055453483,
+                    "formatted": "IDR 218"
+                },
+                "volume": {
+                    "raw": 23883,
+                    "formatted": "23.9K lot"
+                },
+                "value": {
+                    "raw": 520259000,
+                    "formatted": "520.26M"
+                }
+            },
+            {
+                "symbol": "KEEN",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 1046.3621503814022,
+                    "formatted": "IDR 1.046"
+                },
+                "volume": {
+                    "raw": 4916,
+                    "formatted": "4.9K lot"
+                },
+                "value": {
+                    "raw": 513587000,
+                    "formatted": "513.59M"
+                }
+            },
+            {
+                "symbol": "BBYB",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 486.3094150318015,
+                    "formatted": "IDR 486"
+                },
+                "volume": {
+                    "raw": 10372,
+                    "formatted": "10.4K lot"
+                },
+                "value": {
+                    "raw": 504342800,
+                    "formatted": "504.34M"
+                }
+            },
+            {
+                "symbol": "NRCA",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 1387.4887069452286,
+                    "formatted": "IDR 1.387"
+                },
+                "volume": {
+                    "raw": 3582,
+                    "formatted": "3.6K lot"
+                },
+                "value": {
+                    "raw": 497550000,
+                    "formatted": "497.55M"
+                }
+            },
+            {
+                "symbol": "DOOH",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 284.59313536444273,
+                    "formatted": "IDR 285"
+                },
+                "volume": {
+                    "raw": 17001,
+                    "formatted": "17.0K lot"
+                },
+                "value": {
+                    "raw": 484946200,
+                    "formatted": "484.95M"
+                }
+            },
+            {
+                "symbol": "INET",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 559.9067205288285,
+                    "formatted": "IDR 560"
+                },
+                "volume": {
+                    "raw": 7845,
+                    "formatted": "7.8K lot"
+                },
+                "value": {
+                    "raw": 436704500,
+                    "formatted": "436.70M"
+                }
+            },
+            {
+                "symbol": "AHAP",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 194.01829293135057,
+                    "formatted": "IDR 194"
+                },
+                "volume": {
+                    "raw": 22095,
+                    "formatted": "22.1K lot"
+                },
+                "value": {
+                    "raw": 428954900,
+                    "formatted": "428.95M"
+                }
+            },
+            {
+                "symbol": "BULL",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 616.7896740029786,
+                    "formatted": "IDR 617"
+                },
+                "volume": {
+                    "raw": 6829,
+                    "formatted": "6.8K lot"
+                },
+                "value": {
+                    "raw": 419678500,
+                    "formatted": "419.68M"
+                }
+            },
+            {
+                "symbol": "ASII",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 6903.768020969856,
+                    "formatted": "IDR 6.904"
+                },
+                "volume": {
+                    "raw": 591,
+                    "formatted": "591 lot"
+                },
+                "value": {
+                    "raw": 393952500,
+                    "formatted": "393.95M"
+                }
+            },
+            {
+                "symbol": "FOLK",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 717.5594020456333,
+                    "formatted": "IDR 718"
+                },
+                "volume": {
+                    "raw": 5455,
+                    "formatted": "5.5K lot"
+                },
+                "value": {
+                    "raw": 388909000,
+                    "formatted": "388.91M"
+                }
+            },
+            {
+                "symbol": "BMTR",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 173.50646171135014,
+                    "formatted": "IDR 174"
+                },
+                "volume": {
+                    "raw": 22066,
+                    "formatted": "22.1K lot"
+                },
+                "value": {
+                    "raw": 383205900,
+                    "formatted": "383.21M"
+                }
+            },
+            {
+                "symbol": "HRUM",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 1156.1240703177823,
+                    "formatted": "IDR 1.156"
+                },
+                "volume": {
+                    "raw": 2730,
+                    "formatted": "2.7K lot"
+                },
+                "value": {
+                    "raw": 315566000,
+                    "formatted": "315.57M"
+                }
+            },
+            {
+                "symbol": "KDTN",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 1097.905844155844,
+                    "formatted": "IDR 1.098"
+                },
+                "volume": {
+                    "raw": 2749,
+                    "formatted": "2.7K lot"
+                },
+                "value": {
+                    "raw": 302045000,
+                    "formatted": "302.05M"
+                }
+            },
+            {
+                "symbol": "AALI",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 7916.239892183288,
+                    "formatted": "IDR 7.916"
+                },
+                "volume": {
+                    "raw": 371,
+                    "formatted": "371 lot"
+                },
+                "value": {
+                    "raw": 293692500,
+                    "formatted": "293.69M"
+                }
+            },
+            {
+                "symbol": "MDKA",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 2656.989966555184,
+                    "formatted": "IDR 2.657"
+                },
+                "volume": {
+                    "raw": 997,
+                    "formatted": "997 lot"
+                },
+                "value": {
+                    "raw": 264616000,
+                    "formatted": "264.62M"
+                }
+            },
+            {
+                "symbol": "COIN",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 3393.1294964028775,
+                    "formatted": "IDR 3.393"
+                },
+                "volume": {
+                    "raw": 755,
+                    "formatted": "755 lot"
+                },
+                "value": {
+                    "raw": 256357000,
+                    "formatted": "256.36M"
+                }
+            },
+            {
+                "symbol": "ISAT",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 2154.9092409240925,
+                    "formatted": "IDR 2.155"
+                },
+                "volume": {
+                    "raw": 1163,
+                    "formatted": "1.2K lot"
+                },
+                "value": {
+                    "raw": 250557000,
+                    "formatted": "250.56M"
+                }
+            },
+            {
+                "symbol": "SUPA",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 1128.4212208373283,
+                    "formatted": "IDR 1.128"
+                },
+                "volume": {
+                    "raw": 2213,
+                    "formatted": "2.2K lot"
+                },
+                "value": {
+                    "raw": 248280000,
+                    "formatted": "248.28M"
+                }
+            },
+            {
+                "symbol": "SMDR",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 421.74634146341464,
+                    "formatted": "IDR 422"
+                },
+                "volume": {
+                    "raw": 5818,
+                    "formatted": "5.8K lot"
+                },
+                "value": {
+                    "raw": 245371000,
+                    "formatted": "245.37M"
+                }
+            },
+            {
+                "symbol": "BRPT",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 3114.6015853149775,
+                    "formatted": "IDR 3.115"
+                },
+                "volume": {
+                    "raw": 738,
+                    "formatted": "738 lot"
+                },
+                "value": {
+                    "raw": 231005000,
+                    "formatted": "231.00M"
+                }
+            },
+            {
+                "symbol": "PTPP",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 421.41641625810536,
+                    "formatted": "IDR 421"
+                },
+                "volume": {
+                    "raw": 5345,
+                    "formatted": "5.3K lot"
+                },
+                "value": {
+                    "raw": 225013200,
+                    "formatted": "225.01M"
+                }
+            },
+            {
+                "symbol": "BNBR",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 202.93954520244037,
+                    "formatted": "IDR 203"
+                },
+                "volume": {
+                    "raw": 10880,
+                    "formatted": "10.9K lot"
+                },
+                "value": {
+                    "raw": 222900000,
+                    "formatted": "222.90M"
+                }
+            },
+            {
+                "symbol": "IMPC",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 3761.534140017286,
+                    "formatted": "IDR 3.762"
+                },
+                "volume": {
+                    "raw": 512,
+                    "formatted": "512 lot"
+                },
+                "value": {
+                    "raw": 220354000,
+                    "formatted": "220.35M"
+                }
+            },
+            {
+                "symbol": "PNLF",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 302,
+                    "formatted": "IDR 302"
+                },
+                "volume": {
+                    "raw": 7184,
+                    "formatted": "7.2K lot"
+                },
+                "value": {
+                    "raw": 216897000,
+                    "formatted": "216.90M"
+                }
+            },
+            {
+                "symbol": "LPIN",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 437.9894736842105,
+                    "formatted": "IDR 438"
+                },
+                "volume": {
+                    "raw": 4750,
+                    "formatted": "4.8K lot"
+                },
+                "value": {
+                    "raw": 208045000,
+                    "formatted": "208.04M"
+                }
+            },
+            {
+                "symbol": "SOCI",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 609.5064205457464,
+                    "formatted": "IDR 610"
+                },
+                "volume": {
+                    "raw": 3224,
+                    "formatted": "3.2K lot"
+                },
+                "value": {
+                    "raw": 194586000,
+                    "formatted": "194.59M"
+                }
+            },
+            {
+                "symbol": "OASA",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 379.1307822717365,
+                    "formatted": "IDR 379"
+                },
+                "volume": {
+                    "raw": 5120,
+                    "formatted": "5.1K lot"
+                },
+                "value": {
+                    "raw": 192771000,
+                    "formatted": "192.77M"
+                }
+            },
+            {
+                "symbol": "MBSS",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 3352.305194805195,
+                    "formatted": "IDR 3.352"
+                },
+                "volume": {
+                    "raw": 571,
+                    "formatted": "571 lot"
+                },
+                "value": {
+                    "raw": 191667000,
+                    "formatted": "191.67M"
+                }
+            },
+            {
+                "symbol": "BREN",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 9499.590163934427,
+                    "formatted": "IDR 9.500"
+                },
+                "volume": {
+                    "raw": 201,
+                    "formatted": "201 lot"
+                },
+                "value": {
+                    "raw": 191530000,
+                    "formatted": "191.53M"
+                }
+            },
+            {
+                "symbol": "VICI",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 773.6692223439211,
+                    "formatted": "IDR 774"
+                },
+                "volume": {
+                    "raw": 2389,
+                    "formatted": "2.4K lot"
+                },
+                "value": {
+                    "raw": 184958000,
+                    "formatted": "184.96M"
+                }
+            },
+            {
+                "symbol": "ADRO",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 2098.232189973615,
+                    "formatted": "IDR 2.098"
+                },
+                "volume": {
+                    "raw": 801,
+                    "formatted": "801 lot"
+                },
+                "value": {
+                    "raw": 173480000,
+                    "formatted": "173.48M"
+                }
+            },
+            {
+                "symbol": "TRIN",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 1509.6720516962844,
+                    "formatted": "IDR 1.510"
+                },
+                "volume": {
+                    "raw": 1105,
+                    "formatted": "1.1K lot"
+                },
+                "value": {
+                    "raw": 158966500,
+                    "formatted": "158.97M"
+                }
+            },
+            {
+                "symbol": "PIPA",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 302.2820468040517,
+                    "formatted": "IDR 302"
+                },
+                "volume": {
+                    "raw": 4859,
+                    "formatted": "4.9K lot"
+                },
+                "value": {
+                    "raw": 156306600,
+                    "formatted": "156.31M"
+                }
+            },
+            {
+                "symbol": "AGRS",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 84.54589371980677,
+                    "formatted": "IDR 85"
+                },
+                "volume": {
+                    "raw": 18199,
+                    "formatted": "18.2K lot"
+                },
+                "value": {
+                    "raw": 154001600,
+                    "formatted": "154.00M"
+                }
+            },
+            {
+                "symbol": "MORA",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 13478.794642857143,
+                    "formatted": "IDR 13.479"
+                },
+                "volume": {
+                    "raw": 112,
+                    "formatted": "112 lot"
+                },
+                "value": {
+                    "raw": 150962500,
+                    "formatted": "150.96M"
+                }
+            },
+            {
+                "symbol": "CFIN",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 334.21268990169796,
+                    "formatted": "IDR 334"
+                },
+                "volume": {
+                    "raw": 4363,
+                    "formatted": "4.4K lot"
+                },
+                "value": {
+                    "raw": 145842000,
+                    "formatted": "145.84M"
+                }
+            },
+            {
+                "symbol": "HAIS",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 258,
+                    "formatted": "IDR 258"
+                },
+                "volume": {
+                    "raw": 5584,
+                    "formatted": "5.6K lot"
+                },
+                "value": {
+                    "raw": 144067200,
+                    "formatted": "144.07M"
+                }
+            },
+            {
+                "symbol": "ESSA",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 623.2752613240418,
+                    "formatted": "IDR 623"
+                },
+                "volume": {
+                    "raw": 2296,
+                    "formatted": "2.3K lot"
+                },
+                "value": {
+                    "raw": 143104000,
+                    "formatted": "143.10M"
+                }
+            },
+            {
+                "symbol": "BMRI",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 4799.231547017189,
+                    "formatted": "IDR 4.799"
+                },
+                "volume": {
+                    "raw": 292,
+                    "formatted": "292 lot"
+                },
+                "value": {
+                    "raw": 140613000,
+                    "formatted": "140.61M"
+                }
+            },
+            {
+                "symbol": "ASRI",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 175.4797934440952,
+                    "formatted": "IDR 175"
+                },
+                "volume": {
+                    "raw": 7819,
+                    "formatted": "7.8K lot"
+                },
+                "value": {
+                    "raw": 134297000,
+                    "formatted": "134.30M"
+                }
+            },
+            {
+                "symbol": "CNKO",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 78,
+                    "formatted": "IDR 78"
+                },
+                "volume": {
+                    "raw": 16980,
+                    "formatted": "17.0K lot"
+                },
+                "value": {
+                    "raw": 133372000,
+                    "formatted": "133.37M"
+                }
+            },
+            {
+                "symbol": "KOKA",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 314.2848186296462,
+                    "formatted": "IDR 314"
+                },
+                "volume": {
+                    "raw": 4223,
+                    "formatted": "4.2K lot"
+                },
+                "value": {
+                    "raw": 132762800,
+                    "formatted": "132.76M"
+                }
+            },
+            {
+                "symbol": "PADI",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 198.51017822765945,
+                    "formatted": "IDR 199"
+                },
+                "volume": {
+                    "raw": 6950,
+                    "formatted": "7.0K lot"
+                },
+                "value": {
+                    "raw": 130794400,
+                    "formatted": "130.79M"
+                }
+            },
+            {
+                "symbol": "MAPA",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 644.9647887323944,
+                    "formatted": "IDR 645"
+                },
+                "volume": {
+                    "raw": 1988,
+                    "formatted": "2.0K lot"
+                },
+                "value": {
+                    "raw": 128219000,
+                    "formatted": "128.22M"
+                }
+            },
+            {
+                "symbol": "BLTA",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 58.171323529411765,
+                    "formatted": "IDR 58"
+                },
+                "volume": {
+                    "raw": 21760,
+                    "formatted": "21.8K lot"
+                },
+                "value": {
+                    "raw": 126580800,
+                    "formatted": "126.58M"
+                }
+            },
+            {
+                "symbol": "TRUE",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 437.24439053972105,
+                    "formatted": "IDR 437"
+                },
+                "volume": {
+                    "raw": 2784,
+                    "formatted": "2.8K lot"
+                },
+                "value": {
+                    "raw": 121809600,
+                    "formatted": "121.81M"
+                }
+            },
+            {
+                "symbol": "INKP",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 9756.937799043062,
+                    "formatted": "IDR 9.757"
+                },
+                "volume": {
+                    "raw": 124,
+                    "formatted": "124 lot"
+                },
+                "value": {
+                    "raw": 121557500,
+                    "formatted": "121.56M"
+                }
+            },
+            {
+                "symbol": "PGJO",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 1000,
+                    "formatted": "IDR 1.000"
+                },
+                "volume": {
+                    "raw": 1200,
+                    "formatted": "1.2K lot"
+                },
+                "value": {
+                    "raw": 120000000,
+                    "formatted": "120.00M"
+                }
+            },
+            {
+                "symbol": "ENRG",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 1678.1192468619247,
+                    "formatted": "IDR 1.678"
+                },
+                "volume": {
+                    "raw": 693,
+                    "formatted": "693 lot"
+                },
+                "value": {
+                    "raw": 118519000,
+                    "formatted": "118.52M"
+                }
+            },
+            {
+                "symbol": "GTSI",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 491.71106522113234,
+                    "formatted": "IDR 492"
+                },
+                "volume": {
+                    "raw": 2398,
+                    "formatted": "2.4K lot"
+                },
+                "value": {
+                    "raw": 118173300,
+                    "formatted": "118.17M"
+                }
+            },
+            {
+                "symbol": "INPC",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 256.0891887927241,
+                    "formatted": "IDR 256"
+                },
+                "volume": {
+                    "raw": 4575,
+                    "formatted": "4.6K lot"
+                },
+                "value": {
+                    "raw": 117619200,
+                    "formatted": "117.62M"
+                }
+            },
+            {
+                "symbol": "WSBP",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 24.911984899577952,
+                    "formatted": "IDR 25"
+                },
+                "volume": {
+                    "raw": 47151,
+                    "formatted": "47.2K lot"
+                },
+                "value": {
+                    "raw": 117462500,
+                    "formatted": "117.46M"
+                }
+            },
+            {
+                "symbol": "PSKT",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 326.28726807421623,
+                    "formatted": "IDR 326"
+                },
+                "volume": {
+                    "raw": 3533,
+                    "formatted": "3.5K lot"
+                },
+                "value": {
+                    "raw": 114187600,
+                    "formatted": "114.19M"
+                }
+            },
+            {
+                "symbol": "ASLI",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 672.8908554572272,
+                    "formatted": "IDR 673"
+                },
+                "volume": {
+                    "raw": 1695,
+                    "formatted": "1.7K lot"
+                },
+                "value": {
+                    "raw": 114055000,
+                    "formatted": "114.06M"
+                }
+            },
+            {
+                "symbol": "DADA",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 63.074945394064486,
+                    "formatted": "IDR 63"
+                },
+                "volume": {
+                    "raw": 17520,
+                    "formatted": "17.5K lot"
+                },
+                "value": {
+                    "raw": 112447200,
+                    "formatted": "112.45M"
+                }
+            },
+            {
+                "symbol": "ELSA",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 525.429061784897,
+                    "formatted": "IDR 525"
+                },
+                "volume": {
+                    "raw": 2112,
+                    "formatted": "2.1K lot"
+                },
+                "value": {
+                    "raw": 111112500,
+                    "formatted": "111.11M"
+                }
+            },
+            {
+                "symbol": "CDIA",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 1649.7441350863626,
+                    "formatted": "IDR 1.650"
+                },
+                "volume": {
+                    "raw": 625,
+                    "formatted": "625 lot"
+                },
+                "value": {
+                    "raw": 110263000,
+                    "formatted": "110.26M"
+                }
+            },
+            {
+                "symbol": "MLPL",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 143.24253179532684,
+                    "formatted": "IDR 143"
+                },
+                "volume": {
+                    "raw": 7751,
+                    "formatted": "7.8K lot"
+                },
+                "value": {
+                    "raw": 109633500,
+                    "formatted": "109.63M"
+                }
+            },
+            {
+                "symbol": "PSAB",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 595.5744743855493,
+                    "formatted": "IDR 596"
+                },
+                "volume": {
+                    "raw": 1801,
+                    "formatted": "1.8K lot"
+                },
+                "value": {
+                    "raw": 109372000,
+                    "formatted": "109.37M"
+                }
+            },
+            {
+                "symbol": "AKRA",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 1235.9621621621623,
+                    "formatted": "IDR 1.236"
+                },
+                "volume": {
+                    "raw": 872,
+                    "formatted": "872 lot"
+                },
+                "value": {
+                    "raw": 107720500,
+                    "formatted": "107.72M"
+                }
+            },
+            {
+                "symbol": "ADCP",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 58.499925011248315,
+                    "formatted": "IDR 58"
+                },
+                "volume": {
+                    "raw": 17902,
+                    "formatted": "17.9K lot"
+                },
+                "value": {
+                    "raw": 104831500,
+                    "formatted": "104.83M"
+                }
+            },
+            {
+                "symbol": "GOLF",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 280,
+                    "formatted": "IDR 280"
+                },
+                "volume": {
+                    "raw": 3687,
+                    "formatted": "3.7K lot"
+                },
+                "value": {
+                    "raw": 103217000,
+                    "formatted": "103.22M"
+                }
+            },
+            {
+                "symbol": "GGRM",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 15716.666666666666,
+                    "formatted": "IDR 15.717"
+                },
+                "volume": {
+                    "raw": 65,
+                    "formatted": "65 lot"
+                },
+                "value": {
+                    "raw": 102252500,
+                    "formatted": "102.25M"
+                }
+            },
+            {
+                "symbol": "PTBA",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 2400.0974658869395,
+                    "formatted": "IDR 2.400"
+                },
+                "volume": {
+                    "raw": 413,
+                    "formatted": "413 lot"
+                },
+                "value": {
+                    "raw": 99055000,
+                    "formatted": "99.06M"
+                }
+            },
+            {
+                "symbol": "BEST",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 126.45031766200762,
+                    "formatted": "IDR 126"
+                },
+                "volume": {
+                    "raw": 7555,
+                    "formatted": "7.6K lot"
+                },
+                "value": {
+                    "raw": 95736500,
+                    "formatted": "95.74M"
+                }
+            },
+            {
+                "symbol": "STRK",
+                "side": "SELL",
+                "avg_price": {
+                    "raw": 201.8624641833811,
+                    "formatted": "IDR 202"
+                },
+                "volume": {
+                    "raw": 4584,
+                    "formatted": "4.6K lot"
+                },
+                "value": {
+                    "raw": 93020000,
+                    "formatted": "93.02M"
+                }
+            },
+            {
+                "symbol": "PANI",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 11494.728434504792,
+                    "formatted": "IDR 11.495"
+                },
+                "volume": {
+                    "raw": 78,
+                    "formatted": "78 lot"
+                },
+                "value": {
+                    "raw": 91410000,
+                    "formatted": "91.41M"
+                }
+            },
+            {
+                "symbol": "BKSL",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 148.84804430598822,
+                    "formatted": "IDR 149"
+                },
+                "volume": {
+                    "raw": 5940,
+                    "formatted": "5.9K lot"
+                },
+                "value": {
+                    "raw": 89333500,
+                    "formatted": "89.33M"
+                }
+            },
+            {
+                "symbol": "GOTO",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 66.13565980518287,
+                    "formatted": "IDR 66"
+                },
+                "volume": {
+                    "raw": 13231,
+                    "formatted": "13.2K lot"
+                },
+                "value": {
+                    "raw": 85914600,
+                    "formatted": "85.91M"
+                }
+            },
+            {
+                "symbol": "TPIA",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 6745.443925233645,
+                    "formatted": "IDR 6.745"
+                },
+                "volume": {
+                    "raw": 126,
+                    "formatted": "126 lot"
+                },
+                "value": {
+                    "raw": 84895000,
+                    "formatted": "84.89M"
+                }
+            },
+            {
+                "symbol": "BBRI",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 3692.908587257618,
+                    "formatted": "IDR 3.693"
+                },
+                "volume": {
+                    "raw": 226,
+                    "formatted": "226 lot"
+                },
+                "value": {
+                    "raw": 83559000,
+                    "formatted": "83.56M"
+                }
+            },
+            {
+                "symbol": "BWPT",
+                "side": "BUY",
+                "avg_price": {
+                    "raw": 144.7159090909091,
+                    "formatted": "IDR 145"
+                },
+                "volume": {
+                    "raw": 5738,
+                    "formatted": "5.7K lot"
+                },
+                "value": {
+                    "raw": 82951000,
+                    "formatted": "82.95M"
+                }
+            }
+        ]
+    },
+    "derived_metrics": {
+        "net_exposure_ratio": 1.35,
+        "distribution_dominance": {
+            "score": 0.03,
+            "label": "Weak"
+        },
+        "focus_index": {
+            "value": 0.421,
+            "label": "Focused"
+        },
+        "rotation_indicator": {
+            "buy_stock_count": 50,
+            "sell_stock_count": 50,
+            "type": "Market-wide Rotation"
+        }
+    },
+    "executive_summary": {
+        "market_bias": "Neutral",
+        "broker_behavior": "Passive Trader",
+        "conviction_level": "High",
+        "risk_mode": "Risk-On",
+        "recommended_action": "Wait for clearer signals before making significant moves"
+    }
+}

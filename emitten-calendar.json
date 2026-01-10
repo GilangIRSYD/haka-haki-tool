@@ -1,0 +1,61 @@
+{
+    "symbol": "PTRO",
+    "brokers": [
+        "HP"
+    ],
+    "range": {
+        "from": "2026-01-09",
+        "to": "2026-01-09"
+    },
+    "summary": {
+        "total_buy_value": 33122157500,
+        "total_buy_value_formatted": "33.1B",
+        "total_buy_volume": 27294,
+        "total_buy_volume_formatted": "27.3K",
+        "total_sell_value": 0,
+        "total_sell_value_formatted": "0.0",
+        "total_sell_volume": 0,
+        "total_sell_volume_formatted": "0.0",
+        "total_value": 33122157500,
+        "total_value_formatted": "33.1B",
+        "total_volume": 27294,
+        "total_volume_formatted": "27.3K",
+        "trend": "accumulation",
+        "strength": "strong",
+        "dominant_brokers": [
+            "HP"
+        ],
+        "distribution_brokers": [],
+        "price_movement": {
+            "from": 12050,
+            "to": 12050,
+            "change": 0,
+            "change_pct": 0
+        },
+        "note": "Weak accumulation detected; market consolidation likely"
+    },
+    "data": [
+        {
+            "date": "2026-01-09",
+            "close_price": 12050,
+            "close_price_formatted": "12,050",
+            "total_value": 6614198997500,
+            "total_value_formatted": "6614.2B",
+            "total_volume": 5439651,
+            "total_volume_formatted": "5.4M",
+            "signal": {
+                "trend": "accumulation",
+                "strength": "strong",
+                "note": "Strong breakout with heavy institutional accumulation"
+            },
+            "brokers": {
+                "HP": {
+                    "value": 33122157500,
+                    "value_formatted": "33.1B",
+                    "volume": 27294,
+                    "volume_formatted": "27.3K"
+                }
+            }
+        }
+    ]
+}

@@ -5,28 +5,12 @@ export const siteConfig = {
   description: "Indonesian stock market analysis platform.",
   navItems: [
     {
-      label: "Home",
-      href: "/",
+      label: "Broker Calendar",
+      href: "/broker-calendar",
     },
     {
-      label: "Analyzer",
-      href: "/analyzer",
-    },
-    {
-      label: "Docs",
-      href: "/docs",
-    },
-    {
-      label: "Pricing",
-      href: "/pricing",
-    },
-    {
-      label: "Blog",
-      href: "/blog",
-    },
-    {
-      label: "About",
-      href: "/about",
+      label: "Broker Activity",
+      href: "/broker-activity",
     },
   ],
   navMenuItems: [
