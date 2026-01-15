@@ -1,4 +1,5 @@
 import { BigPlayerResponse } from "@/components/bigplayer/types";
+import { getClientIPSync } from "@/lib/utils/client-ip";
 
 function generateNonce(): string {
   return `${Date.now()}-${Math.random().toString(36).substring(2, 15)}`;
@@ -34,11 +35,15 @@ export async function fetchBigPlayerMovement(
 
   const url = `${baseUrl}${endpoint}?${queryParams.toString()}`;
 
+  // Get client IP for header
+  const clientIP = getClientIPSync() || 'unknown';
+
   try {
     const response = await fetch(url, {
       method: "GET",
       headers: {
         "X-Nonce": generateNonce(),
+        "X-Ip-Client": clientIP,
       },
     });
 

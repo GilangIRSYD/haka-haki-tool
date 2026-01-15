@@ -18,6 +18,7 @@ import { addToast } from "@heroui/toast";
 import { useAnalytics } from "@/lib/hooks/useAnalytics";
 import { useTrackPageView } from "@/lib/hooks/useTrackPageView";
 import { BROKERS as BROKER_LIST } from "@/data/brokers";
+import { getClientIPSync } from "@/lib/utils/client-ip";
 
 // Types
 interface StockItem {
@@ -288,11 +289,13 @@ async function fetchBrokerActivity(
   });
 
   const url = `${baseUrl}${endpoint}?${params.toString()}`;
+  const clientIP = getClientIPSync() || 'unknown';
 
   const response = await fetch(url, {
     method: 'GET',
     headers: {
       'x-nonce': generateNonce(),
+      'X-Ip-Client': clientIP,
     },
   });
 
@@ -320,11 +323,13 @@ async function fetchEmittenCalendar(
   });
 
   const url = `${baseUrl}${endpoint}?${params.toString()}`;
+  const clientIP = getClientIPSync() || 'unknown';
 
   const response = await fetch(url, {
     method: 'GET',
     headers: {
       'x-nonce': generateNonce(),
+      'X-Ip-Client': clientIP,
     },
   });
 

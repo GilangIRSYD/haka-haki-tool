@@ -1,3 +1,6 @@
+// Import client IP utility
+import { getClientIPSync } from '@/lib/utils/client-ip';
+
 /**
  * Generate unique nonce for API requests
  * @returns A unique nonce string
@@ -74,12 +77,14 @@ export interface GetSharedLinkResponse {
  */
 export async function createShareLink(request: ShareLinkRequest): Promise<ShareLinkResponse> {
   const nonce = generateNonce();
+  const clientIP = getClientIPSync() || 'unknown';
 
   const response = await fetch(`${BASE_URL}/api/v1/share-link`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       'X-Nonce': nonce,
+      'X-Ip-Client': clientIP,
     },
     body: JSON.stringify(request),
   });
@@ -101,11 +106,13 @@ export async function createShareLink(request: ShareLinkRequest): Promise<ShareL
  */
 export async function getSharedLink(slug: string): Promise<GetSharedLinkResponse> {
   const nonce = generateNonce();
+  const clientIP = getClientIPSync() || 'unknown';
 
   const response = await fetch(`${BASE_URL}/api/v1/share-link/${slug}`, {
     method: 'GET',
     headers: {
       'X-Nonce': nonce,
+      'X-Ip-Client': clientIP,
     },
   });
 

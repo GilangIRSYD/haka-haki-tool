@@ -6,6 +6,7 @@
 import { logEvent, Analytics } from 'firebase/analytics';
 import { getFirebaseAnalytics } from './config';
 import { getOrCreateDeviceId } from './device-id';
+import { getClientIPSync } from '@/lib/utils/client-ip';
 import { env } from '@/lib/env';
 import type {
   AnalyticsEventName,
@@ -36,18 +37,20 @@ import type {
 class AnalyticsService {
   private analytics: Analytics | null = null;
   private deviceId: string = '';
+  private clientIP: string | null = null;
 
   constructor() {
     // Initialize on client-side only
     if (typeof window !== 'undefined') {
       this.analytics = getFirebaseAnalytics();
       this.deviceId = getOrCreateDeviceId();
+      this.clientIP = getClientIPSync(); // Get cached IP if available
     }
   }
 
   /**
    * Core event tracking method
-   * Automatically injects device_id and timestamp
+   * Automatically injects device_id, timestamp, and client_ip
    */
   trackEvent<T extends AnalyticsEventName>(
     eventName: T,
@@ -58,6 +61,7 @@ class AnalyticsService {
       console.log('[Analytics]', eventName, {
         ...params,
         device_id: this.deviceId,
+        client_ip: this.clientIP || 'unknown',
         timestamp: Date.now(),
       });
       return;
@@ -72,6 +76,7 @@ class AnalyticsService {
       logEvent(this.analytics, eventName as any, {
         ...params,
         device_id: this.deviceId,
+        client_ip: this.clientIP || 'unknown',
         timestamp: Date.now(),
       });
     } catch (error) {

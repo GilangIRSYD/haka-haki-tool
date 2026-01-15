@@ -8,6 +8,7 @@ import { Chip } from "@heroui/chip";
 import { Spinner } from "@heroui/spinner";
 import { addToast } from "@heroui/toast";
 import { useTrackPageView } from "@/lib/hooks/useTrackPageView";
+import { getClientIPSync } from "@/lib/utils/client-ip";
 
 // Types
 interface TokenInfo {
@@ -208,12 +209,14 @@ export default function TokenPage() {
 
       // Extract token from input (supports curl command or plain token)
       const extractedToken = extractToken(tokenInput);
+      const clientIP = getClientIPSync() || 'unknown';
 
       const response = await fetch(`${baseUrl}${endpoint}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'x-nonce': generateNonce(),
+          'X-Ip-Client': clientIP,
         },
         body: JSON.stringify({ token: extractedToken }),
       });
@@ -249,11 +252,13 @@ export default function TokenPage() {
     try {
       const baseUrl = 'https://api-idx.gsphomelab.org/api/v1';
       const endpoint = '/config/access-token';
+      const clientIP = getClientIPSync() || 'unknown';
 
       const response = await fetch(`${baseUrl}${endpoint}`, {
         method: 'GET',
         headers: {
           'x-nonce': generateNonce(),
+          'X-Ip-Client': clientIP,
         },
       });
 

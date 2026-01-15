@@ -23,6 +23,7 @@ import { BrokerFlowModal } from "@/components/broker-calendar/BrokerFlowModal";
 import { BrokerFlowFloatingButton } from "@/components/broker-calendar/BrokerFlowFloatingButton";
 import { useRouter } from "next/navigation";
 import { createShareLink, getSharedLink } from "@/lib/api/share";
+import { getClientIPSync } from "@/lib/utils/client-ip";
 
 interface BrokerCalendarClientProps {
   shareSlug?: string;
@@ -239,11 +240,13 @@ async function fetchBrokerSummary(
   });
 
   const url = `${baseUrl}${endpoint}?${params.toString()}`;
+  const clientIP = getClientIPSync() || 'unknown';
 
   const response = await fetch(url, {
     method: 'GET',
     headers: {
       'x-nonce': generateNonce(),
+      'X-Ip-Client': clientIP,
     },
   });
 
@@ -318,6 +321,7 @@ async function analyzeData(
   });
 
   const url = `${baseUrl}${endpoint}?${params.toString()}`;
+  const clientIP = getClientIPSync() || 'unknown';
 
   try {
     // Fetch both calendar and broker summary data in parallel
@@ -326,6 +330,7 @@ async function analyzeData(
         method: 'GET',
         headers: {
           'x-nonce': generateNonce(),
+          'X-Ip-Client': clientIP,
         },
       }),
       fetchBrokerSummary(stockCode, startDate, endDate),

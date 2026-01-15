@@ -6,6 +6,7 @@
 export interface BaseEventParams {
   device_id?: string;
   timestamp?: number;
+  client_ip?: string;
 }
 
 // Page View Events
