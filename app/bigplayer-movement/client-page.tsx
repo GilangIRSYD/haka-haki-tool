@@ -16,8 +16,19 @@ import {
 import { formatDateRange } from "@/lib/utils/format";
 import { BigPlayerMovementAggregated, DatePreset } from "@/components/bigplayer/types";
 import { Card } from "@heroui/card";
+import { Button } from "@heroui/button";
+import { useAnalytics } from "@/lib/hooks/useAnalytics";
 
 export default function BigPlayerMovementClientPage() {
+  // Analytics
+  const {
+    trackBigPlayerMovementView,
+    trackBigPlayerFilterChanged,
+    trackBigPlayerLoadMore,
+    trackBigPlayerDataFetched,
+    trackScrollToTop,
+  } = useAnalytics();
+
   // Filters state
   const [datePreset, setDatePreset] = useState<DatePreset>("today");
   const [dateStart, setDateStart] = useState("");
@@ -38,6 +49,7 @@ export default function BigPlayerMovementClientPage() {
   const [hasMore, setHasMore] = useState(false);
   const [isPartialMode, setIsPartialMode] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
   // Observer for infinite scroll
   const observerTarget = useRef<HTMLDivElement>(null);
@@ -101,6 +113,8 @@ export default function BigPlayerMovementClientPage() {
       const crawlType = getCrawlTypeForDateRange(start, end);
       setIsPartialMode(crawlType === "PARTIAL");
 
+      const startTime = Date.now();
+
       try {
         if (append) {
           setLoadingMore(true);
@@ -115,24 +129,54 @@ export default function BigPlayerMovementClientPage() {
           page: crawlType === "PARTIAL" ? page : undefined,
         });
 
+        const durationMs = Date.now() - startTime;
+
         if (response.data && response.data.movement) {
+          const recordCount = response.data.movement.length;
+
           if (append) {
-            setAllRawData((prev) => [...prev, ...response.data.movement]);
+            setAllRawData((prev) => {
+              const newLength = prev.length + recordCount;
+              // Track load more with actual results loaded
+              trackBigPlayerLoadMore(page, recordCount, newLength);
+              return [...prev, ...response.data.movement];
+            });
           } else {
             setAllRawData(response.data.movement);
           }
 
           setHasMore(response.data.is_more || false);
           setCurrentPage(page);
+
+          // Track data fetched
+          trackBigPlayerDataFetched(
+            start,
+            end,
+            crawlType,
+            recordCount,
+            true,
+            durationMs
+          );
         }
       } catch (error) {
+        const durationMs = Date.now() - startTime;
         console.error("Failed to fetch Big Player Movement:", error);
+
+        // Track fetch failure
+        trackBigPlayerDataFetched(
+          start,
+          end,
+          crawlType,
+          0,
+          false,
+          durationMs
+        );
       } finally {
         setLoading(false);
         setLoadingMore(false);
       }
     },
-    [datePreset]
+    [datePreset, trackBigPlayerDataFetched, trackBigPlayerLoadMore]
   );
 
   // Apply filters and sort
@@ -165,25 +209,47 @@ export default function BigPlayerMovementClientPage() {
     setDisplayData(filtered);
   }, [allRawData, symbolSearch, actionType]);
 
-  // Initial fetch on mount
+  // Initial fetch on mount - track page view
   useEffect(() => {
     // Fetch initial data for today's preset
     const { start, end } = getDateRange("today");
     setDateStart(start);
     setDateEnd(end);
     fetchData(1, false);
+
+    // Track initial page view
+    trackBigPlayerMovementView("today", start, end);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, []); // Run only on mount
+
+  // Track page view when data changes (debounced by checking significant changes)
+  useEffect(() => {
+    if (displayData.length > 0 && dateStart && dateEnd) {
+      trackBigPlayerMovementView(datePreset, dateStart, dateEnd, displayData.length);
+    }
+    // Only track when data actually changes significantly
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [allRawData.length]); // Only depend on actual data length change
 
   // Track scroll events to detect when user manually scrolls
   useEffect(() => {
     const handleScroll = () => {
-      if (!hasScrolled) {
+      const scrollY = window.scrollY;
+
+      // Set hasScrolled untuk infinite scroll
+      if (!hasScrolled && scrollY > 0) {
         setHasScrolled(true);
+      }
+
+      // Show/hide scroll to top button (tampilkan setelah scroll 400px)
+      if (scrollY > 400) {
+        setShowScrollTop(true);
+      } else {
+        setShowScrollTop(false);
       }
     };
 
-    // Listen to window scroll instead of container
+    // Listen to window scroll
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [hasScrolled]);
@@ -195,8 +261,15 @@ export default function BigPlayerMovementClientPage() {
 
     const observer = new IntersectionObserver(
       (entries) => {
-        // Only trigger if user has manually scrolled at least once
-        if (entries[0].isIntersecting && hasMore && !loadingMore && isPartialMode && hasScrolled) {
+        // Only trigger if:
+        // 1. User has manually scrolled at least once
+        // 2. There is more data to load
+        // 3. Not currently loading
+        // 4. In partial mode (pagination available)
+        // 5. NO active filters (symbol search or action type)
+        const hasActiveFilters = symbolSearch.trim() !== "" || actionType !== "all";
+
+        if (entries[0].isIntersecting && hasMore && !loadingMore && isPartialMode && hasScrolled && !hasActiveFilters) {
           fetchData(currentPage + 1, true);
         }
       },
@@ -210,22 +283,32 @@ export default function BigPlayerMovementClientPage() {
         observer.unobserve(currentTarget);
       }
     };
-  }, [hasMore, loadingMore, currentPage, isPartialMode, fetchData, hasScrolled]);
+    // Exclude fetchData from deps to prevent recreation on date preset change
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [hasMore, loadingMore, currentPage, isPartialMode, hasScrolled, symbolSearch, actionType]);
 
   // Handle apply custom filters
-  const handleApplyFilters = () => {
+  const handleApplyFilters = useCallback(() => {
     setAllRawData([]);
     setCurrentPage(1);
     // Pass current dates directly to avoid stale closure
     fetchData(1, false, dateStart, dateEnd);
-  };
+
+    // Track custom filter apply
+    trackBigPlayerFilterChanged("date_start", dateStart, "");
+    trackBigPlayerFilterChanged("date_end", dateEnd, "");
+  }, [dateStart, dateEnd, fetchData, trackBigPlayerFilterChanged]);
 
   // Handle date preset change
-  const handleDatePresetChange = (preset: DatePreset) => {
+  const handleDatePresetChange = useCallback((preset: DatePreset) => {
+    const previousPreset = datePreset;
     setDatePreset(preset);
     setAllRawData([]);
     setCurrentPage(1);
     setHasScrolled(false);
+
+    // Track filter change
+    trackBigPlayerFilterChanged("date_preset", preset, previousPreset);
 
     if (preset !== "custom") {
       const { start, end } = getDateRange(preset);
@@ -234,25 +317,62 @@ export default function BigPlayerMovementClientPage() {
       // Auto-fetch for presets - pass dates directly to avoid stale closure
       fetchData(1, false, start, end);
     }
-  };
+  }, [datePreset, getDateRange, fetchData, trackBigPlayerFilterChanged]);
 
   // Handle custom date start change
-  const handleDateStartChange = (date: string) => {
+  const handleDateStartChange = useCallback((date: string) => {
+    const previousDate = dateStart;
     setDateStart(date);
     // If user manually changes date while on a preset, switch to custom mode
     if (datePreset !== "custom") {
       setDatePreset("custom");
     }
-  };
+    // Track filter change
+    trackBigPlayerFilterChanged("date_start", date, previousDate);
+  }, [dateStart, datePreset, trackBigPlayerFilterChanged]);
 
   // Handle custom date end change
-  const handleDateEndChange = (date: string) => {
+  const handleDateEndChange = useCallback((date: string) => {
+    const previousDate = dateEnd;
     setDateEnd(date);
     // If user manually changes date while on a preset, switch to custom mode
     if (datePreset !== "custom") {
       setDatePreset("custom");
     }
-  };
+    // Track filter change
+    trackBigPlayerFilterChanged("date_end", date, previousDate);
+  }, [dateEnd, datePreset, trackBigPlayerFilterChanged]);
+
+  // Handle symbol search change
+  const handleSymbolSearchChange = useCallback((search: string) => {
+    setSymbolSearch(search);
+    setHasScrolled(false); // Reset scroll state to prevent auto load more while filtering
+    // Track filter change
+    trackBigPlayerFilterChanged("symbol_search", search);
+  }, [trackBigPlayerFilterChanged]);
+
+  // Handle action type change
+  const handleActionTypeChange = useCallback((type: "all" | "buy" | "sell" | "other") => {
+    const previousType = actionType;
+    setActionType(type);
+    setHasScrolled(false); // Reset scroll state to prevent auto load more while filtering
+    // Track filter change
+    trackBigPlayerFilterChanged("action_type", type, previousType);
+  }, [actionType, trackBigPlayerFilterChanged]);
+
+  // Scroll to top function
+  const scrollToTop = useCallback(() => {
+    const currentScrollPosition = window.scrollY;
+
+    // Track scroll to top event
+    trackScrollToTop('bigplayer-movement', currentScrollPosition);
+
+    // Smooth scroll to top
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [trackScrollToTop]);
 
   return (
     <div className="space-y-6">
@@ -277,8 +397,8 @@ export default function BigPlayerMovementClientPage() {
           onDatePresetChange={handleDatePresetChange}
           onDateStartChange={handleDateStartChange}
           onDateEndChange={handleDateEndChange}
-          onSymbolSearchChange={setSymbolSearch}
-          onActionTypeChange={setActionType}
+          onSymbolSearchChange={handleSymbolSearchChange}
+          onActionTypeChange={handleActionTypeChange}
           onApplyFilters={handleApplyFilters}
           loading={loading}
         />
@@ -292,9 +412,14 @@ export default function BigPlayerMovementClientPage() {
             <div className="text-default-600">
               Showing <span className="font-semibold">{displayData.length}</span>{" "}
               entries
-              {isPartialMode && hasMore && (
+              {isPartialMode && hasMore && !symbolSearch && actionType === "all" && (
                 <span className="ml-2 text-default-400">
                   (scroll to load more)
+                </span>
+              )}
+              {isPartialMode && hasMore && (symbolSearch || actionType !== "all") && (
+                <span className="ml-2 text-warning-500 text-xs">
+                  ⚠️ Filters active - scroll disabled
                 </span>
               )}
             </div>
@@ -338,8 +463,8 @@ export default function BigPlayerMovementClientPage() {
         <BigPlayerTable data={displayData} loading={loading} />
       </Card>
 
-      {/* Infinite scroll sentinel */}
-      {isPartialMode && hasMore && (
+      {/* Infinite scroll sentinel - only show when no active filters */}
+      {isPartialMode && hasMore && !symbolSearch && actionType === "all" && (
         <div
           ref={observerTarget}
           className="flex justify-center py-4"
@@ -354,10 +479,38 @@ export default function BigPlayerMovementClientPage() {
       )}
 
       {/* No more data indicator */}
-      {isPartialMode && !hasMore && displayData.length > 0 && (
+      {isPartialMode && !hasMore && displayData.length > 0 && !symbolSearch && actionType === "all" && (
         <div className="text-center text-sm text-default-400 py-4">
           No more data to load
         </div>
+      )}
+
+      {/* Floating Action Button - Scroll to Top */}
+      {showScrollTop && (
+        <Button
+          isIconOnly
+          color="primary"
+          size="lg"
+          radius="full"
+          onPress={scrollToTop}
+          className="fixed bottom-8 right-8 z-50 shadow-lg hover:scale-110 active:scale-95 transition-transform"
+          aria-label="Scroll to top"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M4.5 15.75l7.5-7.5 7.5 7.5"
+            />
+          </svg>
+        </Button>
       )}
     </div>
   );

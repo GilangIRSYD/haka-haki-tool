@@ -151,6 +151,42 @@ export interface ShareLinkClickedParams extends BaseEventParams {
   source: 'direct' | 'social_media' | 'other';
 }
 
+// Big Player Movement Events
+export interface BigPlayerMovementViewParams extends BaseEventParams {
+  date_preset?: string;
+  date_start?: string;
+  date_end?: string;
+  results_count?: number;
+}
+
+export interface BigPlayerFilterChangedParams extends BaseEventParams {
+  filter_type: 'date_preset' | 'date_start' | 'date_end' | 'symbol_search' | 'action_type';
+  filter_value: string;
+  previous_value?: string;
+}
+
+export interface BigPlayerLoadMoreParams extends BaseEventParams {
+  page_number: number;
+  results_loaded: number;
+  total_results: number;
+}
+
+export interface BigPlayerDataFetchedParams extends BaseEventParams {
+  date_start: string;
+  date_end: string;
+  crawl_type: 'ALL' | 'PARTIAL';
+  record_count: number;
+  duration_ms?: number;
+  success: boolean;
+}
+
+// Scroll to Top Event
+export interface ScrollToTopParams extends BaseEventParams {
+  page: string;
+  scroll_position: number; // pixels from top
+  trigger_method: 'button_click';
+}
+
 // Union type for all event names
 export type AnalyticsEventName =
   | 'page_view'
@@ -172,7 +208,12 @@ export type AnalyticsEventName =
   | 'data_export_initiated'
   | 'data_export_completed'
   | 'share_link_generated'
-  | 'share_link_clicked';
+  | 'share_link_clicked'
+  | 'big_player_movement_view'
+  | 'big_player_filter_changed'
+  | 'big_player_load_more'
+  | 'big_player_data_fetched'
+  | 'scroll_to_top';
 
 // Union type for all event parameters
 export type AnalyticsEventParams =
@@ -195,7 +236,12 @@ export type AnalyticsEventParams =
   | DataExportInitiatedParams
   | DataExportCompletedParams
   | ShareLinkGeneratedParams
-  | ShareLinkClickedParams;
+  | ShareLinkClickedParams
+  | BigPlayerMovementViewParams
+  | BigPlayerFilterChangedParams
+  | BigPlayerLoadMoreParams
+  | BigPlayerDataFetchedParams
+  | ScrollToTopParams;
 
 // Event name to parameters mapping
 export interface AnalyticsEventMap {
@@ -219,4 +265,9 @@ export interface AnalyticsEventMap {
   data_export_completed: DataExportCompletedParams;
   share_link_generated: ShareLinkGeneratedParams;
   share_link_clicked: ShareLinkClickedParams;
+  big_player_movement_view: BigPlayerMovementViewParams;
+  big_player_filter_changed: BigPlayerFilterChangedParams;
+  big_player_load_more: BigPlayerLoadMoreParams;
+  big_player_data_fetched: BigPlayerDataFetchedParams;
+  scroll_to_top: ScrollToTopParams;
 }

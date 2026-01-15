@@ -202,6 +202,67 @@ export function useAnalytics() {
     []
   );
 
+  /**
+   * Track Big Player Movement page view
+   */
+  const trackBigPlayerMovementView = useCallback(
+    (datePreset?: string, dateStart?: string, dateEnd?: string, resultsCount?: number) => {
+      analyticsService.trackBigPlayerMovementView(datePreset, dateStart, dateEnd, resultsCount);
+    },
+    []
+  );
+
+  /**
+   * Track Big Player Movement filter changes
+   */
+  const trackBigPlayerFilterChanged = useCallback(
+    (
+      filterType: 'date_preset' | 'date_start' | 'date_end' | 'symbol_search' | 'action_type',
+      filterValue: string,
+      previousValue?: string
+    ) => {
+      analyticsService.trackBigPlayerFilterChanged(filterType, filterValue, previousValue);
+    },
+    []
+  );
+
+  /**
+   * Track Big Player Movement load more
+   */
+  const trackBigPlayerLoadMore = useCallback(
+    (pageNumber: number, resultsLoaded: number, totalResults: number) => {
+      analyticsService.trackBigPlayerLoadMore(pageNumber, resultsLoaded, totalResults);
+    },
+    []
+  );
+
+  /**
+   * Track Big Player Movement data fetched
+   */
+  const trackBigPlayerDataFetched = useCallback(
+    (
+      dateStart: string,
+      dateEnd: string,
+      crawlType: 'ALL' | 'PARTIAL',
+      recordCount: number,
+      success: boolean,
+      durationMs?: number
+    ) => {
+      analyticsService.trackBigPlayerDataFetched(dateStart, dateEnd, crawlType, recordCount, success, durationMs);
+    },
+    []
+  );
+
+  /**
+   * Track scroll to top button click
+   */
+  const trackScrollToTop = useCallback(
+    (page: string, scrollPosition: number) => {
+      analyticsService.trackScrollToTop(page, scrollPosition);
+    },
+    []
+  );
+
   return {
     trackEvent,
     trackPageView,
@@ -218,5 +279,10 @@ export function useAnalytics() {
     trackShareLinkGenerated,
     trackShareLinkClicked,
     trackBrokerFlowButtonClicked,
+    trackBigPlayerMovementView,
+    trackBigPlayerFilterChanged,
+    trackBigPlayerLoadMore,
+    trackBigPlayerDataFetched,
+    trackScrollToTop,
   };
 }

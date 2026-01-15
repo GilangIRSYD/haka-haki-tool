@@ -10,12 +10,12 @@ interface FilterBarProps {
   dateStart: string;
   dateEnd: string;
   symbolSearch: string;
-  actionType: "all" | "buy" | "sell";
+  actionType: "all" | "buy" | "sell" | "other";
   onDatePresetChange: (preset: DatePreset) => void;
   onDateStartChange: (date: string) => void;
   onDateEndChange: (date: string) => void;
   onSymbolSearchChange: (search: string) => void;
-  onActionTypeChange: (type: "all" | "buy" | "sell") => void;
+  onActionTypeChange: (type: "all" | "buy" | "sell" | "other") => void;
   onApplyFilters: () => void;
   loading?: boolean;
 }

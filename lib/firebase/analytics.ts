@@ -22,6 +22,11 @@ import type {
   ErrorOccurredParams,
   ShareLinkGeneratedParams,
   ShareLinkClickedParams,
+  BigPlayerMovementViewParams,
+  BigPlayerFilterChangedParams,
+  BigPlayerLoadMoreParams,
+  BigPlayerDataFetchedParams,
+  ScrollToTopParams,
 } from '@/lib/types/analytics';
 
 /**
@@ -277,6 +282,85 @@ class AnalyticsService {
       share_code: shareCode,
       source,
     } as ShareLinkClickedParams);
+  }
+
+  /**
+   * Track Big Player Movement page view
+   */
+  trackBigPlayerMovementView(
+    datePreset?: string,
+    dateStart?: string,
+    dateEnd?: string,
+    resultsCount?: number
+  ): void {
+    this.trackEvent('big_player_movement_view', {
+      date_preset: datePreset,
+      date_start: dateStart,
+      date_end: dateEnd,
+      results_count: resultsCount,
+    } as BigPlayerMovementViewParams);
+  }
+
+  /**
+   * Track Big Player Movement filter changes
+   */
+  trackBigPlayerFilterChanged(
+    filterType: 'date_preset' | 'date_start' | 'date_end' | 'symbol_search' | 'action_type',
+    filterValue: string,
+    previousValue?: string
+  ): void {
+    this.trackEvent('big_player_filter_changed', {
+      filter_type: filterType,
+      filter_value: filterValue,
+      previous_value: previousValue,
+    } as BigPlayerFilterChangedParams);
+  }
+
+  /**
+   * Track Big Player Movement load more
+   */
+  trackBigPlayerLoadMore(
+    pageNumber: number,
+    resultsLoaded: number,
+    totalResults: number
+  ): void {
+    this.trackEvent('big_player_load_more', {
+      page_number: pageNumber,
+      results_loaded: resultsLoaded,
+      total_results: totalResults,
+    } as BigPlayerLoadMoreParams);
+  }
+
+  /**
+   * Track Big Player Movement data fetched
+   */
+  trackBigPlayerDataFetched(
+    dateStart: string,
+    dateEnd: string,
+    crawlType: 'ALL' | 'PARTIAL',
+    recordCount: number,
+    success: boolean,
+    durationMs?: number
+  ): void {
+    this.trackEvent('big_player_data_fetched', {
+      date_start: dateStart,
+      date_end: dateEnd,
+      crawl_type: crawlType,
+      record_count: recordCount,
+      duration_ms: durationMs,
+      success,
+    } as BigPlayerDataFetchedParams);
+  }
+
+  /**
+   * Track scroll to top button click
+   */
+  trackScrollToTop(page: string, scrollPosition: number): void {
+    this.trackEvent('scroll_to_top', {
+      page,
+      scroll_position: scrollPosition,
+      trigger_method: 'button_click',
+    } as ScrollToTopParams);
   }
 
   /**
