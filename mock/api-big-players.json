@@ -1,0 +1,4873 @@
+{
+    "message": "Successfully majorholder data",
+    "data": {
+        "is_more": false,
+        "movement": [
+            {
+                "id": "1000000353",
+                "name": "DION AMAURY",
+                "symbol": "KMDS",
+                "date": "14 Jan 26",
+                "previous": {
+                    "value": "3,651,100",
+                    "percentage": "0.4564",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "3,654,000",
+                    "percentage": "0.4568",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+2,900",
+                    "percentage": "+0.0004",
+                    "formatted_value": "2,900"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: IDX",
+                    "type": "SOURCE_TYPE_IDX"
+                },
+                "price_formatted": "635",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": []
+            },
+            {
+                "id": "1000000352",
+                "name": "ANITA ANWAR",
+                "symbol": "TOWR",
+                "date": "14 Jan 26",
+                "previous": {
+                    "value": "2,600",
+                    "percentage": "0.0000",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "27,511,600",
+                    "percentage": "0.0466",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+27,509,000",
+                    "percentage": "+0.0466",
+                    "formatted_value": "27,509,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_MESOP_OPTION",
+                "data_source": {
+                    "label": "Sumber: IDX",
+                    "type": "SOURCE_TYPE_IDX"
+                },
+                "price_formatted": "444",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": []
+            },
+            {
+                "id": "1000000350",
+                "name": "EKO SANTOSO HADIPRODJO",
+                "symbol": "TOWR",
+                "date": "14 Jan 26",
+                "previous": {
+                    "value": "3,997,000",
+                    "percentage": "0.0068",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "39,604,000",
+                    "percentage": "0.0670",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+35,607,000",
+                    "percentage": "+0.0602",
+                    "formatted_value": "35,607,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_MSOP_OPTION",
+                "data_source": {
+                    "label": "Sumber: IDX",
+                    "type": "SOURCE_TYPE_IDX"
+                },
+                "price_formatted": "444",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": []
+            },
+            {
+                "id": "14207",
+                "name": "SERIAL SYSTEM INTERNATIONAL PTE. LTD.",
+                "symbol": "LUCK",
+                "date": "14 Jan 26",
+                "previous": {
+                    "value": "113,784,540",
+                    "percentage": "15.9000",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "103,084,540",
+                    "percentage": "14.4000",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-10,700,000",
+                    "percentage": "-1.5000",
+                    "formatted_value": "10,700,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_FOREIGN",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: IDX",
+                    "type": "SOURCE_TYPE_IDX"
+                },
+                "price_formatted": "168",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": []
+            },
+            {
+                "id": "1000000349",
+                "name": "SCG CHEMICALS PUBLIC COMPANY",
+                "symbol": "TPIA",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "0",
+                    "percentage": "0.0000",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "9,144,270,316",
+                    "percentage": "10.5700",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+9,144,270,316",
+                    "percentage": "+10.5700",
+                    "formatted_value": "9,144,270,316"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_FOREIGN",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "YU",
+                    "group": "BROKER_GROUP_FOREIGN"
+                },
+                "badges": []
+            },
+            {
+                "id": "1000000348",
+                "name": "HANDI IRAWAN DJUWADI",
+                "symbol": "DYAN",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "0",
+                    "percentage": "0.0000",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "214,598,200",
+                    "percentage": "5.0222",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+214,598,200",
+                    "percentage": "+5.0222",
+                    "formatted_value": "214,598,200"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "AZ",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": []
+            },
+            {
+                "id": "1000000341",
+                "name": "PEMENANG NUSANTARA",
+                "symbol": "WINR",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "3,730,000,000",
+                    "percentage": "71.2469",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "3,670,625,000",
+                    "percentage": "70.1128",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-59,375,000",
+                    "percentage": "-1.1341",
+                    "formatted_value": "59,375,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "AZ",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI"
+                ]
+            },
+            {
+                "id": "1000000322",
+                "name": "SABRINA EVELYN ELIAN",
+                "symbol": "YULE",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "92,419,166",
+                    "percentage": "5.1775",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "92,384,466",
+                    "percentage": "5.1756",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-34,700",
+                    "percentage": "-0.0019",
+                    "formatted_value": "34,700"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "RB",
+                    "group": "BROKER_GROUP_FOREIGN"
+                },
+                "badges": []
+            },
+            {
+                "id": "1000000223",
+                "name": "TRIPLE BERKAH BERSAMA",
+                "symbol": "MEJA",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "878,845,100",
+                    "percentage": "45.4335",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "878,845,100",
+                    "percentage": "45.3800",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "0",
+                    "percentage": "-0.0535",
+                    "formatted_value": "0"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_WARRANT_EXERCISE",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "CP",
+                    "group": "BROKER_GROUP_FOREIGN"
+                },
+                "badges": []
+            },
+            {
+                "id": "1000000216",
+                "name": "CELEBES MINING RESOURCES",
+                "symbol": "HOPE",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "400,940,500",
+                    "percentage": "18.8203",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "295,546,733",
+                    "percentage": "13.8731",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-105,393,767",
+                    "percentage": "-4.9472",
+                    "formatted_value": "105,393,767"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "XA",
+                    "group": "BROKER_GROUP_FOREIGN"
+                },
+                "badges": []
+            },
+            {
+                "id": "1000000169",
+                "name": "GREEN POWER GROUP",
+                "symbol": "KRYA",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "199,300,300",
+                    "percentage": "11.9776",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "184,235,400",
+                    "percentage": "11.0722",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-15,064,900",
+                    "percentage": "-0.9054",
+                    "formatted_value": "15,064,900"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "BQ",
+                    "group": "BROKER_GROUP_FOREIGN"
+                },
+                "badges": []
+            },
+            {
+                "id": "1000000021",
+                "name": "UBS SWITZERLAND AG",
+                "symbol": "CYBR",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "557,117,302",
+                    "percentage": "8.3378",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "557,517,302",
+                    "percentage": "8.3438",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+400,000",
+                    "percentage": "+0.0060",
+                    "formatted_value": "400,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_FOREIGN",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": []
+            },
+            {
+                "id": "15350",
+                "name": "ANDRIANSYAH PRAYITNO",
+                "symbol": "BSML",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "206,754,700",
+                    "percentage": "11.1746",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "207,854,700",
+                    "percentage": "11.2340",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+1,100,000",
+                    "percentage": "+0.0594",
+                    "formatted_value": "1,100,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "MG",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": []
+            },
+            {
+                "id": "15350",
+                "name": "ANDRIANSYAH PRAYITNO",
+                "symbol": "BSML",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "206,354,700",
+                    "percentage": "11.1530",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "206,754,700",
+                    "percentage": "11.1746",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+400,000",
+                    "percentage": "+0.0216",
+                    "formatted_value": "400,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "MG",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": []
+            },
+            {
+                "id": "14308",
+                "name": "DANA PENSIUN BANK PEMBANGUNAN DAERAH JATENG",
+                "symbol": "YOII",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "291,968,700",
+                    "percentage": "8.5254",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "291,468,700",
+                    "percentage": "8.5108",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-500,000",
+                    "percentage": "-0.0146",
+                    "formatted_value": "500,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": []
+            },
+            {
+                "id": "14254",
+                "name": "SINERGI ASIA CORPORINDO",
+                "symbol": "SMLE",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "1,677,335,400",
+                    "percentage": "72.0500",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "1,651,493,400",
+                    "percentage": "70.9400",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-25,842,000",
+                    "percentage": "-1.1100",
+                    "formatted_value": "25,842,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: IDX",
+                    "type": "SOURCE_TYPE_IDX"
+                },
+                "price_formatted": "195",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI"
+                ]
+            },
+            {
+                "id": "14087",
+                "name": "SALIM LIM",
+                "symbol": "KBAG",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "540,399,800",
+                    "percentage": "7.5580",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "548,299,800",
+                    "percentage": "7.6685",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+7,900,000",
+                    "percentage": "+0.1105",
+                    "formatted_value": "7,900,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "NI",
+                    "group": "BROKER_GROUP_GOVERNMENT"
+                },
+                "badges": []
+            },
+            {
+                "id": "13947",
+                "name": "MB INVESTMENT MANAGEMENT",
+                "symbol": "CYBR",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "1,710,200,057",
+                    "percentage": "25.5994",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "1,710,200,057",
+                    "percentage": "25.5947",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "0",
+                    "percentage": "-0.0047",
+                    "formatted_value": "0"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_FOREIGN",
+                "action_type": "ACTION_TYPE_WARRANT_EXERCISE",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "TP",
+                    "group": "BROKER_GROUP_FOREIGN"
+                },
+                "badges": []
+            },
+            {
+                "id": "13943",
+                "name": "LILIAWATI RAHARDJO",
+                "symbol": "SMRA",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "938,000,036",
+                    "percentage": "5.6819",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "943,500,036",
+                    "percentage": "5.7152",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+5,500,000",
+                    "percentage": "+0.0333",
+                    "formatted_value": "5,500,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "PD",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": []
+            },
+            {
+                "id": "13933",
+                "name": "UBS AG SINGAPORE BRANCH",
+                "symbol": "BISI",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "183,977,000",
+                    "percentage": "6.1326",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "158,977,000",
+                    "percentage": "5.2992",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-25,000,000",
+                    "percentage": "-0.8334",
+                    "formatted_value": "25,000,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_FOREIGN",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": []
+            },
+            {
+                "id": "13898",
+                "name": "CGS INTERNATIONAL SEKURITAS INDONESIA",
+                "symbol": "BRMS",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "7,999,791,548",
+                    "percentage": "5.6422",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "7,999,809,548",
+                    "percentage": "5.6422",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+18,000",
+                    "percentage": "0.0000",
+                    "formatted_value": "18,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "YU",
+                    "group": "BROKER_GROUP_FOREIGN"
+                },
+                "badges": []
+            },
+            {
+                "id": "13798",
+                "name": "ABADI KREASI UNGGUL NUSANTARA",
+                "symbol": "INET",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "8,160,707,200",
+                    "percentage": "54.9288",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "8,160,707,200",
+                    "percentage": "53.6000",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "0",
+                    "percentage": "-1.3288",
+                    "formatted_value": "0"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_WARRANT_EXERCISE",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI"
+                ]
+            },
+            {
+                "id": "12628",
+                "name": "SUMBER GARAM PRATAMA",
+                "symbol": "FOLK",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "944,407,881",
+                    "percentage": "23.9203",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "903,330,281",
+                    "percentage": "22.8799",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-41,077,600",
+                    "percentage": "-1.0404",
+                    "formatted_value": "41,077,600"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: IDX",
+                    "type": "SOURCE_TYPE_IDX"
+                },
+                "price_formatted": "80",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": []
+            },
+            {
+                "id": "12628",
+                "name": "SUMBER GARAM PRATAMA",
+                "symbol": "FOLK",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "970,070,781",
+                    "percentage": "24.5703",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "944,407,881",
+                    "percentage": "23.9203",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-25,662,900",
+                    "percentage": "-0.6500",
+                    "formatted_value": "25,662,900"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: IDX",
+                    "type": "SOURCE_TYPE_IDX"
+                },
+                "price_formatted": "75",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": []
+            },
+            {
+                "id": "12628",
+                "name": "SUMBER GARAM PRATAMA",
+                "symbol": "FOLK",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "970,070,781",
+                    "percentage": "24.5703",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "903,330,281",
+                    "percentage": "22.8799",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-66,740,500",
+                    "percentage": "-1.6904",
+                    "formatted_value": "66,740,500"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "HD",
+                    "group": "BROKER_GROUP_FOREIGN"
+                },
+                "badges": []
+            },
+            {
+                "id": "12599",
+                "name": "ANDREAS UTOMO",
+                "symbol": "GULA",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "75,876,400",
+                    "percentage": "7.0900",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "49,556,400",
+                    "percentage": "4.6300",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-26,320,000",
+                    "percentage": "-2.4600",
+                    "formatted_value": "26,320,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: IDX",
+                    "type": "SOURCE_TYPE_IDX"
+                },
+                "price_formatted": "380",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI",
+                    "SHAREHOLDER_BADGE_DIREKTUR"
+                ]
+            },
+            {
+                "id": "12599",
+                "name": "ANDREAS UTOMO",
+                "symbol": "GULA",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "110,876,400",
+                    "percentage": "10.3588",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "95,876,400",
+                    "percentage": "8.9574",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-15,000,000",
+                    "percentage": "-1.4014",
+                    "formatted_value": "15,000,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "EP",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI",
+                    "SHAREHOLDER_BADGE_DIREKTUR"
+                ]
+            },
+            {
+                "id": "12588",
+                "name": "ESTA PRIMA INVESTAMA",
+                "symbol": "MAXI",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "696,843,000",
+                    "percentage": "7.2512",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "696,543,000",
+                    "percentage": "7.2480",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-300,000",
+                    "percentage": "-0.0032",
+                    "formatted_value": "300,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "SH",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": []
+            },
+            {
+                "id": "12476",
+                "name": "FERSINDO NUSA JAYA",
+                "symbol": "ITMA",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "148,840,200",
+                    "percentage": "14.8981",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "136,840,200",
+                    "percentage": "13.6970",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-12,000,000",
+                    "percentage": "-1.2011",
+                    "formatted_value": "12,000,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "HD",
+                    "group": "BROKER_GROUP_FOREIGN"
+                },
+                "badges": []
+            },
+            {
+                "id": "12476",
+                "name": "FERSINDO NUSA JAYA",
+                "symbol": "ITMA",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "148,528,400",
+                    "percentage": "14.8669",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "148,840,200",
+                    "percentage": "14.8981",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+311,800",
+                    "percentage": "+0.0312",
+                    "formatted_value": "311,800"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "TS",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": []
+            },
+            {
+                "id": "12474",
+                "name": "JUNICHIRO WAIDE",
+                "symbol": "VTNY",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "1,274,236,974",
+                    "percentage": "20.3383",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "1,273,236,974",
+                    "percentage": "20.3224",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-1,000,000",
+                    "percentage": "-0.0159",
+                    "formatted_value": "1,000,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_FOREIGN",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "SF",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI",
+                    "SHAREHOLDER_BADGE_DIREKTUR"
+                ]
+            },
+            {
+                "id": "12454",
+                "name": "BATUBARA DEVELOPMENT",
+                "symbol": "SINI",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "78,030,000",
+                    "percentage": "16.2225",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "77,030,000",
+                    "percentage": "16.0146",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-1,000,000",
+                    "percentage": "-0.2079",
+                    "formatted_value": "1,000,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_FOREIGN",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "PG",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI"
+                ]
+            },
+            {
+                "id": "12386",
+                "name": "HX TRADING",
+                "symbol": "LPLI",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "225,032,167",
+                    "percentage": "19.2264",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "223,026,867",
+                    "percentage": "19.0551",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-2,005,300",
+                    "percentage": "-0.1713",
+                    "formatted_value": "2,005,300"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_FOREIGN",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "IU",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": []
+            },
+            {
+                "id": "12385",
+                "name": "HENDRA",
+                "symbol": "OBMD",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "62,395,800",
+                    "percentage": "7.7415",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "62,866,900",
+                    "percentage": "7.7999",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+471,100",
+                    "percentage": "+0.0584",
+                    "formatted_value": "471,100"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "LG",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": []
+            },
+            {
+                "id": "12385",
+                "name": "HENDRA",
+                "symbol": "OBMD",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "59,574,200",
+                    "percentage": "7.3914",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "62,395,800",
+                    "percentage": "7.7415",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+2,821,600",
+                    "percentage": "+0.3501",
+                    "formatted_value": "2,821,600"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "LG",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": []
+            },
+            {
+                "id": "12368",
+                "name": "ARKORA BAKTI INDONESIA",
+                "symbol": "ARKO",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "1,226,692,775",
+                    "percentage": "41.8882",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "1,138,837,925",
+                    "percentage": "38.8882",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-87,854,850",
+                    "percentage": "-3.0000",
+                    "formatted_value": "87,854,850"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "YJ",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI"
+                ]
+            },
+            {
+                "id": "12350",
+                "name": "SUJITO NGATIMAN",
+                "symbol": "DEWI",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "103,542,300",
+                    "percentage": "5.1771",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "102,942,300",
+                    "percentage": "5.1471",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-600,000",
+                    "percentage": "-0.0300",
+                    "formatted_value": "600,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "XA",
+                    "group": "BROKER_GROUP_FOREIGN"
+                },
+                "badges": []
+            },
+            {
+                "id": "12305",
+                "name": "PRIMA POLYCON INDAH",
+                "symbol": "TRST",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "161,447,460",
+                    "percentage": "5.7496",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "161,457,460",
+                    "percentage": "5.7499",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+10,000",
+                    "percentage": "+0.0003",
+                    "formatted_value": "10,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "AZ",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": []
+            },
+            {
+                "id": "12202",
+                "name": "MAYBANK SEKURITAS INDONESIA",
+                "symbol": "ENRG",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "1,739,267,100",
+                    "percentage": "6.6016",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "1,739,267,720",
+                    "percentage": "6.6016",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+620",
+                    "percentage": "0.0000",
+                    "formatted_value": "620"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "ZP",
+                    "group": "BROKER_GROUP_FOREIGN"
+                },
+                "badges": []
+            },
+            {
+                "id": "12193",
+                "name": "WIDODO MAKMUR PERKASA",
+                "symbol": "WMUU",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "3,692,437,428",
+                    "percentage": "28.5325",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "3,657,437,428",
+                    "percentage": "28.2620",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-35,000,000",
+                    "percentage": "-0.2705",
+                    "formatted_value": "35,000,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI"
+                ]
+            },
+            {
+                "id": "11834",
+                "name": "INDOCEMENT TUNGGAL PRAKARSA",
+                "symbol": "INTP",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "218,635,500",
+                    "percentage": "6.2190",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "219,965,500",
+                    "percentage": "6.2568",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+1,330,000",
+                    "percentage": "+0.0378",
+                    "formatted_value": "1,330,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "RB",
+                    "group": "BROKER_GROUP_FOREIGN"
+                },
+                "badges": []
+            },
+            {
+                "id": "11494",
+                "name": "MEDIA NUSANTARA CITRA",
+                "symbol": "MSIN",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "5,179,352,180",
+                    "percentage": "8.5361",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "5,179,052,180",
+                    "percentage": "8.5356",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-300,000",
+                    "percentage": "-0.0005",
+                    "formatted_value": "300,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "EP",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI"
+                ]
+            },
+            {
+                "id": "11494",
+                "name": "MEDIA NUSANTARA CITRA",
+                "symbol": "MSIN",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "5,179,852,180",
+                    "percentage": "8.5369",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "5,179,352,180",
+                    "percentage": "8.5361",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-500,000",
+                    "percentage": "-0.0008",
+                    "formatted_value": "500,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "BR",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI"
+                ]
+            },
+            {
+                "id": "11056",
+                "name": "INTAN INVESTAMA INTERNASIONAL",
+                "symbol": "TRIN",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "1,353,110,600",
+                    "percentage": "29.7292",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "1,241,574,500",
+                    "percentage": "27.2786",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-111,536,100",
+                    "percentage": "-2.4506",
+                    "formatted_value": "111,536,100"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "YP",
+                    "group": "BROKER_GROUP_FOREIGN"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI"
+                ]
+            },
+            {
+                "id": "11055",
+                "name": "KUNCI DAUD INDONESIA",
+                "symbol": "TRIN",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "1,653,801,900",
+                    "percentage": "36.3357",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "1,628,738,000",
+                    "percentage": "35.7850",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-25,063,900",
+                    "percentage": "-0.5507",
+                    "formatted_value": "25,063,900"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "YP",
+                    "group": "BROKER_GROUP_FOREIGN"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI"
+                ]
+            },
+            {
+                "id": "10969",
+                "name": "GLENCORE",
+                "symbol": "NCKL",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "4,280,365,000",
+                    "percentage": "6.7836",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "4,266,285,800",
+                    "percentage": "6.7613",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-14,079,200",
+                    "percentage": "-0.0223",
+                    "formatted_value": "14,079,200"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_FOREIGN",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": []
+            },
+            {
+                "id": "10163",
+                "name": "SAMUEL INTERNATIONAL",
+                "symbol": "NSSS",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "1,855,188,500",
+                    "percentage": "7.8000",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "2,020,188,500",
+                    "percentage": "8.5000",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+165,000,000",
+                    "percentage": "+0.7000",
+                    "formatted_value": "165,000,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_CROSS",
+                "data_source": {
+                    "label": "Sumber: IDX",
+                    "type": "SOURCE_TYPE_IDX"
+                },
+                "price_formatted": "570",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": []
+            },
+            {
+                "id": "10163",
+                "name": "SAMUEL INTERNATIONAL",
+                "symbol": "NSSS",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "2,155,188,500",
+                    "percentage": "9.0548",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "2,020,188,500",
+                    "percentage": "8.4876",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-135,000,000",
+                    "percentage": "-0.5672",
+                    "formatted_value": "135,000,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "IF",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": []
+            },
+            {
+                "id": "10163",
+                "name": "SAMUEL INTERNATIONAL",
+                "symbol": "NSSS",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "1,855,188,500",
+                    "percentage": "7.7944",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "2,155,188,500",
+                    "percentage": "9.0548",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+300,000,000",
+                    "percentage": "+1.2604",
+                    "formatted_value": "300,000,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "KI",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": []
+            },
+            {
+                "id": "10131",
+                "name": "SURONO SUBEKTI",
+                "symbol": "OBAT",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "83,486,000",
+                    "percentage": "12.3751",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "83,486,000",
+                    "percentage": "12.2706",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "0",
+                    "percentage": "-0.1045",
+                    "formatted_value": "0"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_WARRANT_EXERCISE",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": []
+            },
+            {
+                "id": "10037",
+                "name": "SIAUW YUNUS SUBANDI",
+                "symbol": "LRNA",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "25,922,900",
+                    "percentage": "7.4065",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "25,992,700",
+                    "percentage": "7.4265",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+69,800",
+                    "percentage": "+0.0200",
+                    "formatted_value": "69,800"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "HD",
+                    "group": "BROKER_GROUP_FOREIGN"
+                },
+                "badges": []
+            },
+            {
+                "id": "9762",
+                "name": "GEMA BUANA INDONESIA",
+                "symbol": "YULE",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "209,464,304",
+                    "percentage": "11.7347",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "178,214,304",
+                    "percentage": "9.9840",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-31,250,000",
+                    "percentage": "-1.7507",
+                    "formatted_value": "31,250,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "RB",
+                    "group": "BROKER_GROUP_FOREIGN"
+                },
+                "badges": []
+            },
+            {
+                "id": "9700",
+                "name": "DJADJANG TANUWIDJAJA",
+                "symbol": "TOTL",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "374,246,540",
+                    "percentage": "10.9750",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "374,309,140",
+                    "percentage": "10.9768",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+62,600",
+                    "percentage": "+0.0018",
+                    "formatted_value": "62,600"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "ZP",
+                    "group": "BROKER_GROUP_FOREIGN"
+                },
+                "badges": []
+            },
+            {
+                "id": "9669",
+                "name": "PHILLIP SECURITIES",
+                "symbol": "STRK",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "1,723,084,500",
+                    "percentage": "16.0708",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "1,720,984,500",
+                    "percentage": "16.0512",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-2,100,000",
+                    "percentage": "-0.0196",
+                    "formatted_value": "2,100,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_FOREIGN",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "KK",
+                    "group": "BROKER_GROUP_FOREIGN"
+                },
+                "badges": []
+            },
+            {
+                "id": "9613",
+                "name": "SINAR MAS CAKRAWALA",
+                "symbol": "SMMA",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "3,166,196,913",
+                    "percentage": "49.7230",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "3,167,335,882",
+                    "percentage": "49.7409",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+1,138,969",
+                    "percentage": "+0.0179",
+                    "formatted_value": "1,138,969"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "DH",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI"
+                ]
+            },
+            {
+                "id": "9432",
+                "name": "GLOBAL MEDIACOM",
+                "symbol": "MSIN",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "6,957,083,060",
+                    "percentage": "11.4659",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "4,838,173,125",
+                    "percentage": "7.9738",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-2,118,909,935",
+                    "percentage": "-3.4921",
+                    "formatted_value": "2,118,909,935"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "EP",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": []
+            },
+            {
+                "id": "9410",
+                "name": "BUANA GRAHA UTAMA",
+                "symbol": "MICE",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "287,946,518",
+                    "percentage": "47.9911",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "288,146,518",
+                    "percentage": "48.0244",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+200,000",
+                    "percentage": "+0.0333",
+                    "formatted_value": "200,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "DH",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI"
+                ]
+            },
+            {
+                "id": "9195",
+                "name": "BANK JULIUS BAER AND CO",
+                "symbol": "BACA",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "4,792,038,789",
+                    "percentage": "24.0166",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "4,791,293,189",
+                    "percentage": "24.0129",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-745,600",
+                    "percentage": "-0.0037",
+                    "formatted_value": "745,600"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_FOREIGN",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": []
+            },
+            {
+                "id": "9024",
+                "name": "LOW TUCK KWONG",
+                "symbol": "BYAN",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "13,406,852,770",
+                    "percentage": "40.2206",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "13,406,866,270",
+                    "percentage": "40.2206",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+13,500",
+                    "percentage": "0.0000",
+                    "formatted_value": "13,500"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "ZP",
+                    "group": "BROKER_GROUP_FOREIGN"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI",
+                    "SHAREHOLDER_BADGE_DIREKTUR"
+                ]
+            },
+            {
+                "id": "8991",
+                "name": "PRAJOGO PANGESTU",
+                "symbol": "BREN",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "139,686,300",
+                    "percentage": "0.1044",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "139,789,700",
+                    "percentage": "0.1045",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+103,400",
+                    "percentage": "+0.0001",
+                    "formatted_value": "103,400"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: IDX",
+                    "type": "SOURCE_TYPE_IDX"
+                },
+                "price_formatted": "8,950",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI"
+                ]
+            },
+            {
+                "id": "8991",
+                "name": "PRAJOGO PANGESTU",
+                "symbol": "BREN",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "139,561,200",
+                    "percentage": "0.1043",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "139,686,300",
+                    "percentage": "0.1044",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+125,100",
+                    "percentage": "+0.0001",
+                    "formatted_value": "125,100"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: IDX",
+                    "type": "SOURCE_TYPE_IDX"
+                },
+                "price_formatted": "8,800",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI"
+                ]
+            },
+            {
+                "id": "8991",
+                "name": "PRAJOGO PANGESTU",
+                "symbol": "BREN",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "139,512,000",
+                    "percentage": "0.1043",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "139,561,200",
+                    "percentage": "0.1043",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+49,200",
+                    "percentage": "0.0000",
+                    "formatted_value": "49,200"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: IDX",
+                    "type": "SOURCE_TYPE_IDX"
+                },
+                "price_formatted": "9,025",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI"
+                ]
+            },
+            {
+                "id": "8991",
+                "name": "PRAJOGO PANGESTU",
+                "symbol": "BREN",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "139,118,000",
+                    "percentage": "0.1040",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "139,512,000",
+                    "percentage": "0.1043",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+394,000",
+                    "percentage": "+0.0003",
+                    "formatted_value": "394,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: IDX",
+                    "type": "SOURCE_TYPE_IDX"
+                },
+                "price_formatted": "9,000",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI"
+                ]
+            },
+            {
+                "id": "8991",
+                "name": "PRAJOGO PANGESTU",
+                "symbol": "BREN",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "139,008,300",
+                    "percentage": "0.1039",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "139,118,000",
+                    "percentage": "0.1040",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+109,700",
+                    "percentage": "+0.0001",
+                    "formatted_value": "109,700"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: IDX",
+                    "type": "SOURCE_TYPE_IDX"
+                },
+                "price_formatted": "8,975",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI"
+                ]
+            },
+            {
+                "id": "8991",
+                "name": "PRAJOGO PANGESTU",
+                "symbol": "BREN",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "138,965,100",
+                    "percentage": "0.1039",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "139,008,300",
+                    "percentage": "0.1039",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+43,200",
+                    "percentage": "0.0000",
+                    "formatted_value": "43,200"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: IDX",
+                    "type": "SOURCE_TYPE_IDX"
+                },
+                "price_formatted": "8,825",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI"
+                ]
+            },
+            {
+                "id": "8991",
+                "name": "PRAJOGO PANGESTU",
+                "symbol": "BREN",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "138,936,400",
+                    "percentage": "0.1039",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "138,965,100",
+                    "percentage": "0.1039",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+28,700",
+                    "percentage": "0.0000",
+                    "formatted_value": "28,700"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: IDX",
+                    "type": "SOURCE_TYPE_IDX"
+                },
+                "price_formatted": "8,925",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI"
+                ]
+            },
+            {
+                "id": "8991",
+                "name": "PRAJOGO PANGESTU",
+                "symbol": "BREN",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "138,575,900",
+                    "percentage": "0.1036",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "138,936,400",
+                    "percentage": "0.1039",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+360,500",
+                    "percentage": "+0.0003",
+                    "formatted_value": "360,500"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: IDX",
+                    "type": "SOURCE_TYPE_IDX"
+                },
+                "price_formatted": "8,900",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI"
+                ]
+            },
+            {
+                "id": "8991",
+                "name": "PRAJOGO PANGESTU",
+                "symbol": "BREN",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "138,507,100",
+                    "percentage": "0.1035",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "138,575,900",
+                    "percentage": "0.1036",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+68,800",
+                    "percentage": "+0.0001",
+                    "formatted_value": "68,800"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: IDX",
+                    "type": "SOURCE_TYPE_IDX"
+                },
+                "price_formatted": "8,875",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI"
+                ]
+            },
+            {
+                "id": "8991",
+                "name": "PRAJOGO PANGESTU",
+                "symbol": "BREN",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "138,459,700",
+                    "percentage": "0.1035",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "138,507,100",
+                    "percentage": "0.1035",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+47,400",
+                    "percentage": "0.0000",
+                    "formatted_value": "47,400"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: IDX",
+                    "type": "SOURCE_TYPE_IDX"
+                },
+                "price_formatted": "8,850",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI"
+                ]
+            },
+            {
+                "id": "8826",
+                "name": "BANK OF SINGAPORE",
+                "symbol": "BBLD",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "89,551,600",
+                    "percentage": "5.4412",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "89,570,500",
+                    "percentage": "5.4424",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+18,900",
+                    "percentage": "+0.0012",
+                    "formatted_value": "18,900"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_FOREIGN",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": []
+            },
+            {
+                "id": "8818",
+                "name": "BANK DANAMON INDONESIA",
+                "symbol": "SIMA",
+                "date": "13 Jan 26",
+                "previous": {
+                    "value": "26,486,584",
+                    "percentage": "5.9845",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "26,480,620",
+                    "percentage": "5.9831",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-5,964",
+                    "percentage": "-0.0014",
+                    "formatted_value": "5,964"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": []
+            },
+            {
+                "id": "1000000353",
+                "name": "DION AMAURY",
+                "symbol": "KMDS",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "654,000",
+                    "percentage": "0.0818",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "3,651,100",
+                    "percentage": "0.4564",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+2,997,100",
+                    "percentage": "+0.3746",
+                    "formatted_value": "2,997,100"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: IDX",
+                    "type": "SOURCE_TYPE_IDX"
+                },
+                "price_formatted": "600",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": []
+            },
+            {
+                "id": "1000000325",
+                "name": "ANGKASA PURA INDONESIA",
+                "symbol": "GMFI",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "82,100,173,900",
+                    "percentage": "66.7959",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "82,100,173,900",
+                    "percentage": "66.3946",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "0",
+                    "percentage": "-0.4013",
+                    "formatted_value": "0"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_RIGHT_ISSUE",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "NI",
+                    "group": "BROKER_GROUP_GOVERNMENT"
+                },
+                "badges": []
+            },
+            {
+                "id": "1000000322",
+                "name": "SABRINA EVELYN ELIAN",
+                "symbol": "YULE",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "92,436,866",
+                    "percentage": "5.1785",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "92,419,166",
+                    "percentage": "5.1775",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-17,700",
+                    "percentage": "-0.0010",
+                    "formatted_value": "17,700"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "RB",
+                    "group": "BROKER_GROUP_FOREIGN"
+                },
+                "badges": []
+            },
+            {
+                "id": "1000000285",
+                "name": "HENRY LIEM",
+                "symbol": "AKPI",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "15,472,259",
+                    "percentage": "2.5271",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "15,322,259",
+                    "percentage": "2.5026",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-150,000",
+                    "percentage": "-0.0245",
+                    "formatted_value": "150,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: IDX",
+                    "type": "SOURCE_TYPE_IDX"
+                },
+                "price_formatted": "585",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_KOMISARIS"
+                ]
+            },
+            {
+                "id": "1000000285",
+                "name": "HENRY LIEM",
+                "symbol": "AKPI",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "15,488,959",
+                    "percentage": "2.5299",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "15,472,259",
+                    "percentage": "2.5271",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-16,700",
+                    "percentage": "-0.0028",
+                    "formatted_value": "16,700"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: IDX",
+                    "type": "SOURCE_TYPE_IDX"
+                },
+                "price_formatted": "600",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_KOMISARIS"
+                ]
+            },
+            {
+                "id": "1000000231",
+                "name": "LIEM TJEN HUNG",
+                "symbol": "BATA",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "68,218,300",
+                    "percentage": "5.2476",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "68,218,800",
+                    "percentage": "5.2476",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+500",
+                    "percentage": "0.0000",
+                    "formatted_value": "500"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "AO",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": []
+            },
+            {
+                "id": "1000000226",
+                "name": "ANDALAN UTAMA BINTARA",
+                "symbol": "CSIS",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "1,047,200,000",
+                    "percentage": "57.2303",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "1,193,219,559",
+                    "percentage": "65.2104",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+146,019,559",
+                    "percentage": "+7.9801",
+                    "formatted_value": "146,019,559"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "YU",
+                    "group": "BROKER_GROUP_FOREIGN"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI"
+                ]
+            },
+            {
+                "id": "1000000223",
+                "name": "TRIPLE BERKAH BERSAMA",
+                "symbol": "MEJA",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "878,845,100",
+                    "percentage": "45.4806",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "878,845,100",
+                    "percentage": "45.4335",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "0",
+                    "percentage": "-0.0471",
+                    "formatted_value": "0"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_WARRANT_EXERCISE",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "CP",
+                    "group": "BROKER_GROUP_FOREIGN"
+                },
+                "badges": []
+            },
+            {
+                "id": "1000000183",
+                "name": "RUDI R SUTANTRA",
+                "symbol": "ATLA",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "2,963,954,200",
+                    "percentage": "47.8090",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "2,958,954,200",
+                    "percentage": "47.7283",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-5,000,000",
+                    "percentage": "-0.0807",
+                    "formatted_value": "5,000,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "AG",
+                    "group": "BROKER_GROUP_FOREIGN"
+                },
+                "badges": []
+            },
+            {
+                "id": "1000000169",
+                "name": "GREEN POWER GROUP",
+                "symbol": "KRYA",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "209,985,700",
+                    "percentage": "12.6198",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "199,300,300",
+                    "percentage": "11.9776",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-10,685,400",
+                    "percentage": "-0.6422",
+                    "formatted_value": "10,685,400"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "BQ",
+                    "group": "BROKER_GROUP_FOREIGN"
+                },
+                "badges": []
+            },
+            {
+                "id": "15350",
+                "name": "ANDRIANSYAH PRAYITNO",
+                "symbol": "BSML",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "214,339,400",
+                    "percentage": "11.5845",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "206,354,700",
+                    "percentage": "11.1530",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-7,984,700",
+                    "percentage": "-0.4315",
+                    "formatted_value": "7,984,700"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "MG",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": []
+            },
+            {
+                "id": "15350",
+                "name": "ANDRIANSYAH PRAYITNO",
+                "symbol": "BSML",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "210,039,400",
+                    "percentage": "11.3521",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "214,339,400",
+                    "percentage": "11.5845",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+4,300,000",
+                    "percentage": "+0.2324",
+                    "formatted_value": "4,300,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "MG",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": []
+            },
+            {
+                "id": "14132",
+                "name": "ARI SUDARSONO",
+                "symbol": "BRRC",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "421,936,056",
+                    "percentage": "43.0725",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "421,936,056",
+                    "percentage": "42.4226",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "0",
+                    "percentage": "-0.6499",
+                    "formatted_value": "0"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_WARRANT_EXERCISE",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "XA",
+                    "group": "BROKER_GROUP_FOREIGN"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI",
+                    "SHAREHOLDER_BADGE_DIREKTUR"
+                ]
+            },
+            {
+                "id": "14131",
+                "name": "AGUS SUMARJITO",
+                "symbol": "BRRC",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "52,482,536",
+                    "percentage": "5.3576",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "52,482,536",
+                    "percentage": "5.2767",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "0",
+                    "percentage": "-0.0809",
+                    "formatted_value": "0"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_WARRANT_EXERCISE",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": []
+            },
+            {
+                "id": "14130",
+                "name": "GRANADA GLOBAL INDUSTRI",
+                "symbol": "BRRC",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "126,436,008",
+                    "percentage": "12.9070",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "126,436,008",
+                    "percentage": "12.7122",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "0",
+                    "percentage": "-0.1948",
+                    "formatted_value": "0"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_WARRANT_EXERCISE",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": []
+            },
+            {
+                "id": "14109",
+                "name": "NOPRIAN FADLI",
+                "symbol": "BRRC",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "50,289,000",
+                    "percentage": "5.1337",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "50,289,000",
+                    "percentage": "5.0562",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "0",
+                    "percentage": "-0.0775",
+                    "formatted_value": "0"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_WARRANT_EXERCISE",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "YJ",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": []
+            },
+            {
+                "id": "14087",
+                "name": "SALIM LIM",
+                "symbol": "KBAG",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "539,599,800",
+                    "percentage": "7.5468",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "540,399,800",
+                    "percentage": "7.5580",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+800,000",
+                    "percentage": "+0.0112",
+                    "formatted_value": "800,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "NI",
+                    "group": "BROKER_GROUP_GOVERNMENT"
+                },
+                "badges": []
+            },
+            {
+                "id": "14061",
+                "name": "ANDREW SANUSI",
+                "symbol": "TAYS",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "56,124,200",
+                    "percentage": "5.1072",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "56,116,202",
+                    "percentage": "5.1065",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-7,998",
+                    "percentage": "-0.0007",
+                    "formatted_value": "7,998"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "PD",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_DIREKTUR"
+                ]
+            },
+            {
+                "id": "14049",
+                "name": "RMK INVESTAMA",
+                "symbol": "RMKO",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "142,500,000",
+                    "percentage": "11.4000",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "192,500,000",
+                    "percentage": "15.4000",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+50,000,000",
+                    "percentage": "+4.0000",
+                    "formatted_value": "50,000,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "MI",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI"
+                ]
+            },
+            {
+                "id": "13944",
+                "name": "SAMUEL TUMBUH BERSAMA",
+                "symbol": "NSSS",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "9,319,995,300",
+                    "percentage": "39.1571",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "9,312,958,000",
+                    "percentage": "39.1275",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-7,037,300",
+                    "percentage": "-0.0296",
+                    "formatted_value": "7,037,300"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "IF",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI"
+                ]
+            },
+            {
+                "id": "13937",
+                "name": "CGS INTERNATIONAL SECURITIES SINGAPORE",
+                "symbol": "INPP",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "879,853,500",
+                    "percentage": "7.8685",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "893,438,800",
+                    "percentage": "7.9900",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+13,585,300",
+                    "percentage": "+0.1215",
+                    "formatted_value": "13,585,300"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_FOREIGN",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "YU",
+                    "group": "BROKER_GROUP_FOREIGN"
+                },
+                "badges": []
+            },
+            {
+                "id": "13898",
+                "name": "CGS INTERNATIONAL SEKURITAS INDONESIA",
+                "symbol": "HILL",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "2,976,879,700",
+                    "percentage": "20.1939",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "2,975,835,000",
+                    "percentage": "20.1868",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-1,044,700",
+                    "percentage": "-0.0071",
+                    "formatted_value": "1,044,700"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "YU",
+                    "group": "BROKER_GROUP_FOREIGN"
+                },
+                "badges": []
+            },
+            {
+                "id": "13798",
+                "name": "ABADI KREASI UNGGUL NUSANTARA",
+                "symbol": "INET",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "5,360,707,200",
+                    "percentage": "46.6665",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "8,160,707,200",
+                    "percentage": "54.9288",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+2,800,000,000",
+                    "percentage": "+8.2623",
+                    "formatted_value": "2,800,000,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "YB",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI"
+                ]
+            },
+            {
+                "id": "12599",
+                "name": "ANDREAS UTOMO",
+                "symbol": "GULA",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "76,122,700",
+                    "percentage": "7.1119",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "75,876,400",
+                    "percentage": "7.0889",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-246,300",
+                    "percentage": "-0.0230",
+                    "formatted_value": "246,300"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: IDX",
+                    "type": "SOURCE_TYPE_IDX"
+                },
+                "price_formatted": "308",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI",
+                    "SHAREHOLDER_BADGE_DIREKTUR"
+                ]
+            },
+            {
+                "id": "12599",
+                "name": "ANDREAS UTOMO",
+                "symbol": "GULA",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "76,183,000",
+                    "percentage": "7.1175",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "76,122,700",
+                    "percentage": "7.1119",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-60,300",
+                    "percentage": "-0.0056",
+                    "formatted_value": "60,300"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: IDX",
+                    "type": "SOURCE_TYPE_IDX"
+                },
+                "price_formatted": "310",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI",
+                    "SHAREHOLDER_BADGE_DIREKTUR"
+                ]
+            },
+            {
+                "id": "12599",
+                "name": "ANDREAS UTOMO",
+                "symbol": "GULA",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "76,206,400",
+                    "percentage": "7.1197",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "76,183,000",
+                    "percentage": "7.1175",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-23,400",
+                    "percentage": "-0.0022",
+                    "formatted_value": "23,400"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: IDX",
+                    "type": "SOURCE_TYPE_IDX"
+                },
+                "price_formatted": "312",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI",
+                    "SHAREHOLDER_BADGE_DIREKTUR"
+                ]
+            },
+            {
+                "id": "12599",
+                "name": "ANDREAS UTOMO",
+                "symbol": "GULA",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "95,876,400",
+                    "percentage": "8.9574",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "76,206,400",
+                    "percentage": "7.1197",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-19,670,000",
+                    "percentage": "-1.8377",
+                    "formatted_value": "19,670,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: IDX",
+                    "type": "SOURCE_TYPE_IDX"
+                },
+                "price_formatted": "306",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI",
+                    "SHAREHOLDER_BADGE_DIREKTUR"
+                ]
+            },
+            {
+                "id": "12591",
+                "name": "KARYA NUSA PERDANA",
+                "symbol": "MAXI",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "3,001,859,300",
+                    "percentage": "31.2365",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "2,971,859,300",
+                    "percentage": "30.9243",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-30,000,000",
+                    "percentage": "-0.3122",
+                    "formatted_value": "30,000,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "AN",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": []
+            },
+            {
+                "id": "12588",
+                "name": "ESTA PRIMA INVESTAMA",
+                "symbol": "MAXI",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "697,143,000",
+                    "percentage": "7.2543",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "696,843,000",
+                    "percentage": "7.2512",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-300,000",
+                    "percentage": "-0.0031",
+                    "formatted_value": "300,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "SH",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": []
+            },
+            {
+                "id": "12476",
+                "name": "FERSINDO NUSA JAYA",
+                "symbol": "ITMA",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "148,538,600",
+                    "percentage": "14.8679",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "148,528,400",
+                    "percentage": "14.8669",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-10,200",
+                    "percentage": "-0.0010",
+                    "formatted_value": "10,200"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "TS",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": []
+            },
+            {
+                "id": "12474",
+                "name": "JUNICHIRO WAIDE",
+                "symbol": "VTNY",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "1,275,736,974",
+                    "percentage": "20.3623",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "1,274,236,974",
+                    "percentage": "20.3383",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-1,500,000",
+                    "percentage": "-0.0240",
+                    "formatted_value": "1,500,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_FOREIGN",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "SF",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI",
+                    "SHAREHOLDER_BADGE_DIREKTUR"
+                ]
+            },
+            {
+                "id": "12413",
+                "name": "GOLDFIVE INVESTMENT CAPITAL",
+                "symbol": "BSML",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "647,456,365",
+                    "percentage": "34.9934",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "648,456,365",
+                    "percentage": "35.0474",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+1,000,000",
+                    "percentage": "+0.0540",
+                    "formatted_value": "1,000,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "ZP",
+                    "group": "BROKER_GROUP_FOREIGN"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI"
+                ]
+            },
+            {
+                "id": "12413",
+                "name": "GOLDFIVE INVESTMENT CAPITAL",
+                "symbol": "BSML",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "643,056,365",
+                    "percentage": "34.7556",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "647,456,365",
+                    "percentage": "34.9934",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+4,400,000",
+                    "percentage": "+0.2378",
+                    "formatted_value": "4,400,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "FS",
+                    "group": "BROKER_GROUP_FOREIGN"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI"
+                ]
+            },
+            {
+                "id": "12386",
+                "name": "HX TRADING",
+                "symbol": "LPLI",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "225,462,567",
+                    "percentage": "19.2632",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "225,032,167",
+                    "percentage": "19.2264",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-430,400",
+                    "percentage": "-0.0368",
+                    "formatted_value": "430,400"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_FOREIGN",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "IU",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": []
+            },
+            {
+                "id": "12381",
+                "name": "GLOBAL PERKASA INVESTINDO",
+                "symbol": "KOPI",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "49,652,800",
+                    "percentage": "7.1211",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "49,641,800",
+                    "percentage": "7.1195",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-11,000",
+                    "percentage": "-0.0016",
+                    "formatted_value": "11,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "GR",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": []
+            },
+            {
+                "id": "12305",
+                "name": "PRIMA POLYCON INDAH",
+                "symbol": "TRST",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "161,427,460",
+                    "percentage": "5.7488",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "161,447,460",
+                    "percentage": "5.7496",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+20,000",
+                    "percentage": "+0.0008",
+                    "formatted_value": "20,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "AZ",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": []
+            },
+            {
+                "id": "12193",
+                "name": "WIDODO MAKMUR PERKASA",
+                "symbol": "WMUU",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "3,734,937,428",
+                    "percentage": "28.8609",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "3,692,437,428",
+                    "percentage": "28.5325",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-42,500,000",
+                    "percentage": "-0.3284",
+                    "formatted_value": "42,500,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI"
+                ]
+            },
+            {
+                "id": "11834",
+                "name": "INDOCEMENT TUNGGAL PRAKARSA",
+                "symbol": "INTP",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "216,498,100",
+                    "percentage": "6.1582",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "218,635,500",
+                    "percentage": "6.2190",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+2,137,400",
+                    "percentage": "+0.0608",
+                    "formatted_value": "2,137,400"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "RB",
+                    "group": "BROKER_GROUP_FOREIGN"
+                },
+                "badges": []
+            },
+            {
+                "id": "11590",
+                "name": "NEBULA PERSADA GEMILANG",
+                "symbol": "NPGF",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "0",
+                    "percentage": "0.0000",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "777,466,592",
+                    "percentage": "23.9941",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+777,466,592",
+                    "percentage": "+23.9941",
+                    "formatted_value": "777,466,592"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_TRANSFER",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "AI",
+                    "group": "BROKER_GROUP_FOREIGN"
+                },
+                "badges": []
+            },
+            {
+                "id": "11590",
+                "name": "NEBULA PERSADA GEMILANG",
+                "symbol": "NPGF",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "777,466,592",
+                    "percentage": "23.9941",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "0",
+                    "percentage": "0.0000",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-777,466,592",
+                    "percentage": "-23.9941",
+                    "formatted_value": "777,466,592"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_TRANSFER",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "SQ",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": []
+            },
+            {
+                "id": "11494",
+                "name": "MEDIA NUSANTARA CITRA",
+                "symbol": "MSIN",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "5,180,852,180",
+                    "percentage": "8.5385",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "5,179,852,180",
+                    "percentage": "8.5369",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-1,000,000",
+                    "percentage": "-0.0016",
+                    "formatted_value": "1,000,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "EP",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI"
+                ]
+            },
+            {
+                "id": "11438",
+                "name": "PEMBERTON ASIAN OPPORTUNITIES FUND",
+                "symbol": "ISSP",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "487,871,400",
+                    "percentage": "6.7892",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "487,740,700",
+                    "percentage": "6.7874",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-130,700",
+                    "percentage": "-0.0018",
+                    "formatted_value": "130,700"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_FOREIGN",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": []
+            },
+            {
+                "id": "11399",
+                "name": "MIKI OJISAN INDOMITRA",
+                "symbol": "KMDS",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "169,523,811",
+                    "percentage": "21.1900",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "158,050,511",
+                    "percentage": "19.7600",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-11,473,300",
+                    "percentage": "-1.4300",
+                    "formatted_value": "11,473,300"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: IDX",
+                    "type": "SOURCE_TYPE_IDX"
+                },
+                "price_formatted": "600",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": []
+            },
+            {
+                "id": "11399",
+                "name": "MIKI OJISAN INDOMITRA",
+                "symbol": "KMDS",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "169,523,811",
+                    "percentage": "21.1905",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "161,047,611",
+                    "percentage": "20.1310",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-8,476,200",
+                    "percentage": "-1.0595",
+                    "formatted_value": "8,476,200"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "SQ",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": []
+            },
+            {
+                "id": "11336",
+                "name": "ABADIMUKTI GUNALESTARI",
+                "symbol": "GPRA",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "1,874,465,120",
+                    "percentage": "43.8302",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "1,874,193,720",
+                    "percentage": "43.8238",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-271,400",
+                    "percentage": "-0.0064",
+                    "formatted_value": "271,400"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "CP",
+                    "group": "BROKER_GROUP_FOREIGN"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI"
+                ]
+            },
+            {
+                "id": "10969",
+                "name": "GLENCORE",
+                "symbol": "NCKL",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "4,329,737,900",
+                    "percentage": "6.8619",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "4,280,365,000",
+                    "percentage": "6.7836",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-49,372,900",
+                    "percentage": "-0.0783",
+                    "formatted_value": "49,372,900"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_FOREIGN",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": []
+            },
+            {
+                "id": "10561",
+                "name": "OLYMPIC KAPITAL EQUITY",
+                "symbol": "CSIS",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "350,232,000",
+                    "percentage": "20.8000",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "350,232,000",
+                    "percentage": "19.1405",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "0",
+                    "percentage": "-1.6595",
+                    "formatted_value": "0"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_RIGHT_ISSUE",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "XA",
+                    "group": "BROKER_GROUP_FOREIGN"
+                },
+                "badges": []
+            },
+            {
+                "id": "10131",
+                "name": "SURONO SUBEKTI",
+                "symbol": "OBAT",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "83,486,000",
+                    "percentage": "12.4798",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "83,486,000",
+                    "percentage": "12.3751",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "0",
+                    "percentage": "-0.1047",
+                    "formatted_value": "0"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_WARRANT_EXERCISE",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": []
+            },
+            {
+                "id": "10037",
+                "name": "SIAUW YUNUS SUBANDI",
+                "symbol": "LRNA",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "25,830,300",
+                    "percentage": "7.3801",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "25,922,900",
+                    "percentage": "7.4065",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+92,600",
+                    "percentage": "+0.0264",
+                    "formatted_value": "92,600"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "HD",
+                    "group": "BROKER_GROUP_FOREIGN"
+                },
+                "badges": []
+            },
+            {
+                "id": "9727",
+                "name": "BOGAMULIA NAGADI",
+                "symbol": "TSPC",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "4,077,011,318",
+                    "percentage": "90.4021",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "4,076,425,718",
+                    "percentage": "90.3891",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-585,600",
+                    "percentage": "-0.0130",
+                    "formatted_value": "585,600"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "TP",
+                    "group": "BROKER_GROUP_FOREIGN"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI"
+                ]
+            },
+            {
+                "id": "9613",
+                "name": "SINAR MAS CAKRAWALA",
+                "symbol": "SMMA",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "3,166,833,443",
+                    "percentage": "49.7330",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "3,166,196,913",
+                    "percentage": "49.7230",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-636,530",
+                    "percentage": "-0.0100",
+                    "formatted_value": "636,530"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "DH",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI"
+                ]
+            },
+            {
+                "id": "9531",
+                "name": "LO KHENG HONG",
+                "symbol": "ABMM",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "154,165,300",
+                    "percentage": "5.5996",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "154,255,300",
+                    "percentage": "5.6028",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+90,000",
+                    "percentage": "+0.0032",
+                    "formatted_value": "90,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "DH",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": []
+            },
+            {
+                "id": "9410",
+                "name": "BUANA GRAHA UTAMA",
+                "symbol": "MICE",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "288,346,518",
+                    "percentage": "48.0578",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "288,546,518",
+                    "percentage": "48.0911",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+200,000",
+                    "percentage": "+0.0333",
+                    "formatted_value": "200,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: IDX",
+                    "type": "SOURCE_TYPE_IDX"
+                },
+                "price_formatted": "570",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI"
+                ]
+            },
+            {
+                "id": "9410",
+                "name": "BUANA GRAHA UTAMA",
+                "symbol": "MICE",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "288,146,518",
+                    "percentage": "48.0244",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "288,346,518",
+                    "percentage": "48.0578",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+200,000",
+                    "percentage": "+0.0334",
+                    "formatted_value": "200,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: IDX",
+                    "type": "SOURCE_TYPE_IDX"
+                },
+                "price_formatted": "575",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI"
+                ]
+            },
+            {
+                "id": "9410",
+                "name": "BUANA GRAHA UTAMA",
+                "symbol": "MICE",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "287,846,518",
+                    "percentage": "47.9744",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "287,946,518",
+                    "percentage": "47.9911",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+100,000",
+                    "percentage": "+0.0167",
+                    "formatted_value": "100,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "DH",
+                    "group": "BROKER_GROUP_LOCAL"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI"
+                ]
+            },
+            {
+                "id": "9195",
+                "name": "BANK JULIUS BAER AND CO",
+                "symbol": "BACA",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "4,795,302,489",
+                    "percentage": "24.0330",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "4,792,038,789",
+                    "percentage": "24.0166",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-3,263,700",
+                    "percentage": "-0.0164",
+                    "formatted_value": "3,263,700"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_FOREIGN",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": []
+            },
+            {
+                "id": "9024",
+                "name": "LOW TUCK KWONG",
+                "symbol": "BYAN",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "13,406,846,370",
+                    "percentage": "40.2205",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "13,406,852,770",
+                    "percentage": "40.2206",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+6,400",
+                    "percentage": "+0.0001",
+                    "formatted_value": "6,400"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "ZP",
+                    "group": "BROKER_GROUP_FOREIGN"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI",
+                    "SHAREHOLDER_BADGE_DIREKTUR"
+                ]
+            },
+            {
+                "id": "8926",
+                "name": "BUMI CITRA INVESTINDO",
+                "symbol": "BCIP",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "525,227,100",
+                    "percentage": "36.7313",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "527,372,100",
+                    "percentage": "36.8813",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+2,145,000",
+                    "percentage": "+0.1500",
+                    "formatted_value": "2,145,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "DU",
+                    "group": "BROKER_GROUP_FOREIGN"
+                },
+                "badges": [
+                    "SHAREHOLDER_BADGE_PENGENDALI"
+                ]
+            },
+            {
+                "id": "8827",
+                "name": "SENDRA GUNAWAN",
+                "symbol": "AHAP",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "568,781,066",
+                    "percentage": "11.6078",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "566,781,066",
+                    "percentage": "11.5670",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "-2,000,000",
+                    "percentage": "-0.0408",
+                    "formatted_value": "2,000,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_LOCAL",
+                "action_type": "ACTION_TYPE_SELL",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "CC",
+                    "group": "BROKER_GROUP_GOVERNMENT"
+                },
+                "badges": []
+            },
+            {
+                "id": "8826",
+                "name": "BANK OF SINGAPORE",
+                "symbol": "PTSP",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "17,637,920",
+                    "percentage": "7.9879",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "17,657,920",
+                    "percentage": "7.9970",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+20,000",
+                    "percentage": "+0.0091",
+                    "formatted_value": "20,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_FOREIGN",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": []
+            },
+            {
+                "id": "8826",
+                "name": "BANK OF SINGAPORE",
+                "symbol": "MREI",
+                "date": "12 Jan 26",
+                "previous": {
+                    "value": "32,914,255",
+                    "percentage": "6.3567",
+                    "formatted_value": ""
+                },
+                "current": {
+                    "value": "32,944,255",
+                    "percentage": "6.3625",
+                    "formatted_value": ""
+                },
+                "changes": {
+                    "value": "+30,000",
+                    "percentage": "+0.0058",
+                    "formatted_value": "30,000"
+                },
+                "marker": "",
+                "is_posted": false,
+                "cmh_id": "0",
+                "nationality": "NATIONALITY_TYPE_FOREIGN",
+                "action_type": "ACTION_TYPE_BUY",
+                "data_source": {
+                    "label": "Sumber: KSEI",
+                    "type": "SOURCE_TYPE_KSEI"
+                },
+                "price_formatted": "0",
+                "broker_detail": {
+                    "code": "",
+                    "group": "BROKER_GROUP_UNSPECIFIED"
+                },
+                "badges": []
+            }
+        ]
+    }
+}

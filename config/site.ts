@@ -12,6 +12,10 @@ export const siteConfig = {
       label: "Broker Activity",
       href: "/broker-activity",
     },
+    {
+      label: "Big Player Movement",
+      href: "/bigplayer-movement",
+    },
   ],
   navMenuItems: [
     {
