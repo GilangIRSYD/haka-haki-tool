@@ -16,6 +16,10 @@ export const siteConfig = {
       label: "Big Player Movement",
       href: "/bigplayer-movement",
     },
+    {
+      label: "Big Broksum",
+      href: "/big-broksum",
+    },
   ],
   navMenuItems: [
     {
