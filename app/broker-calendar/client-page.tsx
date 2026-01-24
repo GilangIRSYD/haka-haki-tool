@@ -682,7 +682,7 @@ function CalendarView({ dailyData }: { dailyData: DailyData[] }) {
     );
   };
 
-  const sortedMonths = Object.keys(monthlyData).sort().reverse();
+  const sortedMonths = Object.keys(monthlyData).sort();
 
   return (
     <div className="space-y-2">
