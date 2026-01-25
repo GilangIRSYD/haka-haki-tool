@@ -739,9 +739,12 @@ function BrokerSummaryTable({
   const summary = useMemo(() => calculatePeriodSummary(periodData), [periodData]);
 
   const formatCurrency = (value: number) => {
-    if (value >= 1000000000) return `${(value / 1000000000).toFixed(1)}B`;
-    if (value >= 1000000) return `${(value / 1000000).toFixed(1)}M`;
-    return `${(value / 1000).toFixed(1)}K`;
+    const absValue = Math.abs(value);
+    const sign = value >= 0 ? '' : '-';
+
+    if (absValue >= 1000000000) return `${sign}${(absValue / 1000000000).toFixed(1)}B`;
+    if (absValue >= 1000000) return `${sign}${(absValue / 1000000).toFixed(1)}M`;
+    return `${sign}${(absValue / 1000).toFixed(1)}K`;
   };
 
   const formatLot = (value: number) => {
