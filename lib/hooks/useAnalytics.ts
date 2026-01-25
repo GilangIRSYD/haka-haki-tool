@@ -263,6 +263,297 @@ export function useAnalytics() {
     []
   );
 
+  /**
+   * Track Big Broksum analysis initiated
+   */
+  const trackBigBroksumAnalysisInitiated = useCallback(
+    (
+      stockCode: string,
+      periodPreset: string,
+      startDate: string,
+      endDate: string
+    ) => {
+      analyticsService.trackEvent('feature_used', {
+        feature_name: 'big_broksum',
+        action: 'analysis_initiated',
+        context: {
+          stock_code: stockCode,
+          period_preset: periodPreset,
+          start_date: startDate,
+          end_date: endDate,
+          period_count: 6,
+        },
+      });
+    },
+    []
+  );
+
+  /**
+   * Track Big Broksum analysis completed
+   */
+  const trackBigBroksumAnalysisCompleted = useCallback(
+    (
+      stockCode: string,
+      durationMs: number,
+      successfulPeriods: number,
+      periodPreset: string
+    ) => {
+      analyticsService.trackEvent('feature_used', {
+        feature_name: 'big_broksum',
+        action: 'analysis_completed',
+        context: {
+          stock_code: stockCode,
+          duration_ms: durationMs,
+          total_periods: 6,
+          successful_periods: successfulPeriods,
+          period_preset: periodPreset,
+        },
+      });
+    },
+    []
+  );
+
+  /**
+   * Track Big Broksum analysis failed
+   */
+  const trackBigBroksumAnalysisFailed = useCallback(
+    (
+      stockCode: string,
+      errorType: string,
+      errorMessage: string,
+      durationMs: number
+    ) => {
+      analyticsService.trackEvent('feature_used', {
+        feature_name: 'big_broksum',
+        action: 'analysis_failed',
+        context: {
+          stock_code: stockCode,
+          error_type: errorType,
+          error_message: errorMessage,
+          duration_ms: durationMs,
+        },
+      });
+    },
+    []
+  );
+
+  /**
+   * Track Big Broksum preset selected
+   */
+  const trackBigBroksumPresetSelected = useCallback(
+    (
+      preset: "1week" | "3months" | "6months" | "12months",
+      previousPreset?: string
+    ) => {
+      analyticsService.trackEvent('feature_used', {
+        feature_name: 'big_broksum',
+        action: 'preset_selected',
+        context: {
+          preset: preset,
+          previous_preset: previousPreset,
+        },
+      });
+    },
+    []
+  );
+
+  /**
+   * Track Big Broksum custom date changed
+   */
+  const trackBigBroksumCustomDateChanged = useCallback(
+    (
+      fieldType: "start_date" | "end_date",
+      newDate: string,
+      daysSpan: number
+    ) => {
+      analyticsService.trackEvent('feature_used', {
+        feature_name: 'big_broksum',
+        action: 'custom_date_changed',
+        context: {
+          field_type: fieldType,
+          new_date: newDate,
+          days_span: daysSpan,
+        },
+      });
+    },
+    []
+  );
+
+  /**
+   * Track Big Broksum stock code entered
+   */
+  const trackBigBroksumStockCodeEntered = useCallback(
+    (
+      stockCode: string,
+      method: "manual_input" | "from_history"
+    ) => {
+      analyticsService.trackEvent('feature_used', {
+        feature_name: 'big_broksum',
+        action: 'stock_code_entered',
+        context: {
+          stock_code: stockCode,
+          input_method: method,
+        },
+      });
+    },
+    []
+  );
+
+  /**
+   * Track Big Broksum summary viewed
+   */
+  const trackBigBroksumSummaryViewed = useCallback(
+    (
+      stockCode: string,
+      trendPattern: string,
+      accumulationCount: number,
+      distributionCount: number
+    ) => {
+      analyticsService.trackEvent('feature_used', {
+        feature_name: 'big_broksum',
+        action: 'summary_viewed',
+        context: {
+          stock_code: stockCode,
+          trend_pattern: trendPattern,
+          accumulation_count: accumulationCount,
+          distribution_count: distributionCount,
+        },
+      });
+    },
+    []
+  );
+
+  /**
+   * Track Big Broksum position switchers detected
+   */
+  const trackBigBroksumPositionSwitchersDetected = useCallback(
+    (
+      stockCode: string,
+      switcherCount: number,
+      topSwitcher?: string
+    ) => {
+      analyticsService.trackEvent('feature_used', {
+        feature_name: 'big_broksum',
+        action: 'position_switchers_detected',
+        context: {
+          stock_code: stockCode,
+          switcher_count: switcherCount,
+          top_switcher: topSwitcher,
+        },
+      });
+    },
+    []
+  );
+
+  /**
+   * Track Big Broksum consistent traders viewed
+   */
+  const trackBigBroksumConsistentTradersViewed = useCallback(
+    (
+      stockCode: string,
+      buyerCount: number,
+      sellerCount: number
+    ) => {
+      analyticsService.trackEvent('feature_used', {
+        feature_name: 'big_broksum',
+        action: 'consistent_traders_viewed',
+        context: {
+          stock_code: stockCode,
+          buyer_count: buyerCount,
+          seller_count: sellerCount,
+        },
+      });
+    },
+    []
+  );
+
+  /**
+   * Track Big Broksum period table viewed
+   */
+  const trackBigBroksumPeriodTableViewed = useCallback(
+    (
+      stockCode: string,
+      periodLabel: string,
+      scrollPosition?: number
+    ) => {
+      analyticsService.trackEvent('feature_used', {
+        feature_name: 'big_broksum',
+        action: 'period_table_viewed',
+        context: {
+          stock_code: stockCode,
+          period_label: periodLabel,
+          scroll_position: scrollPosition,
+        },
+      });
+    },
+    []
+  );
+
+  /**
+   * Track Big Broksum new analysis
+   */
+  const trackBigBroksumNewAnalysis = useCallback(
+    (
+      previousStockCode: string,
+      analysesInSession: number
+    ) => {
+      analyticsService.trackEvent('feature_used', {
+        feature_name: 'big_broksum',
+        action: 'new_analysis',
+        context: {
+          previous_stock_code: previousStockCode,
+          analyses_in_session: analysesInSession,
+        },
+      });
+    },
+    []
+  );
+
+  /**
+   * Track Big Broksum history restored
+   */
+  const trackBigBroksumHistoryRestored = useCallback(
+    (
+      stockCode: string,
+      startDate: string
+    ) => {
+      analyticsService.trackEvent('feature_used', {
+        feature_name: 'big_broksum',
+        action: 'history_restored',
+        context: {
+          stock_code: stockCode,
+          start_date: startDate,
+        },
+      });
+    },
+    []
+  );
+
+  /**
+   * Track Big Broksum API batch completed
+   */
+  const trackBigBroksumApiBatchCompleted = useCallback(
+    (
+      stockCode: string,
+      totalDurationMs: number,
+      successfulCalls: number,
+      failedCalls: number
+    ) => {
+      analyticsService.trackEvent('feature_used', {
+        feature_name: 'big_broksum',
+        action: 'api_batch_completed',
+        context: {
+          stock_code: stockCode,
+          total_duration_ms: totalDurationMs,
+          successful_calls: successfulCalls,
+          failed_calls: failedCalls,
+          total_calls: successfulCalls + failedCalls,
+        },
+      });
+    },
+    []
+  );
+
   return {
     trackEvent,
     trackPageView,
@@ -284,5 +575,18 @@ export function useAnalytics() {
     trackBigPlayerLoadMore,
     trackBigPlayerDataFetched,
     trackScrollToTop,
+    trackBigBroksumAnalysisInitiated,
+    trackBigBroksumAnalysisCompleted,
+    trackBigBroksumAnalysisFailed,
+    trackBigBroksumPresetSelected,
+    trackBigBroksumCustomDateChanged,
+    trackBigBroksumStockCodeEntered,
+    trackBigBroksumSummaryViewed,
+    trackBigBroksumPositionSwitchersDetected,
+    trackBigBroksumConsistentTradersViewed,
+    trackBigBroksumPeriodTableViewed,
+    trackBigBroksumNewAnalysis,
+    trackBigBroksumHistoryRestored,
+    trackBigBroksumApiBatchCompleted,
   };
 }

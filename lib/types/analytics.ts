@@ -106,7 +106,7 @@ export interface PageLoadPerformanceParams extends BaseEventParams {
 
 // Feature Usage Events
 export interface FeatureUsedParams extends BaseEventParams {
-  feature_name: 'broker_analyzer' | 'tradingview_chart' | 'calendar_view';
+  feature_name: 'broker_analyzer' | 'tradingview_chart' | 'calendar_view' | 'big_broksum';
   action: string;
   context?: Record<string, unknown>;
 }

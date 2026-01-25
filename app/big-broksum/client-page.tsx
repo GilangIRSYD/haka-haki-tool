@@ -13,6 +13,7 @@ import { Chip } from "@heroui/chip";
 import { Spinner } from "@heroui/spinner";
 import { addToast } from "@heroui/toast";
 import { useTrackPageView } from "@/lib/hooks/useTrackPageView";
+import { useAnalytics } from "@/lib/hooks/useAnalytics";
 import { useRouter } from "next/navigation";
 import { getClientIPSync } from "@/lib/utils/client-ip";
 import { BROKERS } from "@/data/brokers";
@@ -975,21 +976,60 @@ function InputSection({
     stockCode: string;
     startDate: string;
     endDate: string;
+    periodPreset: string;
   }) => void;
   isAnalyzing: boolean;
 }) {
-  const [stockCode, setStockCode] = useState("FORE");
-  const [startDate, setStartDate] = useState(getDateByPreset("6months"));
+  // Analytics hooks
+  const {
+    trackBigBroksumPresetSelected,
+    trackBigBroksumCustomDateChanged,
+    trackBigBroksumStockCodeEntered,
+    trackBigBroksumHistoryRestored,
+  } = useAnalytics();
+
+  // Helper to get stored value from localStorage
+  const getStoredValue = (key: string, defaultValue: string): string => {
+    if (typeof window === 'undefined') return defaultValue;
+    try {
+      const item = localStorage.getItem(key);
+      return item ? JSON.parse(item) : defaultValue;
+    } catch (error) {
+      return defaultValue;
+    }
+  };
+
+  const initialStockCode = getStoredValue('bigbroksum_stockCode', 'FORE');
+  const initialStartDate = getStoredValue('bigbroksum_startDate', getDateByPreset('6months'));
+
+  const [stockCode, setStockCode] = useState(initialStockCode);
+  const [startDate, setStartDate] = useState(initialStartDate);
   const [endDate, setEndDate] = useState(getTodayDate());
   const [selectedPreset, setSelectedPreset] = useState<string>("6months");
   const [isCustomRange, setIsCustomRange] = useState(false);
+  const [hasRestoredHistory, setHasRestoredHistory] = useState(false);
+
+  // Track history restoration on mount
+  useEffect(() => {
+    if (initialStockCode !== 'FORE' || initialStartDate !== getDateByPreset('6months')) {
+      trackBigBroksumHistoryRestored(initialStockCode, initialStartDate);
+      setHasRestoredHistory(true);
+    }
+  }, []);
 
   const handlePresetClick = (preset: string) => {
+    const previousPreset = selectedPreset;
     setSelectedPreset(preset);
     setIsCustomRange(false);
     const newStartDate = getDateByPreset(preset);
     setStartDate(newStartDate);
     setEndDate(getTodayDate());
+
+    // Track preset selection
+    trackBigBroksumPresetSelected(
+      preset as "1week" | "3months" | "6months" | "12months",
+      previousPreset || undefined
+    );
   };
 
   const handleSubmit = () => {
@@ -1001,7 +1041,19 @@ function InputSection({
       });
       return;
     }
-    onSubmit({ stockCode: stockCode.toUpperCase(), startDate, endDate });
+
+    // Track stock code entry
+    trackBigBroksumStockCodeEntered(
+      stockCode.toUpperCase(),
+      hasRestoredHistory ? 'from_history' : 'manual_input'
+    );
+
+    onSubmit({
+      stockCode: stockCode.toUpperCase(),
+      startDate,
+      endDate,
+      periodPreset: isCustomRange ? 'custom' : selectedPreset
+    });
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -1050,6 +1102,10 @@ function InputSection({
                   setStartDate(value);
                   setIsCustomRange(true);
                   setSelectedPreset("");
+
+                  // Track custom date change
+                  const daysSpan = endDate ? Math.ceil((new Date(endDate).getTime() - new Date(value).getTime()) / (1000 * 60 * 60 * 24)) : 0;
+                  trackBigBroksumCustomDateChanged('start_date', value, daysSpan);
                 }}
                 onKeyDown={handleKeyDown}
                 size="sm"
@@ -1067,6 +1123,10 @@ function InputSection({
                   setEndDate(value);
                   setIsCustomRange(true);
                   setSelectedPreset("");
+
+                  // Track custom date change
+                  const daysSpan = startDate ? Math.ceil((new Date(value).getTime() - new Date(startDate).getTime()) / (1000 * 60 * 60 * 24)) : 0;
+                  trackBigBroksumCustomDateChanged('end_date', value, daysSpan);
                 }}
                 onKeyDown={handleKeyDown}
                 size="sm"
@@ -1140,6 +1200,187 @@ function InputSection({
   );
 }
 
+// TradingView Modal Component
+function TradingViewModal({
+  isOpen,
+  onClose,
+  symbol
+}: {
+  isOpen: boolean;
+  onClose: () => void;
+  symbol: string;
+}) {
+  const widgetRef = useRef<HTMLDivElement>(null);
+  const scriptLoaded = useRef(false);
+  const widgetCreated = useRef(false);
+  const currentSymbol = useRef<string>("");
+  const containerId = "bigbroksum-tradingview-widget-container";
+
+  // Load TradingView script only once
+  useEffect(() => {
+    if (!scriptLoaded.current) {
+      const script = document.createElement('script');
+      script.src = 'https://s3.tradingview.com/tv.js';
+      script.async = true;
+      script.id = 'bigbroksum-tradingview-widget-script';
+      script.onload = () => {
+        scriptLoaded.current = true;
+      };
+      document.head.appendChild(script);
+    }
+  }, []);
+
+  // Create widget when modal opens
+  useEffect(() => {
+    if (isOpen && symbol && widgetRef.current) {
+      const waitForScript = () => {
+        if (scriptLoaded.current && widgetRef.current) {
+          // Always recreate widget when modal opens
+          currentSymbol.current = symbol;
+          widgetRef.current.innerHTML = '';
+
+          // @ts-ignore
+          new TradingView.widget({
+            autosize: true,
+            symbol: `IDX:${symbol}`,
+            interval: "D",
+            timezone: "Asia/Jakarta",
+            theme: "dark",
+            style: "1",
+            locale: "en",
+            toolbar_bg: "#1e222d",
+            enable_publishing: false,
+            hide_side_toolbar: false,
+            allow_symbol_change: true,
+            container_id: containerId,
+            studies: [
+              "MASimple@tv-basicstudies",
+              "MACD@tv-basicstudies"
+            ]
+          });
+          widgetCreated.current = true;
+        } else {
+          setTimeout(waitForScript, 100);
+        }
+      };
+
+      waitForScript();
+    }
+
+    // Cleanup widget when modal closes
+    return () => {
+      if (widgetRef.current) {
+        widgetRef.current.innerHTML = '';
+        widgetCreated.current = false;
+      }
+    };
+  }, [isOpen, symbol, containerId]);
+
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <div className="fixed inset-0 z-[10000] flex items-center justify-center p-4">
+          {/* Backdrop */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+            onClick={onClose}
+          />
+
+          {/* Modal */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.2 }}
+            className="relative w-full max-w-6xl h-[80vh] flex flex-col"
+          >
+            <div className="w-full h-full bg-content1 rounded-2xl shadow-2xl overflow-hidden flex flex-col">
+              {/* Header */}
+              <div className="flex items-center justify-between px-4 py-3 border-b border-default-200 flex-shrink-0">
+                <h2 className="text-lg font-bold">TradingView Chart - {symbol}</h2>
+                <Button
+                  isIconOnly
+                  size="sm"
+                  variant="flat"
+                  onPress={onClose}
+                  className="rounded-full"
+                >
+                  ✕
+                </Button>
+              </div>
+
+              {/* TradingView Widget Container - Always in DOM */}
+              <div className="flex-1 p-3 min-h-0">
+                <div
+                  id={containerId}
+                  ref={widgetRef}
+                  className="w-full h-full rounded-lg overflow-hidden"
+                />
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      )}
+    </AnimatePresence>
+  );
+}
+
+// Floating Action Button for Chart
+function ChartFloatingButton({
+  onClick,
+  symbol
+}: {
+  onClick: () => void;
+  symbol: string;
+}) {
+  return (
+    <motion.div
+      initial={{ scale: 0, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      exit={{ scale: 0, opacity: 0 }}
+      transition={{
+        type: "spring",
+        stiffness: 300,
+        damping: 20
+      }}
+      className="fixed bottom-8 right-8 z-[9999] group"
+    >
+      <Button
+        isIconOnly
+        size="lg"
+        color="primary"
+        className="rounded-full shadow-2xl h-16 w-16"
+        onPress={onClick}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="28"
+          height="28"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+        </svg>
+      </Button>
+      {/* Tooltip with shortcut hint */}
+      <div className="absolute bottom-full right-0 mb-2 px-3 py-2 bg-foreground text-background text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none flex items-center gap-2">
+        <span>Toggle Chart</span>
+        <kbd className="px-1.5 py-0.5 text-[10px] font-semibold bg-default-100 opacity-65 text-default-foreground border border-default-300 rounded">
+          ⌘ + K
+        </kbd>
+      </div>
+    </motion.div>
+  );
+}
+
 // Main page component
 function BigBroksumPage({ shareSlug }: { shareSlug?: string }) {
   const router = useRouter();
@@ -1152,29 +1393,77 @@ function BigBroksumPage({ shareSlug }: { shareSlug?: string }) {
     },
   });
 
+  // Analytics hooks
+  const {
+    trackBigBroksumAnalysisInitiated,
+    trackBigBroksumAnalysisCompleted,
+    trackBigBroksumAnalysisFailed,
+    trackBigBroksumSummaryViewed,
+    trackBigBroksumPositionSwitchersDetected,
+    trackBigBroksumConsistentTradersViewed,
+    trackBigBroksumNewAnalysis,
+    trackBigBroksumApiBatchCompleted,
+    trackApiCallPerformance,
+    trackChartToggled,
+  } = useAnalytics();
+
   const [periodsData, setPeriodsData] = useState<PeriodData[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [stockCode, setStockCode] = useState<string>("");
   const [dateRange, setDateRange] = useState<{ startDate: string; endDate: string } | null>(null);
+  const [analysisStartTime, setAnalysisStartTime] = useState<number>(0);
+  const [analysesInSession, setAnalysesInSession] = useState<number>(0);
+
+  // TradingView Chart States
+  const [isChartModalOpen, setIsChartModalOpen] = useState(false);
+  const [chartSymbol, setChartSymbol] = useState<string | null>(null);
 
   const handleAnalyze = async (data: {
     stockCode: string;
     startDate: string;
     endDate: string;
+    periodPreset: string;
   }) => {
     setIsLoading(true);
     setStockCode(data.stockCode);
     setDateRange({ startDate: data.startDate, endDate: data.endDate });
+    const startTime = Date.now();
+    setAnalysisStartTime(startTime);
+
+    // Track analysis initiated
+    trackBigBroksumAnalysisInitiated(
+      data.stockCode,
+      data.periodPreset,
+      data.startDate,
+      data.endDate
+    );
 
     try {
       // Divide the period into 6 sub-periods
       const periods = dividePeriodInto6(data.startDate, data.endDate);
 
+      let apiCallStart = Date.now();
+      let successCount = 0;
+      let failCount = 0;
+
       // Fetch data for all periods in parallel
       const results = await Promise.all(
         periods.map(async (period) => {
+          const callStart = Date.now();
           try {
             const summary = await fetchBrokerSummary(data.stockCode, period.startDate, period.endDate);
+            const callDuration = Date.now() - callStart;
+
+            // Track individual API call performance
+            trackApiCallPerformance(
+              '/api/v1/emiten-broker-summary',
+              'GET',
+              callDuration,
+              true,
+              200
+            );
+            successCount++;
+
             return {
               periodLabel: period.label,
               startDate: period.startDate,
@@ -1183,6 +1472,17 @@ function BigBroksumPage({ shareSlug }: { shareSlug?: string }) {
               sellers: summary.sellers,
             };
           } catch (error) {
+            const callDuration = Date.now() - callStart;
+            failCount++;
+
+            // Track failed API call
+            trackApiCallPerformance(
+              '/api/v1/emiten-broker-summary',
+              'GET',
+              callDuration,
+              false
+            );
+
             console.error(`Failed to fetch data for ${period.label}:`, error);
             return {
               periodLabel: period.label,
@@ -1195,8 +1495,48 @@ function BigBroksumPage({ shareSlug }: { shareSlug?: string }) {
         })
       );
 
+      const totalDuration = Date.now() - apiCallStart;
+
+      // Track API batch completed
+      trackBigBroksumApiBatchCompleted(
+        data.stockCode,
+        totalDuration,
+        successCount,
+        failCount
+      );
+
+      // Save to localStorage for next time
+      if (typeof window !== 'undefined') {
+        try {
+          localStorage.setItem('bigbroksum_stockCode', JSON.stringify(data.stockCode));
+          localStorage.setItem('bigbroksum_startDate', JSON.stringify(data.startDate));
+        } catch (error) {
+          console.error('Failed to save to localStorage:', error);
+        }
+      }
+
+      // Track analysis completed
+      trackBigBroksumAnalysisCompleted(
+        data.stockCode,
+        Date.now() - startTime,
+        successCount,
+        data.periodPreset
+      );
+
       setPeriodsData(results);
+      setAnalysesInSession(prev => prev + 1);
+
+      // Set chart symbol for TradingView
+      setChartSymbol(data.stockCode.toUpperCase());
     } catch (error) {
+      // Track analysis failed
+      trackBigBroksumAnalysisFailed(
+        data.stockCode,
+        'unknown',
+        error instanceof Error ? error.message : 'Unknown error',
+        Date.now() - startTime
+      );
+
       addToast({
         title: "Analysis Failed",
         description: error instanceof Error ? error.message : "Failed to fetch broker data. Please try again.",
@@ -1206,6 +1546,55 @@ function BigBroksumPage({ shareSlug }: { shareSlug?: string }) {
       setIsLoading(false);
     }
   };
+
+  // Track results viewing when periodsData changes
+  useEffect(() => {
+    if (periodsData.length > 0) {
+      const summary = calculateExecutiveSummary(periodsData);
+
+      // Track summary viewed
+      trackBigBroksumSummaryViewed(
+        stockCode,
+        summary.trendPattern,
+        summary.accumulationPeriods,
+        summary.distributionPeriods
+      );
+
+      // Track position switchers detected
+      if (summary.positionSwitchers.length > 0) {
+        trackBigBroksumPositionSwitchersDetected(
+          stockCode,
+          summary.positionSwitchers.length,
+          summary.positionSwitchers[0]?.broker
+        );
+      }
+
+      // Track consistent traders viewed
+      trackBigBroksumConsistentTradersViewed(
+        stockCode,
+        summary.mostConsistentBuyers.length,
+        summary.mostConsistentSellers.length
+      );
+    }
+  }, [periodsData]); // Only depend on periodsData
+
+  // Keyboard shortcut for toggling chart modal (Cmd/Ctrl + K)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Check for Cmd/Ctrl + K
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        // Toggle chart modal if symbol is available
+        if (chartSymbol) {
+          trackChartToggled(chartSymbol, 'keyboard_shortcut', true);
+          setIsChartModalOpen(prev => !prev);
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [chartSymbol, trackChartToggled]);
 
   return (
     <div className="w-full h-full">
@@ -1251,9 +1640,13 @@ function BigBroksumPage({ shareSlug }: { shareSlug?: string }) {
                 size="sm"
                 variant="flat"
                 onPress={() => {
+                  // Track new analysis button
+                  trackBigBroksumNewAnalysis(stockCode, analysesInSession);
+
                   setPeriodsData([]);
                   setStockCode("");
                   setDateRange(null);
+                  setChartSymbol(null);
                 }}
               >
                 New Analysis
@@ -1305,6 +1698,26 @@ function BigBroksumPage({ shareSlug }: { shareSlug?: string }) {
           </motion.div>
         )}
       </div>
+
+      {/* TradingView Floating Action Button */}
+      <AnimatePresence>
+        {chartSymbol && (
+          <ChartFloatingButton
+            onClick={() => {
+              trackChartToggled(chartSymbol, 'button_click');
+              setIsChartModalOpen(true);
+            }}
+            symbol={chartSymbol}
+          />
+        )}
+      </AnimatePresence>
+
+      {/* TradingView Chart Modal */}
+      <TradingViewModal
+        isOpen={isChartModalOpen}
+        onClose={() => setIsChartModalOpen(false)}
+        symbol={chartSymbol || ""}
+      />
     </div>
   );
 }
