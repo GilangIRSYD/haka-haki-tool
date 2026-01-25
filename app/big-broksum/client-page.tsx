@@ -12,7 +12,6 @@ import { Card, CardBody } from "@heroui/card";
 import { Chip } from "@heroui/chip";
 import { Spinner } from "@heroui/spinner";
 import { addToast } from "@heroui/toast";
-import { useAnalytics } from "@/lib/hooks/useAnalytics";
 import { useTrackPageView } from "@/lib/hooks/useTrackPageView";
 import { useRouter } from "next/navigation";
 import { getClientIPSync } from "@/lib/utils/client-ip";
@@ -1140,16 +1139,15 @@ function InputSection({
 
 // Main page component
 function BigBroksumPage({ shareSlug }: { shareSlug?: string }) {
-  const { trackPageView } = useAnalytics();
   const router = useRouter();
 
   // Track page view
-  useEffect(() => {
-    trackPageView({
-      pageTitle: 'Big Broksum',
+  useTrackPageView({
+    pageTitle: 'Big Broksum',
+    additionalParams: {
       pageType: 'big_broksum',
-    });
-  }, [trackPageView]);
+    },
+  });
 
   const [periodsData, setPeriodsData] = useState<PeriodData[]>([]);
   const [isLoading, setIsLoading] = useState(false);
