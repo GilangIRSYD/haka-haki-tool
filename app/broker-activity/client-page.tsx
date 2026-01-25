@@ -176,6 +176,32 @@ interface DailyData {
   };
 }
 
+interface EmittenInfoResponse {
+  data: {
+    symbol: string;
+    name: string;
+    sector: string;
+    sub_sector: string;
+    price: string;
+    previous: string;
+    change: string;
+    percentage: number;
+    volume: string;
+    value: string;
+    status: string;
+    icon_url: string;
+    indexes: string[];
+    notation: Array<{
+      notation_code: string;
+      notation_desc: string;
+      icon_url?: {
+        light_mode: string;
+        dark_mode: string;
+      };
+    }>;
+  };
+}
+
 // Helper functions
 function generateNonce(): string {
   return Array.from({ length: 32 }, () =>
@@ -335,6 +361,28 @@ async function fetchEmittenCalendar(
 
   if (!response.ok) {
     throw new Error(`Emitten Calendar API Error: ${response.status} ${response.statusText}`);
+  }
+
+  return response.json();
+}
+
+async function fetchEmittenInfo(symbol: string): Promise<EmittenInfoResponse> {
+  const baseUrl = 'https://api-idx.gsphomelab.org/api/v1';
+  const endpoint = `/emitten/${symbol}/info`;
+
+  const url = `${baseUrl}${endpoint}`;
+  const clientIP = getClientIPSync() || 'unknown';
+
+  const response = await fetch(url, {
+    method: 'GET',
+    headers: {
+      'x-nonce': generateNonce(),
+      'X-Ip-Client': clientIP,
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error(`Emitten Info API Error: ${response.status} ${response.statusText}`);
   }
 
   return response.json();
@@ -945,6 +993,8 @@ function BrokerActivityPage() {
   const [emittenCalendar, setEmittenCalendar] = useState<EmittenCalendarResponse | null>(null);
   const [selectedStock, setSelectedStock] = useState<string | null>(null);
   const [isLoadingCalendar, setIsLoadingCalendar] = useState(false);
+  const [emittenInfo, setEmittenInfo] = useState<EmittenInfoResponse | null>(null);
+  const [isLoadingEmittenInfo, setIsLoadingEmittenInfo] = useState(false);
 
   const [isChartModalOpen, setIsChartModalOpen] = useState(false);
   const [chartSymbol, setChartSymbol] = useState<string | null>(null);
@@ -1006,6 +1056,27 @@ function BrokerActivityPage() {
       };
 
       fetchCalendar();
+    }
+  }, [selectedStock]);
+
+  // Fetch emitten info when stock is selected
+  useEffect(() => {
+    if (selectedStock) {
+      const fetchInfo = async () => {
+        setIsLoadingEmittenInfo(true);
+        try {
+          const data = await fetchEmittenInfo(selectedStock);
+          setEmittenInfo(data);
+        } catch (error) {
+          // Silently fail for emitten info, it's not critical
+          console.error("Failed to fetch emitten info:", error);
+          setEmittenInfo(null);
+        } finally {
+          setIsLoadingEmittenInfo(false);
+        }
+      };
+
+      fetchInfo();
     }
   }, [selectedStock]);
 
@@ -1080,6 +1151,7 @@ function BrokerActivityPage() {
     setBrokerCode(newBrokerCode);
     setSelectedStock(null);
     setEmittenCalendar(null);
+    setEmittenInfo(null);
   };
 
   // Handle ESC key to close modal
@@ -1309,25 +1381,225 @@ function BrokerActivityPage() {
                 <Card>
                   <CardBody>
                     {/* Calendar Header */}
-                    <div className="flex items-center justify-between mb-4">
-                      <div>
-                        <h2 className="text-xl font-bold">{selectedStock}</h2>
-                        <p className="text-sm text-default-500">
-                          {brokerCode} - {brokerInfo?.name || 'Unknown'}
-                        </p>
+                    <div className="mb-4">
+                      {/* Top Row: Logo + Symbol + Company Name + Broker */}
+                      <div className="flex items-start justify-between gap-4 mb-3">
+                        <div className="flex items-center gap-3">
+                          {emittenInfo?.data.icon_url && (
+                            <img
+                              src={emittenInfo.data.icon_url}
+                              alt={selectedStock}
+                              className="w-16 h-16 rounded-full object-contain bg-default-100"
+                              onError={(e) => {
+                                e.currentTarget.style.display = 'none';
+                              }}
+                            />
+                          )}
+                          <div>
+                            <div className="flex items-center gap-2 flex-wrap">
+                              <h2 className="text-xl font-bold">{selectedStock}</h2>
+                              {emittenCalendar?.summary.trend && (
+                                <Chip
+                                  size="sm"
+                                  color={emittenCalendar.summary.trend === "accumulation" ? "success" : emittenCalendar.summary.trend === "distribution" ? "danger" : "default"}
+                                  variant="flat"
+                                  className="h-5 text-[10px] font-bold px-2"
+                                >
+                                  {emittenCalendar.summary.trend === "accumulation" ? "NET BUY" :
+                                   emittenCalendar.summary.trend === "distribution" ? "NET SELL" : "NEUTRAL"}
+                                </Chip>
+                              )}
+                              {/* Notations & ISSI */}
+                              {emittenInfo?.data.notation && emittenInfo.data.notation
+                                .filter(n => n.notation_code !== 'AQ')
+                                .map((notation) => (
+                                  <Chip
+                                    key={notation.notation_code}
+                                    size="sm"
+                                    variant="flat"
+                                    color="warning"
+                                    className="h-5 text-[9px] font-semibold px-2"
+                                  >
+                                    {notation.notation_code}
+                                  </Chip>
+                                ))
+                              }
+                              {emittenInfo?.data.indexes.includes('ISSI') && (
+                                <Chip
+                                  size="sm"
+                                  variant="flat"
+                                  color="primary"
+                                  className="h-5 text-[9px] font-semibold px-2"
+                                >
+                                  ISSI
+                                </Chip>
+                              )}
+                            </div>
+                            {emittenInfo?.data.name && (
+                              <p className="text-sm text-default-600">{emittenInfo.data.name}</p>
+                            )}
+                            <div className="flex items-center gap-3">
+                              <p className="text-xs text-default-500">
+                                <span className={`font-bold ${getBrokerGroupTextColor(getBrokerGroupCode(brokerCode))}`}>
+                                  {brokerCode}
+                                </span>
+                                {' - '}{brokerInfo?.name || 'Unknown'}
+                              </p>
+                              {emittenCalendar?.summary.price_movement && (
+                                <>
+                                  <span className="text-default-300">|</span>
+                                  <p className="text-xs">
+                                    <span className="text-default-500">Price:</span>
+                                    <span className="font-bold text-default-700 ml-1">
+                                      {emittenCalendar.summary.price_movement.from}
+                                    </span>
+                                    <span className="text-default-400 mx-1">→</span>
+                                    <span className={`font-bold ${
+                                      emittenCalendar.summary.price_movement.change_pct >= 0 ? 'text-success' : 'text-danger'
+                                    }`}>
+                                      {emittenCalendar.summary.price_movement.to}
+                                    </span>
+                                    <span className={`ml-1 ${
+                                      emittenCalendar.summary.price_movement.change_pct >= 0 ? 'text-success' : 'text-danger'
+                                    }`}>
+                                      ({emittenCalendar.summary.price_movement.change_pct >= 0 ? '+' : ''}{emittenCalendar.summary.price_movement.change_pct.toFixed(1)}%)
+                                    </span>
+                                  </p>
+                                </>
+                              )}
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                      {brokerActivity && (
-                        <div className="text-right">
-                          <p className="text-xs text-default-500">Total Value</p>
-                          <p className="text-lg font-bold text-primary">
-                            {brokerActivity.stocks.items.find(s => s.symbol === selectedStock)?.value.formatted || '-'}
-                          </p>
-                          <p className="text-xs text-default-500">Total Volume</p>
-                          <p className="text-sm font-semibold text-default-600">
-                            {brokerActivity.stocks.items.find(s => s.symbol === selectedStock)?.volume.formatted || '-'}
-                          </p>
+
+                      {/* Sector & Sub-sector */}
+                      {emittenInfo?.data.sector && (
+                        <div className="flex items-center gap-2 mb-3">
+                          <span className="text-xs text-default-600">{emittenInfo.data.sector}</span>
+                          {emittenInfo.data.sub_sector && (
+                            <>
+                              <span className="text-default-400">•</span>
+                              <span className="text-xs text-default-500">{emittenInfo.data.sub_sector}</span>
+                            </>
+                          )}
                         </div>
                       )}
+
+                      {/* Stats Row - Broker Activity Summary */}
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-3">
+                        {/* Total Value */}
+                        {brokerActivity && (() => {
+                          const stock = brokerActivity.stocks.items.find(s => s.symbol === selectedStock);
+                          const isBuy = stock?.side === "BUY";
+                          return (
+                            <div className={`rounded-lg border px-3 py-2 ${
+                              isBuy ? 'bg-success/5 border-success/20' : 'bg-danger/5 border-danger/20'
+                            }`}>
+                              <p className={`text-[10px] uppercase font-medium ${
+                                isBuy ? 'text-success-700' : 'text-danger-700'
+                              }`}>Total Value</p>
+                              <p className={`text-base font-bold ${
+                                isBuy ? 'text-success' : 'text-danger'
+                              }`}>
+                                {stock?.value.formatted || '-'}
+                              </p>
+                              <p className={`text-[9px] ${
+                                isBuy ? 'text-success-600' : 'text-danger-600'
+                              }`}>
+                                Value traded
+                              </p>
+                            </div>
+                          );
+                        })()}
+
+                        {/* Total Volume */}
+                        {brokerActivity && (() => {
+                          const stock = brokerActivity.stocks.items.find(s => s.symbol === selectedStock);
+                          const isBuy = stock?.side === "BUY";
+                          return (
+                            <div className={`rounded-lg border px-3 py-2 ${
+                              isBuy ? 'bg-success/5 border-success/20' : 'bg-danger/5 border-danger/20'
+                            }`}>
+                              <p className={`text-[10px] uppercase font-medium ${
+                                isBuy ? 'text-success-700' : 'text-danger-700'
+                              }`}>Total Volume</p>
+                              <p className={`text-base font-bold ${
+                                isBuy ? 'text-success' : 'text-danger'
+                              }`}>
+                                {stock?.volume.formatted || '-'}
+                              </p>
+                              <p className={`text-[9px] ${
+                                isBuy ? 'text-success-600' : 'text-danger-600'
+                              }`}>
+                                Lot traded
+                              </p>
+                            </div>
+                          );
+                        })()}
+
+                        {/* Current Price */}
+                        {emittenInfo?.data && (
+                          <div className="bg-default-50 rounded-lg border border-default-200 px-3 py-2">
+                            <div className="flex items-center justify-between">
+                              <p className="text-[10px] text-default-500 uppercase font-medium">Current Price</p>
+                              {emittenInfo.data.percentage !== undefined && (
+                                <p className={`text-[10px] font-semibold ${
+                                  emittenInfo.data.percentage > 0 ? 'text-success' :
+                                  emittenInfo.data.percentage < 0 ? 'text-danger' :
+                                  'text-default-500'
+                                }`}>
+                                  {emittenInfo.data.percentage > 0 ? '+' : ''}{emittenInfo.data.percentage.toFixed(2)}%
+                                </p>
+                              )}
+                            </div>
+                            <p className="text-base font-bold text-default-700">
+                              IDR {emittenInfo.data.price}
+                            </p>
+                            {emittenInfo.data.previous && (
+                              <p className="text-[9px] text-default-500">
+                                Previous: IDR {emittenInfo.data.previous}
+                              </p>
+                            )}
+                          </div>
+                        )}
+
+                        {/* Broker Average Price */}
+                        {brokerActivity && (() => {
+                          const stock = brokerActivity.stocks.items.find(s => s.symbol === selectedStock);
+                          const isBuy = stock?.side === "BUY";
+                          const avgPriceRaw = stock?.avg_price.raw;
+                          const currentPrice = emittenInfo?.data.price ? parseFloat(emittenInfo.data.price) : null;
+
+                          // Calculate percentage difference if net buy and we have both prices
+                          const showPercentageDiff = isBuy && avgPriceRaw && currentPrice;
+                          const percentageDiff = showPercentageDiff
+                            ? ((currentPrice - avgPriceRaw) / avgPriceRaw) * 100
+                            : null;
+
+                          return (
+                            <div className="bg-default-50 rounded-lg px-3 py-2">
+                              <div className="flex items-center justify-between">
+                                <p className="text-[10px] text-default-500 uppercase font-medium">Broker Avg</p>
+                                {showPercentageDiff && percentageDiff !== null && (
+                                  <p className={`text-[10px] font-semibold ${
+                                    percentageDiff > 0 ? 'text-success' :
+                                    percentageDiff < 0 ? 'text-danger' :
+                                    'text-default-500'
+                                  }`}>
+                                    {percentageDiff > 0 ? '+' : ''}{percentageDiff.toFixed(2)}%
+                                  </p>
+                                )}
+                              </div>
+                              <p className="text-base font-bold text-primary">
+                                {stock?.avg_price.formatted || '-'}
+                              </p>
+                              <p className="text-[9px] text-default-500">
+                                Average price
+                              </p>
+                            </div>
+                          );
+                        })()}
+                      </div>
                     </div>
 
                     <CalendarView dailyData={calendarDailyData} symbol={selectedStock} />
