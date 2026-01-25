@@ -396,7 +396,7 @@ function calculateExecutiveSummary(periodsData: PeriodData[]): ExecutiveSummaryD
     const buyers = new Set(period.buyers.map(b => b.broker));
     const sellers = new Set(period.sellers.map(s => s.broker));
 
-    [...buyers, ...sellers].forEach(broker => {
+    Array.from(buyers).concat(Array.from(sellers)).forEach(broker => {
       if (!brokerPositions.has(broker)) brokerPositions.set(broker, []);
 
       if (buyers.has(broker) && sellers.has(broker)) {
