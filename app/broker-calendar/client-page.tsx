@@ -68,6 +68,7 @@ interface AnalysisResult {
   netSell: number;
   totalValue: number;
   insight: string;
+  brokers: string[];
   brokerSummary: BrokerDailyData[];
   dailyData: DailyData[];
   dominantBrokers: string[];
@@ -394,6 +395,7 @@ async function analyzeData(
       netSell,
       totalValue: apiResponse.summary.total_value,
       insight: apiResponse.summary.note,
+      brokers: apiResponse.brokers || [],
       brokerSummary,
       dailyData,
       dominantBrokers: apiResponse.summary.dominant_brokers || [],
@@ -1215,7 +1217,7 @@ function InputSection({
   const [loadedFromStorage, setLoadedFromStorage] = useState(false);
 
   const [selectedBrokers, setSelectedBrokers] = useState<string[]>(
-    initialData?.brokers || ["AK", "XL", "XC", "CC", "MG"]
+    initialData?.brokers || []
   );
   const [stockCode, setStockCode] = useState(initialData?.stockCode || "FORE");
   const [startDate, setStartDate] = useState(
@@ -1238,22 +1240,26 @@ function InputSection({
   useEffect(() => {
     if (!loadedFromStorage && !initialData) {
       const savedStockCode = loadFromLocalStorage<string>(STORAGE_KEYS.STOCK_CODE, "");
-      const savedBrokers = loadFromLocalStorage<string[]>(STORAGE_KEYS.SELECTED_BROKERS, []);
 
       if (savedStockCode) {
         setStockCode(savedStockCode);
       }
-      if (savedBrokers.length > 0) {
-        setSelectedBrokers(savedBrokers);
-      }
+      // Brokers default to empty, not loaded from localStorage
 
       setLoadedFromStorage(true);
     }
   }, [loadedFromStorage, initialData]);
 
+  // Sync selectedBrokers when initialData.brokers changes (e.g., after API response)
+  useEffect(() => {
+    if (initialData?.brokers) {
+      setSelectedBrokers(initialData.brokers);
+    }
+  }, [initialData?.brokers]);
+
   const handleSubmit = () => {
-    if (selectedBrokers.length === 0 || !stockCode || !startDate || !endDate) {
-      alert("Please fill in all fields");
+    if (!stockCode || !startDate || !endDate) {
+      alert("Please fill in all required fields");
       return;
     }
     onSubmit({ brokers: selectedBrokers, stockCode: stockCode.toUpperCase(), startDate, endDate });
@@ -1378,7 +1384,7 @@ function InputSection({
 
           <div>
             <label className="block text-xs font-medium text-default-700 mb-1.5">
-              Select Brokers
+              Select Brokers <span className="text-default-400 font-normal">(Optional - leave empty for top buy & sell brokers)</span>
             </label>
             <Autocomplete
               defaultItems={BROKERS.filter((b) => !selectedBrokers.includes(b.code))}
@@ -1475,7 +1481,7 @@ function InputSection({
             }`}>
               {selectedBrokers.length > 0
                 ? `${selectedBrokers.length}/7 broker(s) selected: ${selectedBrokers.join(", ")}`
-                : "0/7 brokers selected (maximum 7 brokers)"}
+                : "No broker selected - will analyze top buy & sell brokers"}
             </p>
           </div>
 
@@ -1554,9 +1560,19 @@ function AnalyzerPage({ shareSlug }: { shareSlug?: string }) {
       );
       setAnalysisResult(result);
 
-      // Save to localStorage after successful analysis
+      // If no brokers were selected, populate from response
+      let updatedBrokers = data.brokers;
+      if (data.brokers.length === 0 && result.brokers.length > 0) {
+        updatedBrokers = result.brokers;
+        // Update formData with the brokers from response
+        setFormData({
+          ...data,
+          brokers: updatedBrokers
+        });
+      }
+
+      // Save to localStorage after successful analysis (only stock code, not brokers)
       saveToLocalStorage(STORAGE_KEYS.STOCK_CODE, data.stockCode);
-      saveToLocalStorage(STORAGE_KEYS.SELECTED_BROKERS, data.brokers);
 
       // Track analysis completion
       const duration = Date.now() - startTime;
