@@ -1,0 +1,407 @@
+{
+    "data": {
+        "address": [
+            {
+                "id": "76",
+                "email": [
+                    "corsec@sentulcity.co.id"
+                ],
+                "fax": "87961036; ",
+                "npwp": "01.614.952.8-054.000",
+                "phone": "8796-0023\r\n522-6848 ",
+                "website": "www.bukitsentul.co.id",
+                "key": "",
+                "lastupdate": "2021-12-28T14:00:24+07:00",
+                "value": "<td colspan='4'>Kantor Pusat : Gedung Menara Sudirman, Lantai 25, Jl.Jend.Sudirman  Kav.60, Jakarta 12190, Indonesia\r\n\r\nKantor Operasional : Sentul City Building, Jl.MH. Thamrin Kav.8, Sentul City, Bogor 16810, Indonesia\n\n        \t\t  \t\t\tPhone: 8796-0023\r\n522-6848 \n        \t\t  \t\t\tFax: 87961036; \n                            NPWP: 01.614.952.8-054.000\n        \t\t  \t\t\tEmail: corsec@sentulcity.co.id\n        \t\t  \t\t\tWebsite: www.bukitsentul.co.id\n\n        \t  \t\t\t</td>",
+                "office": "Kantor Pusat : Gedung Menara Sudirman, Lantai 25, Jl.Jend.Sudirman  Kav.60, Jakarta 12190, Indonesia  Kantor Operasional : Sentul City Building, Jl.MH. Thamrin Kav.8, Sentul City, Bogor 16810, Indonesia"
+            }
+        ],
+        "background": "PT Sentul City Tbk merupakan perusahaan properti yang bergerak di bidang pengembangan, penjualan, pengoperasian, dan penyewaan perumahan, gedung kantor, pusat perbelanjaan, tempat rekreasi, dan lainnya. Perusahaan yang dahulu bernama PT Bukit Sentul Tbk ini mempunyai kawasan yang disebut \"Kota mandiri\" di daerah sentul, Jawa Barat.\n",
+        "history": {
+            "amount": "200 B",
+            "board": "Papan Utama",
+            "date": "28 Jul 1997",
+            "price": "500",
+            "registrar": "",
+            "shares": "400,000,000",
+            "underwriters": [
+                "PT. Trimega Securindo Lestari"
+            ],
+            "administrative_bureau": "PT. Sirca Datapro Perdana",
+            "free_float": "23.40%"
+        },
+        "key_executive": {
+            "commissioner": [
+                {
+                    "id": "13834592",
+                    "key": "Commissioner",
+                    "lastupdate": "2025-07-09T09:37:03+07:00",
+                    "value": "Gatot Sudariyono"
+                },
+                {
+                    "id": "13834589",
+                    "key": "Commissioner",
+                    "lastupdate": "2025-07-09T09:37:03+07:00",
+                    "value": "Yuswandi Arsyad Temenggung"
+                },
+                {
+                    "id": "13834588",
+                    "key": "Commissioner",
+                    "lastupdate": "2025-07-09T09:37:03+07:00",
+                    "value": "Sumarsono"
+                }
+            ],
+            "director": [
+                {
+                    "id": "13834582",
+                    "key": "Director",
+                    "lastupdate": "2025-07-09T09:37:03+07:00",
+                    "value": "Tjetje Muljanto"
+                },
+                {
+                    "id": "13834585",
+                    "key": "Director",
+                    "lastupdate": "2025-07-09T09:37:03+07:00",
+                    "value": "Jeyson Pribadi"
+                },
+                {
+                    "id": "13834584",
+                    "key": "Director",
+                    "lastupdate": "2025-07-09T09:37:03+07:00",
+                    "value": "Hartan Gunadi Harja"
+                },
+                {
+                    "id": "13834583",
+                    "key": "Director",
+                    "lastupdate": "2025-07-09T09:37:03+07:00",
+                    "value": "Adi Syahruzad"
+                },
+                {
+                    "id": "13834581",
+                    "key": "Director",
+                    "lastupdate": "2025-07-09T09:37:03+07:00",
+                    "value": "Stephanie Alim"
+                },
+                {
+                    "id": "13834580",
+                    "key": "Director",
+                    "lastupdate": "2025-07-09T09:37:03+07:00",
+                    "value": "Daniel Otto Kumala"
+                }
+            ],
+            "independent_commissioner": [
+                {
+                    "id": "13834593",
+                    "key": "Commissioner (Independent)",
+                    "lastupdate": "2025-07-09T09:37:03+07:00",
+                    "value": "Jonnardi"
+                },
+                {
+                    "id": "13834591",
+                    "key": "Commissioner (Independent)",
+                    "lastupdate": "2025-07-09T09:37:03+07:00",
+                    "value": "Lukita Dinarsyah Tuwo"
+                },
+                {
+                    "id": "13834590",
+                    "key": "Commissioner (Independent)",
+                    "lastupdate": "2025-07-09T09:37:03+07:00",
+                    "value": "Wahyu Utomo"
+                }
+            ],
+            "president_commissioner": [
+                {
+                    "id": "13834586",
+                    "key": "President Commissioner",
+                    "lastupdate": "2025-07-09T09:37:03+07:00",
+                    "value": "Basaria Panjaitan"
+                }
+            ],
+            "president_director": [
+                {
+                    "id": "13834579",
+                    "key": "President Director",
+                    "lastupdate": "2025-07-09T09:37:03+07:00",
+                    "value": "Hiramsyah Sambudhy Thaib"
+                }
+            ],
+            "vice_president": [],
+            "vice_president_commissioner": [
+                {
+                    "id": "13834587",
+                    "key": "Vice President Commissioner",
+                    "lastupdate": "2025-07-09T09:37:03+07:00",
+                    "value": "Reina Kumala Kwee"
+                }
+            ],
+            "independent_vice_president_commissioner": [],
+            "independent_president_commissioner": []
+        },
+        "secretary": [
+            {
+                "id": "12528570",
+                "key": "",
+                "lastupdate": "2021-12-28T14:00:24+07:00",
+                "value": "{\"name\":\"Kwee Liana Kumala\",\"phone\":\"021 8792 3959\",\"email\":\"corsec@sentulcity.co.id\"}"
+            }
+        ],
+        "shareholder": [
+            {
+                "percentage": "65.27%",
+                "name": "PT. SAKTI GENERASI PERDANA",
+                "value": "109.46 B",
+                "badges": [
+                    "pengendali"
+                ],
+                "id": "0"
+            },
+            {
+                "percentage": "22.12%",
+                "name": "MASYARAKAT NON WARKAT",
+                "value": "37.10 B",
+                "badges": [],
+                "id": "0"
+            },
+            {
+                "percentage": "6.7%",
+                "name": "STELLA ISABELLA DJOHAN",
+                "value": "11.24 B",
+                "badges": [],
+                "id": "0"
+            },
+            {
+                "percentage": "5.27%",
+                "name": "SAMUEL SEKURITAS INDONESIA, PT",
+                "value": "8.85 B",
+                "badges": [],
+                "id": "0"
+            },
+            {
+                "percentage": "0.64%",
+                "name": "MASYARAKAT WARKAT",
+                "value": "1.07 B",
+                "badges": [],
+                "id": "0"
+            }
+        ],
+        "subsidiary": [
+            {
+                "company": "PT FAUNA LAND",
+                "percentage": "70.00%",
+                "types": "PARIWISATA",
+                "value": "20000000000"
+            },
+            {
+                "company": "PT SENTUL CITY PROPERTI",
+                "percentage": "99.90%",
+                "types": "REAL ESTAT",
+                "value": "2164330018"
+            },
+            {
+                "company": "PT SENTUL GRAHA SEJAHTERA",
+                "percentage": "99.90%",
+                "types": "REAL ESTAT",
+                "value": "250000000"
+            },
+            {
+                "company": "PT CENTERRA MANAJEMEN PROPERTI",
+                "percentage": "99.90%",
+                "types": "PENGELOLAAN APARTEMEN",
+                "value": "61756000"
+            },
+            {
+                "company": "PT BUKIT JONGGOL ASRI (D/H PT KOTA ULUNG SELARAS)",
+                "percentage": "80.00%",
+                "types": "REAL ESTAT",
+                "value": "4384202689567"
+            },
+            {
+                "company": "PT SENTUL PP PROPERTI",
+                "percentage": "51.00%",
+                "types": "REAL ESTAT",
+                "value": "170682671664"
+            },
+            {
+                "company": "PT AFTANESIA RAYA",
+                "percentage": "99.99%",
+                "types": "REAL ESTAT",
+                "value": "445536507279"
+            },
+            {
+                "company": "PT NATURA CITY DEVELOPMENTS (D/H PT SERPONG KARYA CEMERLANG)",
+                "percentage": "29.23%",
+                "types": "PERDAGANGAN UMUM",
+                "value": "982403027849"
+            },
+            {
+                "company": "PT GUNUNGGEULIS ELOK ABADI",
+                "percentage": "99.99%",
+                "types": "RESTORAN DAN PARIWISATA",
+                "value": "213235561544"
+            },
+            {
+                "company": "PT KARYA MEGAH SUKSES",
+                "percentage": "99.99%",
+                "types": "PERDAGANGAN DAN JASA",
+                "value": "55518198898"
+            },
+            {
+                "company": "PT SUKAPUTRA GRAHA CEMERLANG",
+                "percentage": "99.99%",
+                "types": "PENGELOLAAN KOTA",
+                "value": "180505465525"
+            },
+            {
+                "company": "PT GAZELLE INDONESIA",
+                "percentage": "99.99%",
+                "types": "REAL ESTAT",
+                "value": "213506434687"
+            },
+            {
+                "company": "PT SENTUL AIR NUSANTARA",
+                "percentage": "99.95%",
+                "types": "PENGELOLAAN AIR",
+                "value": "17960856649"
+            },
+            {
+                "company": "PT LANGGENG SAKTI MANDIRI",
+                "percentage": "99.99%",
+                "types": "PENGELOLAAN AIR",
+                "value": "5419111968"
+            },
+            {
+                "company": "PT BINTANG PERDANA MULIA",
+                "percentage": "99.83%",
+                "types": "REAL ESTAT",
+                "value": "54048280034"
+            },
+            {
+                "company": "PT JASA SELARAS UTAMA",
+                "percentage": "99.99%",
+                "types": "JASA PARKIR",
+                "value": "2898111937"
+            },
+            {
+                "company": "PT SERPONG NATURA HIJAU SENTOSA",
+                "percentage": "99.00%",
+                "types": "PERDAGANGAN DAN JASA",
+                "value": "709573297"
+            },
+            {
+                "company": "PT GRAHA SEJAHTERA ABADI",
+                "percentage": "99.99%",
+                "types": "PERDAGANGAN DAN JASA",
+                "value": "2487359440777"
+            },
+            {
+                "company": "PT JAYA SELARAS GEMILANG",
+                "percentage": "99.20%",
+                "types": "REAL ESTAT",
+                "value": "11613546725"
+            },
+            {
+                "company": "PT KENCANA PONDOK SEJAHTERA",
+                "percentage": "99.80%",
+                "types": "REAL ESTAT",
+                "value": "2889700458"
+            }
+        ],
+        "profile": {
+            "fund_type": {
+                "value": "",
+                "info": ""
+            },
+            "inception_date": "",
+            "fund_manager": "",
+            "fund_manager_ico": "",
+            "custodian_bank": "",
+            "custodian_ico": "",
+            "risk_level": {
+                "value": "",
+                "info": ""
+            },
+            "aum": {
+                "value": "",
+                "info": ""
+            },
+            "maxdrawdown": {
+                "value": "",
+                "info": ""
+            },
+            "cagr5year": {
+                "value": "",
+                "info": ""
+            },
+            "expense_ratio": {
+                "value": "",
+                "info": ""
+            }
+        },
+        "fee": [],
+        "asset_allocation": [],
+        "shareholder_reksa": [],
+        "pdf": [],
+        "shareholder_numbers": [
+            {
+                "shareholder_date": "31 Dec 2025",
+                "total_share": "101,965",
+                "change": 52475,
+                "change_formatted": "(+52,475)"
+            },
+            {
+                "shareholder_date": "30 Nov 2025",
+                "total_share": "49,490",
+                "change": 5420,
+                "change_formatted": "(+5,420)"
+            },
+            {
+                "shareholder_date": "31 Oct 2025",
+                "total_share": "44,070",
+                "change": 3474,
+                "change_formatted": "(+3,474)"
+            },
+            {
+                "shareholder_date": "30 Sep 2025",
+                "total_share": "40,596",
+                "change": 1821,
+                "change_formatted": "(+1,821)"
+            },
+            {
+                "shareholder_date": "31 Aug 2025",
+                "total_share": "38,775",
+                "change": 8794,
+                "change_formatted": "(+8,794)"
+            },
+            {
+                "shareholder_date": "31 Jul 2025",
+                "total_share": "29,981",
+                "change": 3355,
+                "change_formatted": "(+3,355)"
+            }
+        ],
+        "badges": [
+            "direktur",
+            "komisaris",
+            "pengendali"
+        ],
+        "top_holdings": [],
+        "shareholder_director_commissioner": [],
+        "listing_information": {
+            "exercise_start_date": "",
+            "exercise_end_date": "",
+            "exercise_price": 0,
+            "expire_date": "",
+            "listing_date": "",
+            "foreign_percentage": {
+                "raw": 0,
+                "formatted": ""
+            },
+            "local_percentage": {
+                "raw": 0,
+                "formatted": ""
+            },
+            "number_of_securities": 0,
+            "total_shares": 0
+        }
+    }
+}

@@ -9,7 +9,7 @@ import { FirebaseProvider } from "@/lib/firebase";
 
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
-import { Navbar } from "@/components/layout";
+import { Navbar, SidebarToggle } from "@/components/layout";
 
 export const metadata: Metadata = {
   title: {
@@ -36,8 +36,8 @@ export default function RootLayout({
 }) {
   return (
     <html suppressHydrationWarning lang="en">
-      <head/>
-      <meta name="viewport" content="width=1024"/>
+      <head />
+      <meta name="viewport" content="width=1024" />
       <body
         className={clsx(
           "min-h-screen text-foreground bg-background font-sans antialiased",
@@ -48,12 +48,11 @@ export default function RootLayout({
           <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
             <div className="relative flex flex-col min-h-screen bg-gradient-to-br from-background dark:to-purple-950 to-blue-100">
               <Navbar />
-              <main className="container mx-auto max-w-7xl pt-3 px-6 flex-grow">
-                {children}
+              <main>
+                <SidebarToggle>
+                  {children}
+                </SidebarToggle>
               </main>
-              {/* <footer className="w-full flex items-center justify-center py-3">
-
-              </footer> */}
             </div>
             <ToastProvider toastOffset={50} placement="top-right" />
           </Providers>
